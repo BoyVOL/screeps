@@ -3,13 +3,13 @@ console.log("___________________________________________________________________
 class MemoryItem {
     constructor(key){
 
-        this.key = key;
+        key = key;
     }
 }
 
 Object.defineProperty(MemoryItem, "test", {
     get: function() {
-      return "bla";
+      return this.key;
     }
   });
 
