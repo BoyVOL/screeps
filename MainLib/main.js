@@ -6,11 +6,19 @@ class MemoryItem {
         this.key = key;
     }
 
-    
+    Alloc(value){
+        if(typeof(Memory[this.key]) == 'undefined'){
+            Memory[this.key] = value;
+        }
+    }
+
+    Alloc(){
+        this.Alloc({});
+    }
 }
 
 class test extends Creep{
-    
+
 }
 
 /**
@@ -20,8 +28,7 @@ class test extends Creep{
 function loop(){
 
     var test = new MemoryItem("bla");
-
-    console.log("bla "+test.key);
+    test.Alloc();
 }
 
 module.exports = {
