@@ -7,6 +7,10 @@ class MemoryItem {
     }
 }
 
+class CustomCreep extends creep{
+    
+}
+
 /**
  * Description
  * @returns {any}
