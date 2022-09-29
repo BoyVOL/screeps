@@ -30,7 +30,8 @@ class HtableController{
         this.Htable = htable;
     }
 
-    LoadIntoMemory(){
+    get length(){
+        return Object.keys(this.Htable).length;
     }
 }
 
@@ -48,8 +49,7 @@ function loop(){
     console.log(test.native);
 
     var testControl = new HtableController(Game.spawns);
-    console.log(Game.spawns);
-    testControl.LoadIntoMemory();
+    console.log(testControl.length);
 }
 
 module.exports = {
