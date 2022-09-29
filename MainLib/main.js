@@ -35,6 +35,8 @@ class HtableController{
             console.log(element);
         });
     }
+
+
 }
 
 class test extends Creep{
@@ -49,6 +51,9 @@ function loop(){
     var test = new MemoryItem("bla");
     test.native = test.native + "bla";
     console.log(test.native);
+
+    var testControl = HtableController(Game.spawns);
+    testControl.LoadIntoMemory();
 }
 
 module.exports = {
