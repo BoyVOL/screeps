@@ -1,4 +1,4 @@
-require('MemoryManagement');
+var MM = require('MemoryManagement');
 
 console.log("______________________________________________________________________________");
 
@@ -12,11 +12,11 @@ class test extends Creep{
  */
 function loop(){
 
-    var test = new MemoryItem("bla");
+    var test = new MM.MemoryItem("bla");
     test.native = test.native + "bla";
     console.log(test.native);
 
-    var testControl = new HtableController(Game.flags);
+    var testControl = new MM.HtableController(Game.flags);
     console.log(testControl.length);
     testControl.forEach(function(value){
         console.log(value);
