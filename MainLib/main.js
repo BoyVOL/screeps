@@ -26,7 +26,7 @@ class MemoryItem {
 
 class HtableController{
 
-    constructor(hTable){
+    constructor(htable){
         this.Htable = htable;
     }
 
