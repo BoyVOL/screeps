@@ -19,10 +19,13 @@ class MemoryItem {
     Set(value){
         Memory[this.key] = value;
     }
+
+    get test(){
+        return "test";
+    }
 }
 
 class test extends Creep{
-
 }
 
 /**
@@ -31,17 +34,11 @@ class test extends Creep{
  */
 function loop(){
 
-    var object = {
-        get test(){
-            return "test";
-        }
-    }
-
     var test = new MemoryItem("bla");
     test.Alloc("bla");
     test.Set(test.Get()+"bla");
     console.log(test.Get());
-    console.log(object.test);
+    console.log(test.test);
 }
 
 module.exports = {
