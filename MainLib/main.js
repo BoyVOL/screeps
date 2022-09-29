@@ -6,13 +6,10 @@ class MemoryItem {
         this.key = key;
     }
 
-}
-
-Object.defineProperty(MemoryItem, "fullName", {
-    get: function() {
-      return this.key;
+    get fullName() {
+        this.key;
     }
-  });
+}
 
 /**
  * Description
