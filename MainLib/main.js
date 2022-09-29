@@ -4,14 +4,14 @@ class MemoryItem {
     constructor(key){
 
         this.key = key;
-
-        Object.defineProperty(MemoryItem, "test", {
-            get: function() {
-              return "bla";
-            }
-          });
     }
 }
+
+Object.defineProperty(MemoryItem, "test", {
+    get: function() {
+      return "bla";
+    }
+  });
 
 /**
  * Description
