@@ -31,10 +31,17 @@ class test extends Creep{
  */
 function loop(){
 
+    var object = {
+        get test(){
+            return "test";
+        }
+    }
+
     var test = new MemoryItem("bla");
     test.Alloc("bla");
     test.Set(test.Get()+"bla");
     console.log(test.Get());
+    console.log(object.test);
 }
 
 module.exports = {
