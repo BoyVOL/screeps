@@ -1,7 +1,7 @@
-var SS = require('CustomSpawns');
-var CC = require('CustomCreeps');
-var MM = require('MemoryManagement');
-var CT = require('CustomTowers');
+var SS = require('LegacyCode/CustomSpawns');
+var CC = require('LegacyCode/CustomCreeps');
+var MM = require('LegacyCode/MemoryManagement');
+var CT = require('LegacyCode/CustomTowers');
 
 global.SpawnSt = new SS.SpawnStorer("SS2");
 
