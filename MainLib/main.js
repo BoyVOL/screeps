@@ -1,18 +1,19 @@
 console.log("______________________________________________________________________________");
 
 class MemoryItem {
-    constructor(key){
 
-        key = key;
+    constructor(key){
+        this.key = key;
     }
+
 }
 
-Object.defineProperty(MemoryItem, "test", {
+Object.defineProperty(MemoryItem, "fullName", {
     get: function() {
       return this.key;
     }
   });
-
+  
 /**
  * Description
  * @returns {any}
