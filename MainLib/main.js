@@ -21,7 +21,7 @@ function loop(){
 
     var test = new MemoryItem("bla");
 
-    console.log(test.test);
+    console.log("bla"+test.test);
 }
 
 module.exports = {
