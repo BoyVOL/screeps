@@ -11,6 +11,10 @@ class MemoryItem {
             Memory[this.key] = value;
         }
     }
+
+    Get(){
+        return Memory[this.key];
+    }
 }
 
 class test extends Creep{
@@ -24,7 +28,8 @@ class test extends Creep{
 function loop(){
 
     var test = new MemoryItem("bla");
-    test.Alloc();
+    test.Alloc("bla");
+    console.log(test.Get());
 }
 
 module.exports = {
