@@ -31,7 +31,7 @@ class HtableController{
     }
 
     LoadIntoMemory(){
-        console.log(this.Htable.count);
+        console.log(this.Htable.length);
     }
 
 
