@@ -32,8 +32,6 @@ class HtableController{
 
     LoadIntoMemory(){
     }
-
-
 }
 
 class test extends Creep{
