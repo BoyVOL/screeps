@@ -5,9 +5,11 @@ class MemoryItem {
     constructor(key){
         this.key = key;
     }
+
+    
 }
 
-class CustomCreep extends creep{
+class test extends Creep{
     
 }
 
