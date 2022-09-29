@@ -5,7 +5,7 @@ class MemoryItem {
 
         this.key = key;
 
-        Object.defineProperty(user, "test", {
+        Object.defineProperty(MemoryItem, "test", {
             get: function() {
               return "bla";
             }
