@@ -1,9 +1,12 @@
 console.log("______________________________________________________________________________");
 
+
+/** class for overriding long term memory usage */
 class MemoryItem {
 
-    constructor(key){
+    constructor(key,def){
         this.key = key;
+        this.Alloc(def);
     }
 
     Alloc(value){
@@ -21,6 +24,19 @@ class MemoryItem {
     }
 }
 
+class HtableController{
+
+    constructor(HTable){
+        this.Htable = Htable;
+    }
+
+    LoadIntoMemory(){
+        this.Htable.forEach(element => {
+            console.log(element);
+        });
+    }
+}
+
 class test extends Creep{
 }
 
@@ -31,8 +47,7 @@ class test extends Creep{
 function loop(){
 
     var test = new MemoryItem("bla");
-    test.Alloc("bla");
-    test.native = test.native+"bla";
+    test.native = test.native + "bla";
     console.log(test.native);
 }
 
