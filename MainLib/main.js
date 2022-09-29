@@ -33,7 +33,7 @@ function loop(){
 
     var test = new MemoryItem("bla");
     test.Alloc("bla");
-    test.Set(test.Get()+="bla");
+    test.Set(test.Get()+"bla");
     console.log(test.Get());
 }
 
