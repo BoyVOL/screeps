@@ -1,3 +1,5 @@
+require('MemoryManagement');
+
 console.log("______________________________________________________________________________");
 
 
@@ -24,6 +26,7 @@ class MemoryItem {
     }
 }
 
+
 class HtableController{
 
     constructor(htable){
@@ -33,6 +36,8 @@ class HtableController{
     get length(){
         return Object.keys(this.Htable).length;
     }
+
+    
 }
 
 class test extends Creep{
