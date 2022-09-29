@@ -32,7 +32,11 @@ class HtableController{
         return Object.keys(this.Htable).length;
     }
 
-    
+    forEach(funct){
+        for (const key in this.Htable) {
+            funct(this.Htable[key]);
+        }
+    }
 }
 
 module.exports = {
