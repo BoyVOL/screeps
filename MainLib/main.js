@@ -11,10 +11,6 @@ class MemoryItem {
             Memory[this.key] = value;
         }
     }
-
-    Alloc(){
-        this.Alloc({});
-    }
 }
 
 class test extends Creep{
