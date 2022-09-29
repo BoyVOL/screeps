@@ -5,10 +5,6 @@ class MemoryItem {
     constructor(key){
         this.key = key;
     }
-
-    get fullName() {
-        this.key;
-    }
 }
 
 /**
@@ -19,7 +15,7 @@ function loop(){
 
     var test = new MemoryItem("bla");
 
-    console.log("bla "+test.fullName);
+    console.log("bla "+test.key);
 }
 
 module.exports = {
