@@ -31,9 +31,7 @@ class HtableController{
     }
 
     LoadIntoMemory(){
-        this.Htable.forEach(element => {
-            console.log(element);
-        });
+        console.log(this.Htable);
     }
 
 
