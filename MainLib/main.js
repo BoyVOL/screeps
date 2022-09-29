@@ -50,7 +50,7 @@ function loop(){
     console.log(test.native);
 
     var testControl = new HtableController(Game.spawns);
-    console.log(Game.spawns[0]);
+    console.log(Game.spawns);
     testControl.LoadIntoMemory();
 }
 
