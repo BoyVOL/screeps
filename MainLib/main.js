@@ -12,16 +12,12 @@ class MemoryItem {
         }
     }
 
-    Get(){
+    get native(){
         return Memory[this.key];
     }
 
-    Set(value){
+    set native(value){
         Memory[this.key] = value;
-    }
-
-    get test(){
-        return "test";
     }
 }
 
@@ -36,9 +32,8 @@ function loop(){
 
     var test = new MemoryItem("bla");
     test.Alloc("bla");
-    test.Set(test.Get()+"bla");
-    console.log(test.Get());
-    console.log(test.test);
+    test.native = test.native+"bla";
+    console.log(test.native);
 }
 
 module.exports = {
