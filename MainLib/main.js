@@ -31,7 +31,6 @@ class HtableController{
     }
 
     LoadIntoMemory(){
-        console.log(this.Htable.length);
     }
 
 
@@ -51,6 +50,7 @@ function loop(){
     console.log(test.native);
 
     var testControl = new HtableController(Game.spawns);
+    console.log(Game.spawns.length);
     testControl.LoadIntoMemory();
 }
 
