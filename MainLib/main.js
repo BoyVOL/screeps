@@ -52,7 +52,7 @@ function loop(){
     test.native = test.native + "bla";
     console.log(test.native);
 
-    var testControl = HtableController(Game.spawns);
+    var testControl = new HtableController(Game.spawns);
     testControl.LoadIntoMemory();
 }
 
