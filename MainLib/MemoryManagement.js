@@ -21,35 +21,26 @@ class MemoryItem {
     }
 }
 
+class ObjectOverride{
 
-class HtableOverride{
-
-    constructor(htable){
-        this.Htable = htable;
+    constructor(native){
+        this.Native = native;
     }
 
+}
+
+
+class HtableOverride extends ObjectOverride{
+
     get length(){
-        return Object.keys(this.Htable).length;
+        return Object.keys(this.Native).length;
     }
 
     forEach(funct){
-        for (const key in this.Htable) {
-            funct(this.Htable[key]);
+        for (const key in this.Native) {
+            funct(this.Native[key]);
         }
     }
-}
-
-class ObjectOverride{
-
-    constructor(object){
-        Object.assign(this,object);
-    }
-
-        ListKeys(){
-            for (const key in this) {
-                console.log(key);
-            }
-        }
 }
 
 module.exports = {

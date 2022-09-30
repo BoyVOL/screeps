@@ -24,10 +24,8 @@ function loop(){
     })
 
     var test2 = new ObjectOverride(testControl.Htable["Spawn1"]);
-    console.log(test2);
-    test2.ListKeys();
 
-    console.log(test2.hits,testControl.Htable["Spawn1"].hits);
+    console.log(test2.native.hits,testControl.Htable["Spawn1"].hits);
 }
 
 module.exports = {
