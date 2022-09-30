@@ -32,7 +32,7 @@ class ObjectOverride{
 
 class HtableOverride extends ObjectOverride{
 
-    get length(){
+    get count(){
         return Object.keys(this.orig).length;
     }
 

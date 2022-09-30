@@ -1,5 +1,4 @@
-var MM = require('MemoryManagement');
-const { ObjectOverride } = require('./MemoryManagement');
+const { ObjectOverride,HtableOverride,MemoryItem } = require('./MemoryManagement');
 
 console.log("______________________________________________________________________________");
 
@@ -13,11 +12,11 @@ class test extends Creep{
  */
 function loop(){
 
-    var test = new MM.MemoryItem("bla");
+    var test = new MemoryItem("bla");
     test.value = test.value + "bla";
     console.log(test.value);
 
-    var testControl = new MM.HtableOverride(Game.spawns);
+    var testControl = new HtableOverride(Game.spawns);
     console.log(testControl.count);
     testControl.forEach(function(value){
         console.log(value);
