@@ -2,7 +2,7 @@ const { ObjectOverride,HtableOverride,ObjTable } = require('./ClassOverride');
 
 class SpawnOverride extends ObjectOverride{
     Update(){
-        console.log("Update");
+        console.log(this.orig.id);
     }
 }
 
