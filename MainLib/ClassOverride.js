@@ -39,9 +39,10 @@ class ObjTableOverride extends HtableOverride{
 
     InitObjects(){
         this.objArray = [];
-        this.forEach(function(val){
+        var f = function(val){
             this.objArray.push(InitSingleObject(val));
-        });
+        }
+        this.forEach(f(val));
     }
 }
 
