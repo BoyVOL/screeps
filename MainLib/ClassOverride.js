@@ -64,6 +64,7 @@ class ObjTable extends HtableOverride{
     }
 
     Update(){
+        InitObjects();
         var funct = function(obj){
             obj.Update();
         }
