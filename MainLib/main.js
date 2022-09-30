@@ -13,6 +13,8 @@ function loop(){
     var sptable = new ObjTableOverride(Game.spawns);
     test.value = sptable.orig;
     console.log(sptable.count);
+    sptable.InitObjects();
+    console.log(sptable.objArray.length);
 }
 
 module.exports = {
