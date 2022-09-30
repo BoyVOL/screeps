@@ -14,7 +14,7 @@ function loop(){
     test.value = sptable.orig;
     console.log(sptable.count);
     sptable.InitObjects();
-    console.log(sptable.objArray);
+    console.log(sptable.objArray.length);
 }
 
 module.exports = {
