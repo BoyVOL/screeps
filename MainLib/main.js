@@ -23,9 +23,9 @@ function loop(){
         console.log(value);
     })
 
-    var test2 = new ObjectOverride(testControl.Htable["Spawn1"]);
+    var test2 = new ObjectOverride(testControl.native["Spawn1"]);
 
-    console.log(test2.native.hits,testControl.Htable["Spawn1"].hits);
+    console.log(test2.native.hits,testControl.native["Spawn1"].hits);
 }
 
 module.exports = {
