@@ -27,10 +27,11 @@ class SpawnOverride extends ObjectOverride{
 
 }
 
-class ObjTableOverride extends HtableOverride{
+class ObjTable extends HtableOverride{
     constructor(orig){
         super(orig);
         this.objArray = new Array();
+        this.InitObjects();
     }
 
     InitSingleObject(orig){
@@ -54,5 +55,5 @@ class ObjTableOverride extends HtableOverride{
 module.exports = {
     HtableOverride,
     ObjectOverride,
-    ObjTableOverride,
+    ObjTable,
 }
