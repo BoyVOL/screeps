@@ -23,8 +23,8 @@ function loop(){
         console.log(value);
     })
 
-    console.log(testControl.Htable["Spawn1"]);
-    var test2 = new ObjectOverride(testControl.HTable);
+    var test2 = new ObjectOverride(testControl.Htable["Spawn1"]);
+    console.log(test2);
 }
 
 module.exports = {
