@@ -1,10 +1,22 @@
-/** class for overriding functionality of different low level class */
-class ObjectOverride{
+class Updatable{
 
-    constructor(orig){
-        this.orig = orig;
+    constructor(){
+        
     }
 
+    Update(funct){
+        funct();
+    }
+}
+
+
+/** class for overriding functionality of different low level class */
+class ObjectOverride extends Updatable{
+
+    constructor(orig){
+        super();
+        this.orig = orig;
+    }
 }
 
 /** class for overriding access to hash tables */
@@ -49,6 +61,13 @@ class ObjTable extends HtableOverride{
     /** cycle for all items in table that gets function as a parameter */
     forEachObj(funct){
         this.objArray.forEach(funct);
+    }
+
+    Update(){
+        var funct = function(obj){
+            obj.Update();
+        }
+        this.forEachObj(funct);
     }
 }
 
