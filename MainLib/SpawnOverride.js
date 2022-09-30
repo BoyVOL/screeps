@@ -1,4 +1,4 @@
-const { ObjectOverride,HtableOverride,ObjTable } = require('./ClassOverride');
+const { ObjectOverride,ObjTable } = require('./ClassOverride');
 
 class SpawnOverride extends ObjectOverride{
 

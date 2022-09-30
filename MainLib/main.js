@@ -1,11 +1,16 @@
 const { SpawnOverride,SpawnTable} = require('./SpawnOverride');
+const { CreepOverride,CreepTable, CreepTable} = require('./CreepOverride');
 
 console.log("______________________________________________________________________________");
 
+var spawnTable = new SpawnTable();
+var creepTable = new CreepTable();
+
 function loop(){
-    var spawnTable = new SpawnTable();
     console.log(spawnTable.objArray.length);
     spawnTable.Update();
+    console.log(creepTable.objArray.length);
+    creepTable.Update();
 }
 
 module.exports = {
