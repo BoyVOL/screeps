@@ -22,24 +22,24 @@ class MemoryItem {
 }
 
 
-class HtableController{
+class HtableOverride{
 
     constructor(htable){
-        this.Htable = htable;
+        this = htable;
     }
 
     get length(){
-        return Object.keys(this.Htable).length;
+        return Object.keys(this).length;
     }
 
     forEach(funct){
-        for (const key in this.Htable) {
-            funct(this.Htable[key]);
+        for (const key in this) {
+            funct(this[key]);
         }
     }
 }
 
 module.exports = {
     MemoryItem,
-    HtableController
+    HtableOverride
 }
