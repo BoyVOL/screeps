@@ -30,7 +30,7 @@ class SpawnOverride extends ObjectOverride{
 class ObjTableOverride extends HtableOverride{
     constructor(orig){
         super(orig);
-        this.objArray = [];
+        this.objArray = new Array();
     }
 
     InitSingleObject(orig){
@@ -38,7 +38,7 @@ class ObjTableOverride extends HtableOverride{
     }
 
     InitObjects(){
-        this.objArray = [];
+        this.objArray = new Array();
         var pass = this;
         this.forEach(function(val){
             pass.objArray.push(pass.InitSingleObject(val));
