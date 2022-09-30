@@ -44,6 +44,11 @@ class ObjTableOverride extends HtableOverride{
             pass.objArray.push(pass.InitSingleObject(val));
         });
     }
+    
+    /** cycle for all items in table that gets function as a parameter */
+    forEachObj(funct){
+        this.objArray.forEach(funct);
+    }
 }
 
 module.exports = {
