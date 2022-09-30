@@ -24,7 +24,7 @@ class MemoryItem {
 class ObjectOverride{
 
     constructor(native){
-        this.Native = native;
+        this.native = native;
     }
 
 }
@@ -33,12 +33,12 @@ class ObjectOverride{
 class HtableOverride extends ObjectOverride{
 
     get length(){
-        return Object.keys(this.Native).length;
+        return Object.keys(this.native).length;
     }
 
     forEach(funct){
-        for (const key in this.Native) {
-            funct(this.Native[key]);
+        for (const key in this.native) {
+            funct(this.native[key]);
         }
     }
 }
