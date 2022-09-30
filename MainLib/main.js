@@ -3,8 +3,8 @@ const { CreepOverride,CreepTable} = require('./CreepOverride');
 
 console.log("______________________________________________________________________________");
 
-var spawnTable = new SpawnTable();
-var creepTable = new CreepTable();
+const spawnTable = new SpawnTable();
+const creepTable = new CreepTable();
 
 function loop(){
     console.log(spawnTable.objArray.length);
