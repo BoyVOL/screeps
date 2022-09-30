@@ -23,7 +23,30 @@ class HtableOverride extends ObjectOverride{
     }
 }
 
+class SpawnOverride extends ObjectOverride{
+
+}
+
+class ObjTableOverride extends HtableOverride{
+    constructor(orig){
+        super(orig);
+        this.objArray = [];
+    }
+
+    InitSingleObject(orig){
+        return ObjectOverride(orig);
+    }
+
+    InitObjects(){
+        this.objArray = [];
+        this.forEach(function(val){
+            this.objArray.push(InitSingleObject(val));
+        });
+    }
+}
+
 module.exports = {
     HtableOverride,
     ObjectOverride,
+    ObjTableOverride,
 }
