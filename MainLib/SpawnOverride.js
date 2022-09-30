@@ -1,8 +1,10 @@
 const { ObjectOverride,HtableOverride,ObjTable } = require('./ClassOverride');
 
 class SpawnOverride extends ObjectOverride{
+
     Update(){
         console.log(this.orig.id);
+        this.orig.spawnCreep([WORK, CARRY, MOVE], 'Worker1');
     }
 }
 
