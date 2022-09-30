@@ -39,7 +39,15 @@ class HtableOverride{
     }
 }
 
+class ObjectOverride{
+
+    constructor(object){
+        this = object;
+    }
+}
+
 module.exports = {
     MemoryItem,
-    HtableOverride
+    HtableOverride,
+    ObjectOverride
 }

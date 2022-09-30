@@ -1,4 +1,5 @@
 var MM = require('MemoryManagement');
+const { ObjectOverride } = require('./MemoryManagement');
 
 console.log("______________________________________________________________________________");
 
@@ -21,6 +22,8 @@ function loop(){
     testControl.forEach(function(value){
         console.log(value);
     })
+
+    var test2 = new ObjectOverride(testControl.HTable[0]);
 }
 
 module.exports = {
