@@ -1,4 +1,5 @@
-const { ObjectOverride,HtableOverride,MemoryItem } = require('./MemoryManagement');
+const { MemoryItem } = require('./MemoryManagement');
+const {ObjectOverride,HtableOverride} = require('./ClassOverride');
 
 console.log("______________________________________________________________________________");
 
