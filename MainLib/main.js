@@ -26,6 +26,8 @@ function loop(){
     var test2 = new ObjectOverride(testControl.Htable["Spawn1"]);
     console.log(test2);
     test2.ListKeys();
+
+    console.log(test2.hits);
 }
 
 module.exports = {
