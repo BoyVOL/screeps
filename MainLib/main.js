@@ -1,5 +1,5 @@
 const { MemoryItem } = require('./MemoryManagement');
-const {ObjectOverride,HtableOverride} = require('./ClassOverride');
+const { ObjectOverride,HtableOverride } = require('./ClassOverride');
 
 console.log("______________________________________________________________________________");
 
@@ -7,25 +7,11 @@ console.log("___________________________________________________________________
 class test extends Creep{
 }
 
-/**
- * Description
- * @returns {any}
- */
 function loop(){
 
-    var test = new MemoryItem("bla");
-    test.value = test.value + "bla";
-    console.log(test.value);
-
-    var testControl = new HtableOverride(Game.spawns);
-    console.log(testControl.count);
-    testControl.forEach(function(value){
-        console.log(value);
-    })
-
-    var test2 = new ObjectOverride(testControl.orig["Spawn1"]);
-
-    console.log(test2.orig.hits,testControl.orig["Spawn1"].hits);
+    var test = new MemoryItem("test");
+    var htable = HtableOverride(Game.spawns);
+    test.value = htable.orig;
 }
 
 module.exports = {

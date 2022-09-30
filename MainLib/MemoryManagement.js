@@ -5,13 +5,15 @@ class MemoryItem {
         this.key = key;
         this.Alloc(def);
     }
-
+    
+    /** First memory Allocation */
     Alloc(value){
         if(typeof(Memory[this.key]) == 'undefined'){
             Memory[this.key] = value;
         }
     }
 
+    /** property for accessisn value of this field in long term memory */
     get value(){
         return Memory[this.key];
     }
