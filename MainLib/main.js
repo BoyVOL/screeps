@@ -23,7 +23,7 @@ function loop(){
         console.log(value);
     })
 
-    var test2 = new ObjectOverride(testControl.HTable[0]);
+    var test2 = new ObjectOverride(testControl.HTable);
 }
 
 module.exports = {
