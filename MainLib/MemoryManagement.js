@@ -42,7 +42,7 @@ class HtableOverride{
 class ObjectOverride{
 
     constructor(object){
-        this = object;
+        Object.assign(this,object);
     }
 }
 
