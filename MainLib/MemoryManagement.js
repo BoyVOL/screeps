@@ -1,7 +1,7 @@
 /** class for overriding long term memory usage */
 class MemoryItem {
 
-    constructor(key,def){
+    constructor(key,def=""){
         this.key = key;
         this.Alloc(def);
     }
