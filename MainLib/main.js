@@ -16,7 +16,7 @@ function loop(){
     test.native = test.native + "bla";
     console.log(test.native);
 
-    var testControl = new MM.HtableOverride(Game.flags);
+    var testControl = new MM.HtableOverride(Game.spawns);
     console.log(testControl.length);
     testControl.forEach(function(value){
         console.log(value);
