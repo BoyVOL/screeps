@@ -34,7 +34,7 @@ class ObjTableOverride extends HtableOverride{
     }
 
     InitSingleObject(orig){
-        return ObjectOverride(orig);
+        return new ObjectOverride(orig);
     }
 
     InitObjects(){
