@@ -19,7 +19,10 @@ class SpawnTable extends ObjTable{
     }
 }
 
+const spawnTable = new SpawnTable();
+
 module.exports = {
+    spawnTable,
     SpawnOverride,
     SpawnTable
 }

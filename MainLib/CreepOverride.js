@@ -18,7 +18,10 @@ class CreepTable extends ObjTable{
     }
 }
 
+const creepTable = new CreepTable();
+
 module.exports = {
+    creepTable,
     CreepOverride,
     CreepTable
 }
