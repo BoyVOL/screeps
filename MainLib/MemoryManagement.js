@@ -12,19 +12,19 @@ class MemoryItem {
         }
     }
 
-    get native(){
+    get value(){
         return Memory[this.key];
     }
 
-    set native(value){
+    set value(value){
         Memory[this.key] = value;
     }
 }
 
 class ObjectOverride{
 
-    constructor(native){
-        this.native = native;
+    constructor(orig){
+        this.orig = orig;
     }
 
 }
@@ -33,12 +33,12 @@ class ObjectOverride{
 class HtableOverride extends ObjectOverride{
 
     get length(){
-        return Object.keys(this.native).length;
+        return Object.keys(this.orig).length;
     }
 
     forEach(funct){
-        for (const key in this.native) {
-            funct(this.native[key]);
+        for (const key in this.orig) {
+            funct(this.orig[key]);
         }
     }
 }
