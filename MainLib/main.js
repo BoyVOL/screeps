@@ -16,7 +16,7 @@ function loop(){
     sptable.InitObjects();
     console.log(sptable.objArray,sptable.objArray.length);
     sptable.forEachObj(function(val){
-        console.log(val.id);
+        console.log(val.orig.id);
     })
 }
 
