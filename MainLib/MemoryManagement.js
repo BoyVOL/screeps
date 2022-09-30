@@ -49,5 +49,5 @@ class ObjectOverride{
 module.exports = {
     MemoryItem,
     HtableOverride,
-    ObjectOverride
+    ObjectOverride,
 }

@@ -23,6 +23,7 @@ function loop(){
         console.log(value);
     })
 
+    console.log(testControl.Htable[0]);
     var test2 = new ObjectOverride(testControl.HTable);
 }
 
