@@ -1,5 +1,5 @@
 const { SpawnOverride,SpawnTable} = require('./SpawnOverride');
-const { CreepOverride,CreepTable, CreepTable} = require('./CreepOverride');
+const { CreepOverride,CreepTable} = require('./CreepOverride');
 
 console.log("______________________________________________________________________________");
 
