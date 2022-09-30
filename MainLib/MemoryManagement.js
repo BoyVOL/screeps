@@ -43,13 +43,13 @@ class ObjectOverride{
 
     constructor(object){
         Object.assign(this,object);
+    }
 
         ListKeys(){
             for (const key in this) {
                 console.log(key);
             }
         }
-    }
 }
 
 module.exports = {
