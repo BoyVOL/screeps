@@ -10,7 +10,7 @@ class test extends Creep{
 function loop(){
 
     var test = new MemoryItem("test");
-    var htable = HtableOverride(Game.spawns);
+    var htable = new HtableOverride(Game.spawns);
     test.value = htable.orig;
 }
 
