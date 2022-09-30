@@ -25,16 +25,16 @@ class MemoryItem {
 class HtableOverride{
 
     constructor(htable){
-        this = htable;
+        this.Htable = htable;
     }
 
     get length(){
-        return Object.keys(this).length;
+        return Object.keys(this.Htable).length;
     }
 
     forEach(funct){
-        for (const key in this) {
-            funct(this[key]);
+        for (const key in this.Htable) {
+            funct(this.Htable[key]);
         }
     }
 }
