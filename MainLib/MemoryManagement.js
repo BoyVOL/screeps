@@ -9,8 +9,8 @@ class MemoryItem {
     
     /** First memory Allocation */
     Alloc(value){
-        if(typeof(memPath) == 'undefined'){
-            memPath = value;
+        if(typeof(this.value) == 'undefined'){
+            this.value = value;
         }
     }
 
