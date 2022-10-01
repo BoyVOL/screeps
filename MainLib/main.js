@@ -5,7 +5,7 @@ const { MemoryItem } = require('./MemoryManagement');
 console.log("______________________________________________________________________________");
 
 function loop(){
-    var item = new MemoryItem("bla",Memory);
+    var item = new MemoryItem("bla","",Memory);
     item.value += "bla";
     console.log(item.value);
 
