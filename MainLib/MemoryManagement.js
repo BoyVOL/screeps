@@ -1,15 +1,16 @@
 /** class for overriding long term memory usage */
 class MemoryItem {
 
-    constructor(key,def=""){
+    constructor(key,def="",memPath=Memory){
         this.key = key;
+        this.memPath = memPath;
         this.Alloc(def);
     }
     
     /** First memory Allocation */
     Alloc(value){
-        if(typeof(Memory[this.key]) == 'undefined'){
-            Memory[this.key] = value;
+        if(typeof(memPath) == 'undefined'){
+            memPath = value;
         }
     }
 
