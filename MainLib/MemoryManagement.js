@@ -16,11 +16,11 @@ class MemoryItem {
 
     /** property for accessisn value of this field in long term memory */
     get value(){
-        return Memory[this.key];
+        return this.memPath[this.key];
     }
 
     set value(value){
-        Memory[this.key] = value;
+        this.memPath[this.key] = value;
     }
 }
 
