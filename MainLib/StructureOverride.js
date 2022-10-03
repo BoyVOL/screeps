@@ -14,8 +14,8 @@ class StructureTable extends ObjTable{
         super(Game.structures);
     }
 
-    InitSingleObject(origTable,origKey){
-        return new StructureOverride(origTable,origKey);
+    InitSingleObject(orig){
+        return new StructureOverride(orig);
     }
 }
 

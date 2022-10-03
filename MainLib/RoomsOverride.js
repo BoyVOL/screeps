@@ -20,8 +20,8 @@ class RoomsTable extends ObjTable{
         super(Game.rooms);
     }
 
-    InitSingleObject(origTable,origKey){
-        return new RoomOverride(origTable,origKey);
+    InitSingleObject(orig){
+        return new RoomOverride(orig);
     }
 }
 
