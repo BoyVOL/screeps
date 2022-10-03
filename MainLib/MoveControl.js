@@ -29,7 +29,7 @@ class Movement extends WithParent{
     }
 
     GetNewPath(pos){
-        this.MoveContr.path.value = this.FindPath(pos);
+        this.path.value = this.FindPath(pos);
     }
 
     Update(){
