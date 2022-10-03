@@ -82,7 +82,7 @@ class ObjTable extends HtableOverride{
         var pass = this;
         this.forEach(function(val,key){
             if(val != null){
-                AddObject(orig);
+                this.AddObject(orig);
             }
         });
     }
