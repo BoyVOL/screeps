@@ -25,8 +25,10 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
     }
 
-    LoadFromMem(){
-        this.orig = this.orig;
+    LoadOrig(orig){
+        if(typeof(orig) != 'undefined'){
+            this.orig = orig;
+        }
     }
 
     get hasid(){
@@ -34,7 +36,7 @@ class ObjectOverride extends Updatable{
     }
 
     Update(){
-        this.LoadFromMem();
+        this.LoadOrig();
         super.Update();
     }
 }
@@ -95,10 +97,10 @@ class ObjTable extends HtableOverride{
         console.log(this.count,' ',this.objcount);
         var pass = this;
         this.forEach(function(val,key){
-            console.log(pass.orig[key],pass.objArray[key],pass.ObjExists(key),pass.Exists(key));
             if(!pass.ObjExists(key)){
                 pass.AddObject(val,key);
             }
+            pass.Obj
         });
         this.forEachObj(function(val,key){
             if(!pass.Exists(key)){

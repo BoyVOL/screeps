@@ -26,7 +26,7 @@ class SpawnTable extends ObjTable{
         super(Game.spawns);
     }
     
-    LoadFromMem(){
+    LoadOrig(){
         this.orig = Game.spawns;
     }
 

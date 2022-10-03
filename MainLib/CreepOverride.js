@@ -26,7 +26,7 @@ class CreepTable extends ObjTable{
         super(Game.creeps);
     }
     
-    LoadFromMem(){
+    LoadOrig(){
         this.orig = Game.creeps;
     }
 

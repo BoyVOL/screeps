@@ -19,7 +19,7 @@ class RoomsTable extends ObjTable{
         super(Game.rooms);
     }
     
-    LoadFromMem(){
+    LoadOrig(){
         this.orig = Game.rooms;
     }
 

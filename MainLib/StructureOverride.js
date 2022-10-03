@@ -14,7 +14,7 @@ class StructureTable extends ObjTable{
         super(Game.structures);
     }
     
-    LoadFromMem(){
+    LoadOrig(){
         this.orig = Game.structures;
     }
 
