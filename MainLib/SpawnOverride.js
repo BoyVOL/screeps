@@ -10,7 +10,7 @@ class SpawnOverride extends StructureOverride{
     }
 
     SpawnCreep(){
-        this.orig.spawnCreep(this.buildorder.NextBody, this.Buildorder.NextName);
+        this.orig.spawnCreep(this.buildorder.NextBody, this.buildorder.NextName);
     }
 
     Update(){
