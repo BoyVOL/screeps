@@ -7,6 +7,7 @@ class CreepOverride extends RoomObjectOver{
     constructor(orig){
         super(orig);
         this.MoveContr = new Movement(this);
+        console.log(this.MoveContr.path.value);
     }
 
     LoadFromMem(){
