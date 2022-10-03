@@ -8,6 +8,10 @@ class Buildorder extends Updatable{
         this.NextName = 'Worker';
     }
 
+    Update(){
+        super.Update();
+        this.NextName = Game.time;
+    }
 }
 
 module.exports = {
