@@ -5,7 +5,7 @@ class Movement extends WithParent{
     
     constructor(parent){
         super(parent);
-        this.path = new MemoryItem("path",null,this.parent.orig.memory);
+        this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
     }
 
@@ -20,7 +20,7 @@ class Movement extends WithParent{
     }
 
     get PathIsComplete(){
-        return this.path.value.count <= 0;
+        return this.path.value.length <= 0;
     }
 
     Move(){
