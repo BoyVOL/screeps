@@ -60,7 +60,6 @@ class Movement extends WithParent{
     Update(){
         super.Update();
         this.CheckArrival();
-        this.CheckStayingOnPath();
         this.Move();
         this.CheckValidPath();
         this.DrawPath();
