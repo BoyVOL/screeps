@@ -100,7 +100,6 @@ class ObjProxyTable extends HtableOverride{
     }
 
     UpdateObjects(){
-        console.log(this.count,' ',this.objcount);
         var pass = this;
         this.forEach(function(val,key){
             if(!pass.ObjExists(key)){
