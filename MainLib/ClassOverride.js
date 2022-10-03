@@ -26,8 +26,8 @@ class ObjectOverride extends Updatable{
     }
 
     LoadOrig(orig){
-        if(typeof(orig) != 'undefined'){
-            this.orig = orig;
+        if(typeof(this.orig.id) != 'undefined'){
+            this.orig = Game.getObjectById(this.orig.id);
         }
     }
 
@@ -100,7 +100,6 @@ class ObjTable extends HtableOverride{
             if(!pass.ObjExists(key)){
                 pass.AddObject(val,key);
             }
-            pass.objArray[key].LoadOrig(val);
         });
         this.forEachObj(function(val,key){
             if(!pass.Exists(key)){

@@ -35,6 +35,10 @@ class RoomObjectOver extends ObjectOverride{
         this.Room = roomTable.objArray[this.orig.room.name];
     }
 
+    LoadOrig(){
+        this.orig = Game.rooms[this.orig.name];
+    }
+
     FindPath(target){
         var result = this.orig.pos.findPathTo(target);
         return result;
