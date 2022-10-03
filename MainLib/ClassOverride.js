@@ -100,7 +100,7 @@ class ObjTable extends HtableOverride{
             if(!pass.ObjExists(key)){
                 pass.AddObject(val,key);
             }
-            pass.objArray[key].LoadOrig(pass.orig[key]);
+            pass.objArray[key].LoadOrig(val);
         });
         this.forEachObj(function(val,key){
             if(!pass.Exists(key)){
