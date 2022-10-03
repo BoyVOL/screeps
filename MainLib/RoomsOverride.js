@@ -6,6 +6,12 @@ class RoomOverride extends ObjectOverride{
         super.Update();
         console.log(this.orig.name);
     }
+
+    GetRandomPos(){
+        var x = Math.floor(Math.random()*50);
+        var y = Math.floor(Math.random()*50);
+        return this.orig.getPositionAt()
+    }
 }
 
 class RoomsTable extends ObjTable{

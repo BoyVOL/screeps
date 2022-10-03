@@ -1,6 +1,6 @@
 const { ObjectOverride,ObjTable } = require('./ClassOverride');
 const { Movement } = require('./MoveControl');
-const { roomTable } = require('./RoomsOverride')
+const { roomTable,RoomOverride } = require('./RoomsOverride')
 
 class CreepOverride extends ObjectOverride{
 
@@ -14,6 +14,7 @@ class CreepOverride extends ObjectOverride{
         super.Update();
         this.MoveContr.Update();
         console.log("creep ",this.orig.id);
+        console.log("pos = ",this.Room.GetRandomPos());
     }
 }
 
