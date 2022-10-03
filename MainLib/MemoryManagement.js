@@ -4,6 +4,7 @@ class MemoryItem {
     constructor(key,def="",memPath=Memory){
         this.key = key;
         this.memPath = memPath;
+        console.log("memory =", this.isset);
         this.Alloc(def);
     }
     
