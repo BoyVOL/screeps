@@ -30,7 +30,6 @@ class ObjectOverride extends Updatable{
     }
 
     Update(){
-        console.log("reupload ",orig);
         this.Reupload();
     }
 }
@@ -40,13 +39,13 @@ class HtableOverride extends ObjectOverride{
 
     /** this way you can get hash table overall count */
     get count(){
-        return Object.keys(this.origTable).length;
+        return Object.keys(this.orig).length;
     }
 
     /** cycle for all items in table that gets function as a parameter */
     forEach(funct){
-        for (const key in this.origTable) {
-            funct(this.origTable[key],key);
+        for (const key in this.orig) {
+            funct(this.orig[key],key);
         }
     }
 }
@@ -68,7 +67,6 @@ class ObjTable extends HtableOverride{
     InitObjects(){
         this.objArray = {};
         var pass = this;
-        console.log("Done");
         this.forEach(function(val,key){
             var obj = pass.InitSingleObject(val);
             pass.objArray[key] = obj;
