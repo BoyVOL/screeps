@@ -4,6 +4,7 @@ class MemoryItem {
     constructor(key,def="",memPath=Memory){
         this.key = key;
         this.memPath = memPath;
+        console.log("memory =", this.memPath[this.key]);
         this.Alloc(def);
     }
     
@@ -16,7 +17,6 @@ class MemoryItem {
 
     /** property for accessisn value of this field in long term memory */
     get value(){
-        console.log("memory =", this.memPath[this.key]);
         return this.memPath[this.key];
     }
 
