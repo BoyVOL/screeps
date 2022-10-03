@@ -26,7 +26,7 @@ class ObjectOverride extends Updatable{
     }
 
     LoadFromMem(){
-        this.orig = orig;
+        this.orig = this.orig;
     }
 
     get hasid(){
