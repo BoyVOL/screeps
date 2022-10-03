@@ -24,8 +24,8 @@ class CreepTable extends ObjTable{
         super(Game.creeps);
     }
 
-    InitSingleObject(origTable,origKey){
-        return new CreepOverride(origTable,origKey);
+    InitSingleObject(orig){
+        return new CreepOverride(orig);
     }
 }
 
