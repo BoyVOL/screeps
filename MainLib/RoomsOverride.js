@@ -27,10 +27,8 @@ class RoomsTable extends ObjTable{
     SearchByName(name){
         var result = null;
         function search(val){
-            console.log("begin search");
             if(val.orig.name == name){
-                result = val
-                console.log("found it!");
+                result = val;
             } 
         }
         this.forEachObj(search);
