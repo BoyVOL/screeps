@@ -6,6 +6,10 @@ class RoomOverride extends ObjectOverride{
         super.Update();
     }
 
+    LoadOrig(){
+        this.orig = Game.rooms[this.orig.name];
+    }
+
     GetRandomPos(){
         var x = Math.floor(Math.random()*48+1);
         var y = Math.floor(Math.random()*48+1);
@@ -33,10 +37,6 @@ class RoomObjectOver extends ObjectOverride{
     constructor(orig){
         super(orig);
         this.Room = roomTable.objArray[this.orig.room.name];
-    }
-
-    LoadOrig(){
-        this.orig = Game.rooms[this.orig.name];
     }
 
     FindPath(target){
