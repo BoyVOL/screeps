@@ -71,6 +71,10 @@ class HtableOverride extends ObjectOverride{
 
 class ObjTable extends HtableOverride{
 
+    constructor(){
+        super({});
+    }
+
     Update(){
         super.Update();
     }
