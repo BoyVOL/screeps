@@ -14,6 +14,7 @@ class Movement extends WithParent{
 
     Update(){
         super.Update();
+        this.DrawPath();
     }
 }
 
