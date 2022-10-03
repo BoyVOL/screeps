@@ -28,9 +28,6 @@ class ObjectOverride extends Updatable{
     get hasid(){
         return typeof(this.orig.id) != 'undefined';
     }
-    
-    Reupload(){
-    }
 
     Update(){
         super.Update();
@@ -90,13 +87,8 @@ class ObjTable extends HtableOverride{
         }
     }
 
-    Reupload(){
-        this.InitObjects(this.orig);
-    }
-
     Update(){
         super.Update();
-
         var funct = function(obj,key){
             obj.Update();
         }
