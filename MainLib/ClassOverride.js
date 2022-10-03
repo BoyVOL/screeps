@@ -3,9 +3,9 @@ class Updatable{
     constructor(){
         
     }
-
-    Update(funct){
-        funct();
+    
+    Update(){
+        
     }
 }
 
@@ -35,10 +35,7 @@ class HtableOverride extends ObjectOverride{
     }
 }
 
-class SpawnOverride extends ObjectOverride{
-
-}
-
+/** object that wraps around native hash table and converts it into updating object array on the fly*/
 class ObjTable extends HtableOverride{
     constructor(orig){
         super(orig);
@@ -46,10 +43,12 @@ class ObjTable extends HtableOverride{
         this.InitObjects();
     }
 
+    /** Method for initiatins single object that needs to be overread */
     InitSingleObject(orig){
         return new ObjectOverride(orig);
     }
 
+    /** Initiate all objects from hash table */
     InitObjects(){
         this.objArray = new Array();
         var pass = this;
@@ -73,6 +72,7 @@ class ObjTable extends HtableOverride{
 }
 
 module.exports = {
+    Updatable,
     HtableOverride,
     ObjectOverride,
     ObjTable,

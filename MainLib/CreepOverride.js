@@ -3,6 +3,7 @@ const { ObjectOverride,ObjTable } = require('./ClassOverride');
 class CreepOverride extends ObjectOverride{
 
     Update(){
+        super.Update();
         console.log("creep ",this.orig.id);
     }
 }

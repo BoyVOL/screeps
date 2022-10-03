@@ -1,12 +1,22 @@
-const { ObjectOverride,ObjTable } = require('./ClassOverride');
-const {} = require('./CreepProductionControl');
-const {} = require('./StructureOverride');
+const { ObjTable } = require('./ClassOverride');
+const {Buildorder} = require('./CreepProductionControl');
+const {StructureOverride} = require('./StructureOverride');
 
-class SpawnOverride extends ObjectOverride{
+class SpawnOverride extends StructureOverride{
+
+    constructor(){
+        super();
+        this.buildorder = new Buildorder();
+    }
+
+    SpawnCreep(){
+        this.orig.spawnCreep(this.buildorder.NextBody, this.Buildorder.NextName);
+    }
 
     Update(){
+        super.Update();
         console.log(this.orig.id);
-        this.orig.spawnCreep([WORK, CARRY, MOVE], 'Worker1');
+        this.SpawnCreep();
     }
 }
 

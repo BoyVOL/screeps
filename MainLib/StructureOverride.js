@@ -3,6 +3,7 @@ const { ObjectOverride,ObjTable } = require('./ClassOverride');
 class StructureOverride extends ObjectOverride{
 
     Update(){
+        super.Update();
         console.log(this.orig.hits);
     }
 }
