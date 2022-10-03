@@ -8,7 +8,7 @@ class Movement extends WithParent{
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
         this.target = null;
-        console.log(this.MoveContr.path.value);
+        console.log(this.path.value);
     }
 
     DrawPath(){
