@@ -28,6 +28,10 @@ class Movement extends WithParent{
         console.log(this.IsOnPath);
     }
 
+    GetNewPath(pos){
+        this.MoveContr.path.value = this.FindPath(pos);
+    }
+
     Update(){
         super.Update();
         this.Move();
