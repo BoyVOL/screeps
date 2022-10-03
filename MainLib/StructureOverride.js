@@ -1,7 +1,7 @@
 const { ObjTable } = require('./ClassOverride');
-const { roomTable,WithPosition } = require('./RoomsOverride');
+const { roomTable,RoomObjectOver } = require('./RoomsOverride');
 
-class StructureOverride extends WithPosition{
+class StructureOverride extends RoomObjectOver{
 
     Update(){
         super.Update();

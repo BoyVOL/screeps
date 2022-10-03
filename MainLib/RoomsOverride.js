@@ -36,7 +36,7 @@ class RoomsTable extends ObjTable{
     }
 }
 
-class WithPosition extends ObjectOverride{
+class RoomObjectOver extends ObjectOverride{
 
     constructor(orig){
         super(orig);
@@ -51,5 +51,5 @@ module.exports = {
     roomTable,
     RoomOverride,
     RoomsTable,
-    WithPosition,
+    RoomObjectOver,
 }

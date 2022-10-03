@@ -7,6 +7,11 @@ class Movement extends WithParent{
         this.path;
     }
 
+    DrawPath(){
+        this.parent.Room.orig.visual.poly(this.path,{stroke: '#fff', strokeWidth: .15,
+        opacity: .2, lineStyle: 'dashed'});
+    }
+
     Update(){
         super.Update();
     }
