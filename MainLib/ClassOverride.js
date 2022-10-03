@@ -69,6 +69,14 @@ class HtableOverride extends ObjectOverride{
     }
 }
 
+class ObjTable extends HtableOverride{
+
+    Update(){
+        super.Update();
+    }
+
+}
+
 /** object that wraps around native hash table and converts it into updating object array on the fly*/
 class ObjProxyTable extends HtableOverride{
     constructor(orig){
