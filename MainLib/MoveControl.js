@@ -61,6 +61,7 @@ class Movement extends WithParent{
     Update(){
         super.Update();
         this.CheckArrival();
+        this.CheckStayingOnPath();
         this.Move();
         console.log("move result = ",this.lastresult);
         this.CheckValidPath();
