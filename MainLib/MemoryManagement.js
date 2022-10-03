@@ -5,6 +5,7 @@ class MemoryItem {
         this.key = key;
         this.memPath = memPath;
         console.log("memory =", this.memPath[this.key]);
+        console.log("memory =", typeof(this.memPath[this.key]));
         this.Alloc(def);
     }
     
