@@ -13,12 +13,13 @@ class Movement extends WithParent{
         opacity: .2, lineStyle: 'dashed'});
     }
 
-    get notarget(){
-        return this.target == null;
+    Move(){
+        this.parent.orig.moveByPath(this.path.value);
     }
 
     Update(){
         super.Update();
+        this.Move();
         this.DrawPath();
     }
 }
