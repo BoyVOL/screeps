@@ -4,8 +4,8 @@ const { RoomObjectOver } = require('./RoomsOverride');
 
 class CreepOverride extends RoomObjectOver{
 
-    constructor(origTable,origKey){
-        super(origTable,origKey);
+    constructor(orig){
+        super(orig);
         this.MoveContr = new Movement(this);
     }
 

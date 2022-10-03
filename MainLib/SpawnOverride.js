@@ -4,8 +4,8 @@ const { StructureOverride } = require('./StructureOverride');
 
 class SpawnOverride extends StructureOverride{
 
-    constructor(origTable,origKey){
-        super(origTable,origKey);
+    constructor(orig){
+        super(orig);
         this.buildorder = new Buildorder(this);
     }
 
@@ -26,8 +26,8 @@ class SpawnTable extends ObjTable{
         super(Game.spawns);
     }
 
-    InitSingleObject(origTable,origKey){
-        return new SpawnOverride(origTable,origKey);
+    InitSingleObject(orig){
+        return new SpawnOverride(orig);
     }
 }
 

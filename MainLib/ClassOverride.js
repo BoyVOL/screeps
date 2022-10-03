@@ -22,23 +22,17 @@ class ObjectOverride extends Updatable{
 
     constructor(orig){
         super();
-<<<<<<< HEAD
-        this.origTable = origTable;
-        this.origKey = origkey;
-        this.orig = null;
+        this.orig = orig;
         this.Reupload();
     }
     
     Reupload(){
-        this.orig = this.origTable[this.origKey];
     }
 
     Update(){
         console.log("reupload");
         this.Reupload();
-=======
         this.orig = orig;
->>>>>>> parent of b9faa6d (1)
     }
 }
 
@@ -60,8 +54,8 @@ class HtableOverride extends ObjectOverride{
 
 /** object that wraps around native hash table and converts it into updating object array on the fly*/
 class ObjTable extends HtableOverride{
-    constructor(origTable,origkey){
-        super(origTable,origkey);
+    constructor(orig){
+        super(orig);
         this.objArray = {};
         this.InitObjects();
     }
@@ -76,18 +70,14 @@ class ObjTable extends HtableOverride{
         this.objArray = {};
         var pass = this;
         this.forEach(function(val,key){
-<<<<<<< HEAD
-            var obj = pass.InitSingleObject(pass.origTable,key);
-=======
             var obj = pass.InitSingleObject(val);
->>>>>>> parent of b9faa6d (1)
             pass.objArray[key] = obj;
         });
     }
     
     /** cycle for all items in table that gets function as a parameter */
     forEachObj(funct){
-        for (const key in this.origTable) {
+        for (const key in this.orig) {
             funct(this.objArray[key],key);
         }
     }
