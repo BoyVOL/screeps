@@ -74,8 +74,8 @@ class ObjTable extends HtableOverride{
 
     Update(){
         this.InitObjects();
+        console.log(key);
         var funct = function(obj,key){
-            console.log(key);
             obj.Update();
         }
         this.forEachObj(funct);
