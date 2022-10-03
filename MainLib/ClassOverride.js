@@ -99,11 +99,11 @@ class ObjTable extends HtableOverride{
                 pass.AddObject(val,key);
             }
         });
-        this.forEachObj(function(val,key){
+        /*this.forEachObj(function(val,key){
             if(!pass.Exists(key)){
                 pass.DeleteObject(key);
             }
-        });
+        })*/;
     }
     
     /** cycle for all items in table that gets function as a parameter */
