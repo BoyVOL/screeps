@@ -30,9 +30,6 @@ class ObjectOverride extends Updatable{
     }
     
     Reupload(){
-        if(this.hasid) {
-            this.orig = Game.getObjectById(this.orig.id);
-        }
     }
 
     Update(){
@@ -61,8 +58,7 @@ class HtableOverride extends ObjectOverride{
 class ObjTable extends HtableOverride{
     constructor(orig){
         super(orig);
-        this.objArray = {};
-        this.InitObjects();
+        this.InitObjects(orig);
     }
 
     /** Method for initiatins single object that needs to be overread */
@@ -76,7 +72,8 @@ class ObjTable extends HtableOverride{
     }
 
     /** Initiate all objects from hash table */
-    InitObjects(){
+    InitObjects(orig){
+        this.orig = orig;
         this.objArray = {};
         var pass = this;
         this.forEach(function(val,key){
@@ -93,9 +90,13 @@ class ObjTable extends HtableOverride{
         }
     }
 
+    Reupload(){
+    }
+
     Update(){
         super.Update();
         this.InitObjects();
+
         var funct = function(obj,key){
             obj.Update();
         }
