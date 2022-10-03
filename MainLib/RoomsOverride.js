@@ -3,7 +3,6 @@ const { ObjectOverride,ObjTable } = require('./ClassOverride');
 class RoomOverride extends ObjectOverride{
 
     Update(){
-        console.log(this.orig.name);
         super.Update();
     }
 
@@ -21,6 +20,7 @@ class RoomsTable extends ObjTable{
     }
 
     InitSingleObject(orig){
+        console.log("ROOM");
         return new RoomOverride(orig);
     }
 }
