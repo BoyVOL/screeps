@@ -6,7 +6,7 @@ class CreepOverride extends ObjectOverride{
 
     constructor(orig){
         super(orig)
-        this.MoveContr = new Movement();
+        this.MoveContr = new Movement(this);
         this.Room = roomTable.SearchByName(this.orig.room.name);
     }
 

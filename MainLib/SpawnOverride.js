@@ -6,7 +6,7 @@ class SpawnOverride extends StructureOverride{
 
     constructor(orig){
         super(orig);
-        this.buildorder = new Buildorder();
+        this.buildorder = new Buildorder(this);
     }
 
     SpawnCreep(){
