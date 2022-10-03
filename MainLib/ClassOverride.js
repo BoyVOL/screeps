@@ -62,8 +62,8 @@ class ObjTable extends HtableOverride{
         this.forEach(function(val,key){
             var obj = pass.InitSingleObject(val);
             pass.objArray[key] = obj;
-            console.log(key);
         });
+        console.log(key);
     }
     
     /** cycle for all items in table that gets function as a parameter */
