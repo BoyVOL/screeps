@@ -63,6 +63,7 @@ class HtableOverride extends ObjectOverride{
 class ObjTable extends HtableOverride{
     constructor(orig){
         super(orig);
+        this.objArray = {};
     }
 
     /** Method for initiatins single object that needs to be overread */
@@ -81,7 +82,6 @@ class ObjTable extends HtableOverride{
 
     /** Initiate all objects from hash table */
     InitObjects(){
-        this.objArray = {};
         var pass = this;
         this.forEach(function(val,key){
             pass.AddObject(val,key);
@@ -90,7 +90,6 @@ class ObjTable extends HtableOverride{
 
     ObjExists(key){
         this.objArray[key] != undefined;
-        console.log("Pass");
     }
 
     UpdateObjects(){
