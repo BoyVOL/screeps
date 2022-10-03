@@ -68,14 +68,14 @@ class ObjTable extends HtableOverride{
     /** cycle for all items in table that gets function as a parameter */
     forEachObj(funct){
         for (const key in this.orig) {
-            console.log(key);
             funct(this.orig[key],key);
         }
     }
 
     Update(){
         this.InitObjects();
-        var funct = function(obj){
+        var funct = function(obj,key){
+            console.log(key);
             obj.Update();
         }
         this.forEachObj(funct);
