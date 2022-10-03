@@ -25,6 +25,7 @@ class RoomsTable extends ObjTable{
     }
 
     SearchByName(name){
+        console.log(name);
         var result = null;
         function search(val){
             if(val.orig.name == name){
