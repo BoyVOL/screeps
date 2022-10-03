@@ -80,14 +80,6 @@ class ObjTable extends HtableOverride{
         delete this.objArray[key];
     }
 
-    /** Initiate all objects from hash table */
-    InitObjects(){
-        var pass = this;
-        this.forEach(function(val,key){
-            pass.AddObject(val,key);
-        });
-    }
-
     ObjExists(key){
         this.objArray[key] != undefined;
     }
