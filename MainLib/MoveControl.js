@@ -5,7 +5,6 @@ class Movement extends WithParent{
     
     constructor(parent){
         super(parent);
-        this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
         this.target = null;
     }
@@ -16,8 +15,6 @@ class Movement extends WithParent{
     }
 
     get IsOnPath(){
-        console.log(this.parent.orig.pos.x, " ",this.parent.orig.pos.y);
-        console.log(this.path.value[0].x, " ",this.path.value[0].y);
         return this.parent.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
         this.parent.orig.pos.y+this.path.value[0].dy == this.path.value[0].y;
     }
@@ -66,6 +63,7 @@ class Movement extends WithParent{
 
     Update(){
         super.Update();
+        this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.CheckArrival();
         this.CheckStayingOnPath();
         this.Move();
