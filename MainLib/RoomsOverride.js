@@ -25,13 +25,6 @@ class RoomsTable extends ObjTable{
     }
 
     SearchByName(name){
-        var result = null;
-        function search(val,key){
-            if(val.orig.name == name){
-                result = val;
-            } 
-        }
-        this.forEachObj(search);
         return result;
     }
 }
@@ -40,7 +33,7 @@ class RoomObjectOver extends ObjectOverride{
 
     constructor(orig){
         super(orig);
-        this.Room = roomTable.SearchByName(this.orig.room.name);
+        this.Room = roomTable.objArray[this.orig.room.name];
     }
 
     FindPath(target){
