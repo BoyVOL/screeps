@@ -20,7 +20,7 @@ class Movement extends WithParent{
     }
 
     get PathIsComplete(){
-        return this.path.value.length != 0;
+        return this.path.value.length <= 0;
     }
 
     Move(){
