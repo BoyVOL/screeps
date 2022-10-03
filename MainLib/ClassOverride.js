@@ -108,6 +108,7 @@ class ObjTable extends HtableOverride{
     }
 
     Update(){
+        console.log(this.objArray);
         super.Update();
         this.UpdateObjects();
 
