@@ -20,9 +20,21 @@ class WithParent extends Updatable{
 /** class for overriding functionality of different low level class */
 class ObjectOverride extends Updatable{
 
-    constructor(orig){
+    constructor(origTable,origkey){
         super();
-        this.orig = orig;
+        this.origTable = origTable;
+        this.origKey = origkey;
+        this.orig = null;
+        this.Reupload();
+    }
+    
+    Reupload(){
+        this.orig = this.origTable[this.origKey];
+        console.log(this.orig);
+    }
+
+    Update(){
+        this.Reupload();
     }
 }
 
@@ -51,8 +63,8 @@ class ObjTable extends HtableOverride{
     }
 
     /** Method for initiatins single object that needs to be overread */
-    InitSingleObject(orig){
-        return new ObjectOverride(orig);
+    InitSingleObject(origTable,origKey){
+        return new ObjectOverride(origTable,origKey);
     }
 
     /** Initiate all objects from hash table */
@@ -60,7 +72,8 @@ class ObjTable extends HtableOverride{
         this.objArray = {};
         var pass = this;
         this.forEach(function(val,key){
-            var obj = pass.InitSingleObject(val);
+            var obj = pass.InitSingleObject(pass.orig,key);
+            console.log(key);
             pass.objArray[key] = obj;
         });
     }
