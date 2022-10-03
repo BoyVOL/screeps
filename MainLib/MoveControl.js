@@ -15,6 +15,7 @@ class Movement extends WithParent{
 
     Move(){
         this.parent.orig.moveByPath(this.path.value);
+        console.log(this.parent.orig.pos," ",this.path.value[0].x," ",this.path.value[0].y);
     }
 
     Update(){
