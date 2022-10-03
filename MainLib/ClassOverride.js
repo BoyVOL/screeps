@@ -95,7 +95,7 @@ class ObjTable extends HtableOverride{
     UpdateObjects(){
         var pass = this;
         this.forEach(function(val,key){
-            console.log(key);
+            console.log(key,pass.Exists(key));
             if(!pass.Exists(key)){
                 pass.AddObject(val,key);
             }
