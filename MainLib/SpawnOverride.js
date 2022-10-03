@@ -4,8 +4,8 @@ const {StructureOverride} = require('./StructureOverride');
 
 class SpawnOverride extends StructureOverride{
 
-    constructor(){
-        super();
+    constructor(orig){
+        super(orig);
         this.buildorder = new Buildorder();
     }
 
@@ -14,8 +14,8 @@ class SpawnOverride extends StructureOverride{
     }
 
     Update(){
-        super.Update();
-        console.log(this.orig.id);
+        //super.Update();
+        console.log(this.orig.hits);
         this.SpawnCreep();
     }
 }
