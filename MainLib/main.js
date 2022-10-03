@@ -1,10 +1,7 @@
 const { SpawnOverride,SpawnTable,spawnTable} = require('./SpawnOverride');
 const { CreepOverride,CreepTable,creepTable} = require('./CreepOverride');
-<<<<<<< Updated upstream
-const { MemoryItem } = require('./MemoryManagement');
-=======
 const {StructureOverride,StructureTable,structTable} = require("./StructureOverride");
->>>>>>> Stashed changes
+const { MemoryItem } = require('./MemoryManagement');
 
 console.log("______________________________________________________________________________");
 
