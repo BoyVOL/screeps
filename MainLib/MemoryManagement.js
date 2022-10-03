@@ -9,7 +9,7 @@ class MemoryItem {
     
     /** First memory Allocation */
     Alloc(value){
-        if(typeof(this.value) == 'undefined'){
+        if(!this.isset){
             this.value = value;
         }
     }
@@ -21,6 +21,10 @@ class MemoryItem {
 
     set value(value){
         this.memPath[this.key] = value;
+    }
+
+    get isset(){
+        return !typeof(this.value) == 'undefined';
     }
 }
 

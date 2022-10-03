@@ -23,10 +23,6 @@ class RoomsTable extends ObjTable{
     InitSingleObject(orig){
         return new RoomOverride(orig);
     }
-
-    SearchByName(name){
-        return result;
-    }
 }
 
 class RoomObjectOver extends ObjectOverride{
