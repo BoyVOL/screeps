@@ -14,8 +14,8 @@ class SpawnOverride extends StructureOverride{
     }
 
     Update(){
-        //super.Update();
-        console.log(this.orig.hits);
+        super.Update();
+        console.log(this.orig.id);
         this.SpawnCreep();
     }
 }
