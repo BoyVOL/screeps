@@ -43,6 +43,10 @@ class RoomObjectOver extends ObjectOverride{
         this.Room = roomTable.SearchByName(this.orig.room.name);
     }
 
+    FindPath(target){
+        var result = this.orig.pos.findPathTo(target);
+        return result;
+    }
 }
 
 const roomTable = new RoomsTable();
