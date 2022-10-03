@@ -25,7 +25,7 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
     }
 
-    LoadFromMem(orig){
+    LoadFromMem(){
         this.orig = orig;
     }
 
@@ -34,7 +34,7 @@ class ObjectOverride extends Updatable{
     }
 
     Update(){
-        this.LoadFromMem(this.orig);
+        this.LoadFromMem();
         super.Update();
     }
 }
