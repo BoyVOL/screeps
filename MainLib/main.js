@@ -10,6 +10,7 @@ function loop(){
     console.log(spawnTable.objArray.length);
     spawnTable.Update();
     structTable.Update();
+    console.log("hashcount ",structTable.count);
     console.log(creepTable.objArray.length);
     creepTable.Update();
 }
