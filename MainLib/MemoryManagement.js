@@ -9,6 +9,7 @@ class MemoryItem {
     
     /** First memory Allocation */
     Alloc(value){
+        console.log("memory = ",this.isset);
         if(!this.isset){
             this.value = value;
         }
