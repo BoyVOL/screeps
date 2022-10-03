@@ -28,9 +28,13 @@ class Movement extends WithParent{
         return this.lastresult != -5 && this.lastresult != -10;
     }
 
+    get Tired(){
+        return this.lastresult == -11;
+    }
+
     Move(){
         this.lastresult = this.parent.orig.moveByPath(this.path.value);
-        this.path.value.shift();
+        if(!this.Tired) this.path.value.shift();
     }
 
     GetNewPath(pos){
@@ -63,7 +67,6 @@ class Movement extends WithParent{
         this.CheckArrival();
         this.CheckStayingOnPath();
         this.Move();
-        console.log("move result = ",this.lastresult);
         this.CheckValidPath();
         this.DrawPath();
     }
