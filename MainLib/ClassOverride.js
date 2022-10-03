@@ -36,6 +36,7 @@ class ObjectOverride extends Updatable{
     }
 
     Update(){
+        super.Update();
         this.Reupload();
     }
 }
@@ -87,6 +88,7 @@ class ObjTable extends HtableOverride{
     }
 
     Update(){
+        super.Update();
         this.InitObjects();
         var funct = function(obj,key){
             obj.Update();
