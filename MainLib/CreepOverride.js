@@ -12,7 +12,6 @@ class CreepOverride extends RoomObjectOver{
     Update(){
         super.Update();
         var pos = this.Room.GetRandomPos();
-        console.log("Path = ",this.MoveContr.path.value);
         if(this.MoveContr.PathIsComplete) {
             console.log("need new path");
             this.MoveContr.GetNewPath(pos);
