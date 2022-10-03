@@ -56,8 +56,16 @@ class HtableOverride extends ObjectOverride{
         }
     }
 
+    AddRecord(key,val){
+        this.orig[key] = val;
+    }
+
+    DeleteRecord(key){
+        delete this.orig[key];
+    }
+
     Exists(key){
-        return this.orig[key] != undefined;
+        return typeof(this.orig[key]) != 'undefined';
     }
 }
 
@@ -80,17 +88,15 @@ class ObjTable extends HtableOverride{
 
     AddObject(orig,key){
         var obj = this.InitSingleObject(orig);
-        console.log("Addd");
         this.objArray[key] = obj;
     }
 
     DeleteObject(key){
-        console.log("Delete");
         delete this.objArray[key];
     }
 
     ObjExists(key){
-        return this.objArray[key] != undefined;
+        return typeof(this.objArray[key]) != 'undefined';
     }
 
     UpdateObjects(){

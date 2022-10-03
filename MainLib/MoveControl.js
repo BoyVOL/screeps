@@ -42,21 +42,18 @@ class Movement extends WithParent{
 
     CheckArrival(){
         if(this.PathIsComplete) {
-            console.log("arrived");
             this.GetNewPath();
         }
     }
 
     CheckStayingOnPath(){
         if(!this.IsOnPath){
-            console.log("not on path");
             this.GetNewPath();
         }
     }
 
     CheckValidPath(){
         if(!this.MovIsGood){
-            console.log("not valid");
             this.GetNewPath();
         }
     }
