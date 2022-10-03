@@ -68,7 +68,7 @@ class ObjTable extends HtableOverride{
     /** cycle for all items in table that gets function as a parameter */
     forEachObj(funct){
         for (const key in this.orig) {
-            funct(this.orig[key],key);
+            funct(this.objArray[key],key);
         }
     }
 
