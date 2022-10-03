@@ -22,6 +22,10 @@ class CreepTable extends ObjTable{
         super(Game.creeps);
     }
 
+    Reupload(){
+        
+    }
+
     InitSingleObject(orig){
         return new CreepOverride(orig);
     }

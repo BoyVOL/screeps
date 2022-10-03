@@ -28,9 +28,13 @@ class ObjectOverride extends Updatable{
     get hasid(){
         return typeof(this.orig.id) != 'undefined';
     }
+    
+    Reupload(){
+    }
 
     Update(){
         super.Update();
+        this.Reupload();
     }
 }
 
@@ -68,8 +72,7 @@ class ObjTable extends HtableOverride{
     }
 
     /** Initiate all objects from hash table */
-    InitObjects(orig){
-        this.orig = orig;
+    InitObjects(){
         this.objArray = {};
         var pass = this;
         this.forEach(function(val,key){
@@ -86,8 +89,14 @@ class ObjTable extends HtableOverride{
         }
     }
 
+    Reupload(){
+        
+    }
+
     Update(){
         super.Update();
+        this.InitObjects();
+
         var funct = function(obj,key){
             obj.Update();
         }
