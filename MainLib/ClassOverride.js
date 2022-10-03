@@ -38,6 +38,7 @@ class ObjectOverride extends Updatable{
     Update(){
         super.Update();
         this.Reupload();
+        if(this.orig == null) return;
     }
 }
 
@@ -75,7 +76,6 @@ class ObjTable extends HtableOverride{
         this.objArray = {};
         var pass = this;
         this.forEach(function(val,key){
-            console.log(val);
             if(val != null){
                 var obj = pass.InitSingleObject(val);
                 pass.objArray[key] = obj;
