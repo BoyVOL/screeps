@@ -20,7 +20,6 @@ class RoomsTable extends ObjTable{
     }
 
     InitSingleObject(orig){
-        console.log("ROOM");
         return new RoomOverride(orig);
     }
 }
