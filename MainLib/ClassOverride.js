@@ -43,21 +43,21 @@ class HtableOverride extends ObjectOverride{
 
     /** this way you can get hash table overall count */
     get count(){
-        return Object.keys(this.orig).length;
+        return Object.keys(this.origTable).length;
     }
 
     /** cycle for all items in table that gets function as a parameter */
     forEach(funct){
-        for (const key in this.orig) {
-            funct(this.orig[key],key);
+        for (const key in this.origTable) {
+            funct(this.origTable[key],key);
         }
     }
 }
 
 /** object that wraps around native hash table and converts it into updating object array on the fly*/
 class ObjTable extends HtableOverride{
-    constructor(orig){
-        super(orig);
+    constructor(origTable,origkey){
+        super(origTable,origkey);
         this.objArray = {};
         this.InitObjects();
     }
@@ -73,14 +73,13 @@ class ObjTable extends HtableOverride{
         var pass = this;
         this.forEach(function(val,key){
             var obj = pass.InitSingleObject(pass.orig,key);
-            console.log(key);
             pass.objArray[key] = obj;
         });
     }
     
     /** cycle for all items in table that gets function as a parameter */
     forEachObj(funct){
-        for (const key in this.orig) {
+        for (const key in this.origTable) {
             funct(this.objArray[key],key);
         }
     }
