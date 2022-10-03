@@ -14,7 +14,7 @@ class CreepOverride extends ObjectOverride{
         super.Update();
         this.MoveContr.Update();
         console.log("creep ",this.orig.id);
-        console.log("pos = ",this.Room.GetRandomPos());
+        console.log("pos = ",Math.random()*50);
     }
 }
 
