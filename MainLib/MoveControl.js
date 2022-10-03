@@ -18,9 +18,9 @@ class Movement extends WithParent{
     }
 
     Move(){
-        console.log(this.OnStart());
+        console.log(this.OnStart);
         this.parent.orig.moveByPath(this.path.value);
-        console.log(this.OnStart());
+        console.log(this.OnStart);
     }
 
     Update(){
