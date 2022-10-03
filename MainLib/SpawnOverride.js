@@ -1,6 +1,6 @@
 const { ObjTable } = require('./ClassOverride');
-const {Buildorder} = require('./CreepProductionControl');
-const {StructureOverride} = require('./StructureOverride');
+const { Buildorder } = require('./CreepProductionControl');
+const { StructureOverride } = require('./StructureOverride');
 
 class SpawnOverride extends StructureOverride{
 
@@ -15,7 +15,6 @@ class SpawnOverride extends StructureOverride{
 
     Update(){
         super.Update();
-        console.log(this.orig.id);
         this.SpawnCreep();
     }
 }

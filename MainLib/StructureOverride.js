@@ -4,7 +4,6 @@ class StructureOverride extends ObjectOverride{
 
     Update(){
         super.Update();
-        console.log(this.orig.hits);
     }
 }
 
