@@ -28,7 +28,7 @@ class MemoryItem {
     }
 
     get isset(){
-        return !typeof(this.value) != 'undefined';
+        return typeof(this.value) != 'undefined';
     }
 }
 
