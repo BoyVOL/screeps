@@ -9,7 +9,7 @@ class Buildorder extends WithParent{
     }
 
     GetName(){
-        return this.parent.orig.name+Gametime;
+        return this.parent.orig.name+Game.time;
     }
 
     Update(){
