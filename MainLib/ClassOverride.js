@@ -88,7 +88,7 @@ class ObjTable extends HtableOverride{
     }
 
     ObjExists(key){
-        this.objArray[key] != undefined;
+        return this.objArray[key] != undefined;
     }
 
     UpdateObjects(){
