@@ -1,6 +1,6 @@
 const { RoomOverride,RoomsTable,roomTable} = require('./RoomsOverride');
-console.log("______________________________________________________________________________");
 const { SpawnOverride,SpawnTable,spawnTable} = require('./SpawnOverride');
+console.log("______________________________________________________________________________");
 const { CreepOverride,CreepTable,creepTable} = require('./CreepOverride');
 const { StructureOverride,StructureTable,structTable} = require("./StructureOverride");
 const { MemoryItem } = require('./MemoryManagement');
