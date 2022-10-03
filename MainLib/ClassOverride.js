@@ -32,7 +32,6 @@ class ObjectOverride extends Updatable{
     Reupload(){
         if(this.hasid) {
             this.orig = Game.getObjectById(this.orig.id);
-            console.log(reupload == this.orig);
         }
     }
 
