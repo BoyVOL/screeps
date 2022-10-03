@@ -5,7 +5,7 @@ class Buildorder extends WithParent{
     constructor(parent){
         super(parent);
         this.NextBody = [WORK, CARRY, MOVE];
-        this.NextName = GetName();
+        this.NextName = this.GetName();
     }
 
     GetName(){
@@ -14,7 +14,7 @@ class Buildorder extends WithParent{
 
     Update(){
         super.Update();
-        this.NextName = GetName();
+        this.NextName = this.GetName();
     }
 }
 
