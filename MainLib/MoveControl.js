@@ -30,6 +30,7 @@ class Movement extends WithParent{
 
     Move(){
         this.lastresult = this.parent.orig.moveByPath(this.path.value);
+        this.path.value.shift();
     }
 
     GetNewPath(pos){
