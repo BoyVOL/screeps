@@ -7,9 +7,9 @@ const { MemoryItem } = require('./MemoryManagement');
 console.log("______________________________________________________________________________");
 
 function loop(){
-
+    
+    conaole.log("Done");
     roomTable.Update();
-    console.log("Done");
     structTable.Update();
     spawnTable.Update();
     creepTable.Update();
