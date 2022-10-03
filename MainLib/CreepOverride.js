@@ -21,9 +21,9 @@ class CreepTable extends ObjTable{
     constructor(){
         super(Game.creeps);
     }
-
-    Reupload(){
-        
+    
+    LoadFromMem(){
+        this.orig = Game.creeps;
     }
 
     InitSingleObject(orig){

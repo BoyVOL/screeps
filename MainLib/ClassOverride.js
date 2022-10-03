@@ -28,13 +28,9 @@ class ObjectOverride extends Updatable{
     get hasid(){
         return typeof(this.orig.id) != 'undefined';
     }
-    
-    Reupload(){
-    }
 
     Update(){
         super.Update();
-        this.Reupload();
     }
 }
 
@@ -58,6 +54,10 @@ class HtableOverride extends ObjectOverride{
 class ObjTable extends HtableOverride{
     constructor(orig){
         super(orig);
+    }
+
+    LoadFromMem(){
+
     }
 
     /** Method for initiatins single object that needs to be overread */
@@ -88,12 +88,9 @@ class ObjTable extends HtableOverride{
         }
     }
 
-    Reupload(){
-        
-    }
-
     Update(){
         super.Update();
+        this.LoadFromMem();
         this.InitObjects();
 
         var funct = function(obj,key){
