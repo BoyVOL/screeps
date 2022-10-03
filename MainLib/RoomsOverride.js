@@ -4,7 +4,7 @@ class RoomOverride extends ObjectOverride{
 
     Update(){
         super.Update();
-        console.log(this.orig.hits);
+        console.log(this.orig.name);
     }
 }
 
