@@ -37,7 +37,7 @@ class HtableOverride extends ObjectOverride{
     /** cycle for all items in table that gets function as a parameter */
     forEach(funct){
         for (const key in this.orig) {
-            funct(this.orig[key]);
+            funct(this.orig[key],key);
         }
     }
 }
@@ -56,28 +56,19 @@ class ObjTable extends HtableOverride{
     }
 
     /** Initiate all objects from hash table */
-    InitById(){
+    InitObjects(){
         this.objArray = {};
         var pass = this;
-        this.forEach(function(val){
+        this.forEach(function(val,key){
             var obj = pass.InitSingleObject(val);
-            this.objArray[obj.orig.id] = obj;
-        });
-    }
-
-    InitByName(){
-        this.objArray = {};
-        var pass = this;
-        this.forEach(function(val){
-            var obj = pass.InitSingleObject(val);
-            this.objArray[obj.orig.name] = obj;
+            this.objArray[key] = val;
         });
     }
     
     /** cycle for all items in table that gets function as a parameter */
     forEachObj(funct){
         for (const key in this.orig) {
-            funct(this.objArray[key]);
+            funct(this.orig[key],key);
         }
     }
 
