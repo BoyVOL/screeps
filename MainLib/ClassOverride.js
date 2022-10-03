@@ -23,7 +23,6 @@ class ObjectOverride extends Updatable{
     constructor(orig){
         super();
         this.orig = orig;
-        this.Reupload();
     }
 
     get hasid(){
@@ -31,10 +30,10 @@ class ObjectOverride extends Updatable{
     }
     
     Reupload(){
+        if(this.hasid) Game.getObjectById(this.orig.id);
     }
 
     Update(){
-        console.log(this.hasid);
         this.Reupload();
     }
 }
