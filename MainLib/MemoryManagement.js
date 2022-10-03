@@ -4,10 +4,6 @@ class MemoryItem {
     constructor(key,def="",memPath=Memory){
         this.key = key;
         this.memPath = memPath;
-        console.log("memory =", this.memPath[this.key]);
-        console.log("memory =", typeof(this.memPath[this.key]));
-        console.log("memory =", typeof(this.value));
-        console.log("memory =", this.isset);
         this.Alloc(def);
     }
     
@@ -28,7 +24,7 @@ class MemoryItem {
     }
 
     get isset(){
-        return !typeof(this.value) == 'undefined';
+        return !typeof(this.value) != 'undefined';
     }
 }
 
