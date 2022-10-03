@@ -8,7 +8,6 @@ class Movement extends WithParent{
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
         this.target = null;
-        console.log(this.path.value);
     }
 
     DrawPath(){
@@ -44,18 +43,21 @@ class Movement extends WithParent{
 
     CheckArrival(){
         if(this.PathIsComplete) {
+            console.log("arrived");
             this.GetNewPath();
         }
     }
 
     CheckStayingOnPath(){
         if(!this.IsOnPath){
+            console.log("not on path");
             this.GetNewPath();
         }
     }
 
     CheckValidPath(){
         if(!this.MovIsGood){
+            console.log("not valid");
             this.GetNewPath();
         }
     }
