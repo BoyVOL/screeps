@@ -25,11 +25,16 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.Reupload();
     }
+
+    get hasid(){
+        return typeof(this.orig.id) != 'undefined';
+    }
     
     Reupload(){
     }
 
     Update(){
+        console.log(this.hasid);
         this.Reupload();
     }
 }
