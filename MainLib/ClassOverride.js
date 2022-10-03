@@ -9,6 +9,13 @@ class Updatable{
     }
 }
 
+class WithParent extends Updatable{
+    constructor(parent){
+        super();
+        this.parent = parent;
+    }
+}
+
 
 /** class for overriding functionality of different low level class */
 class ObjectOverride extends Updatable{
@@ -73,6 +80,7 @@ class ObjTable extends HtableOverride{
 
 module.exports = {
     Updatable,
+    WithParent,
     HtableOverride,
     ObjectOverride,
     ObjTable,

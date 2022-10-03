@@ -1,9 +1,16 @@
 const { ObjectOverride,ObjTable } = require('./ClassOverride');
+const { Movement } = require('./MoveControl');
 
 class CreepOverride extends ObjectOverride{
 
+    constructor(orig){
+        super(orig)
+        this.MoveContr = new Movement();
+    }
+
     Update(){
         super.Update();
+        this.MoveContr.Update();
         console.log("creep ",this.orig.id);
     }
 }

@@ -15,6 +15,7 @@ class SpawnOverride extends StructureOverride{
 
     Update(){
         super.Update();
+        this.buildorder.Update();
         this.SpawnCreep();
     }
 }
