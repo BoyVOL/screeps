@@ -40,6 +40,8 @@ class WithPosition extends ObjectOverride{
 
     constructor(orig){
         super(orig);
+        this.Room = roomTable.SearchByName(this.orig.room.name);
+        console.log(this.Room.orig.name);
     }
 
 }
