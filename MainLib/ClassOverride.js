@@ -36,8 +36,8 @@ class ObjectOverride extends Updatable{
     }
 
     Update(){
-        this.LoadOrig();
         super.Update();
+        this.LoadOrig();
     }
 }
 
