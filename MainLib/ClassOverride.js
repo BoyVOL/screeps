@@ -32,13 +32,13 @@ class ObjectOverride extends Updatable{
     Reupload(){
         if(this.hasid) {
             this.orig = Game.getObjectById(this.orig.id);
+            console.log(reupload == this.orig);
         }
     }
 
     Update(){
         super.Update();
         this.Reupload();
-        if(this.orig == null) return;
     }
 }
 
@@ -71,14 +71,18 @@ class ObjTable extends HtableOverride{
         return new ObjectOverride(orig);
     }
 
+    AddObject(orig){
+        var obj = pass.InitSingleObject(orig);
+        pass.objArray[key] = obj;
+    }
+
     /** Initiate all objects from hash table */
     InitObjects(){
         this.objArray = {};
         var pass = this;
         this.forEach(function(val,key){
             if(val != null){
-                var obj = pass.InitSingleObject(val);
-                pass.objArray[key] = obj;
+                AddObject(orig);
             }
         });
     }
