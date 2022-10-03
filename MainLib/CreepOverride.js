@@ -1,4 +1,4 @@
-const { ObjTable } = require('./ClassOverride');
+const { ObjProxyTable } = require('./ClassOverride');
 const { Movement } = require('./MoveControl');
 const { RoomObjectOver } = require('./RoomsOverride');
 
@@ -16,7 +16,7 @@ class CreepOverride extends RoomObjectOver{
     }
 }
 
-class CreepTable extends ObjTable{
+class CreepTable extends ObjProxyTable{
 
     constructor(){
         super(Game.creeps);

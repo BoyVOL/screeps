@@ -70,7 +70,7 @@ class HtableOverride extends ObjectOverride{
 }
 
 /** object that wraps around native hash table and converts it into updating object array on the fly*/
-class ObjTable extends HtableOverride{
+class ObjProxyTable extends HtableOverride{
     constructor(orig){
         super(orig);
         this.objArray = {};
@@ -137,5 +137,5 @@ module.exports = {
     WithParent,
     HtableOverride,
     ObjectOverride,
-    ObjTable,
+    ObjProxyTable,
 }

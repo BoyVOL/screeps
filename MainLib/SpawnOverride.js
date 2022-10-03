@@ -1,4 +1,4 @@
-const { ObjTable } = require('./ClassOverride');
+const { ObjProxyTable } = require('./ClassOverride');
 const { Buildorder } = require('./CreepProductionControl');
 const { StructureOverride } = require('./StructureOverride');
 
@@ -20,7 +20,7 @@ class SpawnOverride extends StructureOverride{
     }
 }
 
-class SpawnTable extends ObjTable{
+class SpawnTable extends ObjProxyTable{
 
     constructor(){
         super(Game.spawns);

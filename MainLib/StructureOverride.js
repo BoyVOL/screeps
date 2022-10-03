@@ -1,4 +1,4 @@
-const { ObjTable } = require('./ClassOverride');
+const { ObjProxyTable } = require('./ClassOverride');
 const { roomTable,RoomObjectOver } = require('./RoomsOverride');
 
 class StructureOverride extends RoomObjectOver{
@@ -8,7 +8,7 @@ class StructureOverride extends RoomObjectOver{
     }
 }
 
-class StructureTable extends ObjTable{
+class StructureTable extends ObjProxyTable{
 
     constructor(){
         super(Game.structures);
