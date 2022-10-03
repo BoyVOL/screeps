@@ -53,6 +53,10 @@ class HtableOverride extends ObjectOverride{
             funct(this.orig[key],key);
         }
     }
+
+    Exists(key){
+        return this.orig[key] != undefined;
+    }
 }
 
 /** object that wraps around native hash table and converts it into updating object array on the fly*/
@@ -71,13 +75,33 @@ class ObjTable extends HtableOverride{
         this.objArray[key] = obj;
     }
 
+    DeleteObject(key){
+        delete this.objArray[key];
+    }
+
     /** Initiate all objects from hash table */
     InitObjects(){
         this.objArray = {};
         var pass = this;
         this.forEach(function(val,key){
-            if(val != null){
-                pass.AddObject(val,key);
+            pass.AddObject(val,key);
+        });
+    }
+
+    ObjExists(key){
+        this.objArray[key] != undefined;
+    }
+
+    UpdateObjects(){
+        var pass = this;
+        this.forEach(function(val,key){
+            if(!this.Exists(key)){
+                this.AddObject(val,key);
+            }
+        });
+        this.forEachObj(function(val,key){
+            if(!this.ObjExists(key)){
+                this.DeleteObject(key);
             }
         });
     }
@@ -91,7 +115,7 @@ class ObjTable extends HtableOverride{
 
     Update(){
         super.Update();
-        this.InitObjects();
+        this.UpdateObjects();
 
         var funct = function(obj,key){
             obj.Update();
