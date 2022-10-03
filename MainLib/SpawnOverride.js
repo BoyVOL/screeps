@@ -1,4 +1,6 @@
 const { ObjectOverride,ObjTable } = require('./ClassOverride');
+const {} = require('./CreepProductionControl');
+const {} = require('./StructureOverride');
 
 class SpawnOverride extends ObjectOverride{
 
