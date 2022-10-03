@@ -89,8 +89,8 @@ class ObjTable extends HtableOverride{
     }
 
     ObjExists(key){
-        console.log("Pass");
         this.objArray[key] != undefined;
+        console.log("Pass");
     }
 
     UpdateObjects(){
