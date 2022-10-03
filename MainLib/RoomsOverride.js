@@ -36,10 +36,19 @@ class RoomsTable extends ObjTable{
     }
 }
 
+class WithPosition extends ObjectOverride{
+
+    constructor(orig){
+        super(orig);
+    }
+
+}
+
 const roomTable = new RoomsTable();
 
 module.exports = {
     roomTable,
     RoomOverride,
     RoomsTable,
+    WithPosition,
 }

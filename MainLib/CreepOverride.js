@@ -1,8 +1,8 @@
 const { ObjectOverride,ObjTable } = require('./ClassOverride');
 const { Movement } = require('./MoveControl');
-const { roomTable,RoomOverride } = require('./RoomsOverride')
+const { roomTable,RoomOverride,WithPosition } = require('./RoomsOverride')
 
-class CreepOverride extends ObjectOverride{
+class CreepOverride extends WithPosition{
 
     constructor(orig){
         super(orig)
