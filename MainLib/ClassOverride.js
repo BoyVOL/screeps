@@ -76,7 +76,8 @@ class ObjTable extends HtableOverride{
         var pass = this;
         this.forEach(function(val,key){
             var obj = pass.InitSingleObject(val);
-            if(obj != null) pass.objArray[key] = obj;
+            console.log(Obj);
+            pass.objArray[key] = obj;
         });
     }
     
