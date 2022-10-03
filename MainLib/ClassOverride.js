@@ -95,13 +95,13 @@ class ObjTable extends HtableOverride{
     UpdateObjects(){
         var pass = this;
         this.forEach(function(val,key){
-            if(!this.Exists(key)){
-                this.AddObject(val,key);
+            if(!pass.Exists(key)){
+                pass.AddObject(val,key);
             }
         });
         this.forEachObj(function(val,key){
-            if(!this.ObjExists(key)){
-                this.DeleteObject(key);
+            if(!pass.ObjExists(key)){
+                pass.DeleteObject(key);
             }
         });
     }
