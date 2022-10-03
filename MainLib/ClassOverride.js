@@ -31,7 +31,6 @@ class ObjectOverride extends Updatable{
 
     Update(){
         super.Update();
-        this.Reupload();
     }
 }
 
