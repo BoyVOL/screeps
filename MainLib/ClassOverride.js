@@ -73,10 +73,12 @@ class ObjTable extends HtableOverride{
 
     AddObject(orig,key){
         var obj = this.InitSingleObject(orig);
+        console.log("Addd");
         this.objArray[key] = obj;
     }
 
     DeleteObject(key){
+        console.log("Delete");
         delete this.objArray[key];
     }
 
