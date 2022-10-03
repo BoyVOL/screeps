@@ -1,16 +1,16 @@
 const { ObjectOverride,ObjTable } = require('./ClassOverride');
 
-class StructureOverride extends ObjectOverride{
+class RoomOverride extends ObjectOverride{
 
     Update(){
         console.log(this.orig.hits);
     }
 }
 
-class StructureTable extends ObjTable{
+class RoomsTable extends ObjTable{
 
     constructor(){
-        super(Game.structures);
+        super(Game.rooms);
     }
 
     InitSingleObject(orig){
@@ -18,10 +18,10 @@ class StructureTable extends ObjTable{
     }
 }
 
-const structTable = new StructureTable();
+const roomTable = new RoomsTable();
 
 module.exports = {
-    structTable,
-    StructureOverride,
-    StructureTable,
+    roomTable,
+    RoomOverride,
+    RoomsTable,
 }
