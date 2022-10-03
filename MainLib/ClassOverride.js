@@ -91,11 +91,11 @@ class ObjTable extends HtableOverride{
     }
 
     Reupload(){
+        this.InitObjects(this.orig);
     }
 
     Update(){
         super.Update();
-        this.InitObjects(this.orig);
 
         var funct = function(obj,key){
             obj.Update();
