@@ -32,7 +32,6 @@ class ObjectOverride extends Updatable{
     Update(){
         console.log("reupload");
         this.Reupload();
-        this.orig = orig;
     }
 }
 
