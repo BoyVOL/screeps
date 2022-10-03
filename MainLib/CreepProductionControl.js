@@ -1,16 +1,20 @@
-const { Updatable } = require('./ClassOverride');
+const { WithParent } = require('./ClassOverride');
 
-class Buildorder extends Updatable{
+class Buildorder extends WithParent{
     
-    constructor(){
-        super();
+    constructor(parent){
+        super(parent);
         this.NextBody = [WORK, CARRY, MOVE];
-        this.NextName = 'Worker';
+        this.NextName = GetName();
+    }
+
+    GetName(){
+        return this.parent.orig.name+Gametime;
     }
 
     Update(){
         super.Update();
-        this.NextName = Game.time;
+        this.NextName = GetName();
     }
 }
 
