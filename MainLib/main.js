@@ -9,6 +9,7 @@ console.log("___________________________________________________________________
 function loop(){
 
     roomTable.Update();
+    console.log("Done");
     structTable.Update();
     spawnTable.Update();
     creepTable.Update();
