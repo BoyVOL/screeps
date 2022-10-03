@@ -5,7 +5,6 @@ const { CreepOverride,CreepTable,creepTable} = require('./CreepOverride');
 const { StructureOverride,StructureTable,structTable} = require("./StructureOverride");
 const { MemoryItem } = require('./MemoryManagement');
 
-
 function loop(){
     
     roomTable.Update();
