@@ -58,7 +58,6 @@ class HtableOverride extends ObjectOverride{
 class ObjTable extends HtableOverride{
     constructor(orig){
         super(orig);
-        this.InitObjects(orig);
     }
 
     /** Method for initiatins single object that needs to be overread */
