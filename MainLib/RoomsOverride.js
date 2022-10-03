@@ -15,7 +15,7 @@ class RoomsTable extends ObjTable{
     }
 
     InitSingleObject(orig){
-        return new StructureOverride(orig);
+        return new RoomOverride(orig);
     }
 }
 
