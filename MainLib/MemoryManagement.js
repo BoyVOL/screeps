@@ -12,6 +12,7 @@ class MemoryItem {
         console.log("memory = ",this.isset);
         console.log("memory = ",this.value);
         console.log("memory = ",typeof(this.value));
+        console.log("memory = ",typeof(this.value) != 'undefined');
         if(!this.isset){
             this.value = value;
         }
