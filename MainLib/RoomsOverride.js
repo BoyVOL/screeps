@@ -27,8 +27,8 @@ class RoomsTable extends ObjTable{
 
 class RoomObjectOver extends ObjectOverride{
 
-    constructor(orig){
-        super(orig);
+    constructor(origTable,origKey){
+        super(origTable,origKey);
         this.Room = roomTable.objArray[this.orig.room.name];
     }
 
