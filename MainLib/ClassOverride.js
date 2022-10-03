@@ -25,7 +25,7 @@ class ObjectOverride extends Updatable{
         this.origTable = origTable;
         this.origKey = origkey;
         this.orig = null;
-        Reupload();
+        this.Reupload();
     }
     
     Reupload(){
@@ -33,7 +33,7 @@ class ObjectOverride extends Updatable{
     }
 
     Update(){
-        Reupload();
+        this.Reupload();
     }
 }
 
