@@ -55,7 +55,7 @@ class HtableOverride extends ObjectOverride{
     }
 
     Exists(key){
-        return typeof(this.orig[key]) != 'undefined';
+        return this.orig[key] != undefined;
     }
 }
 
@@ -88,13 +88,14 @@ class ObjTable extends HtableOverride{
     }
 
     ObjExists(key){
-        typeof(this.objArray[key]) != 'undefined';
+        this.objArray[key] != undefined;
     }
 
     UpdateObjects(){
         console.log(this.count,' ',this.objcount);
         var pass = this;
         this.forEach(function(val,key){
+            console.log(pass.orig[key],pass.objArray[key],pass.ObjExists(key),pass.Exists(key));
             if(!pass.ObjExists(key)){
                 pass.AddObject(val,key);
             }
