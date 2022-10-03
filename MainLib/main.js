@@ -9,8 +9,8 @@ console.log("___________________________________________________________________
 function loop(){
 
     roomTable.Update();
-    spawnTable.Update();
     structTable.Update();
+    spawnTable.Update();
     creepTable.Update();
 
 }
