@@ -13,9 +13,14 @@ class Movement extends WithParent{
         opacity: .2, lineStyle: 'dashed'});
     }
 
+    get OnStart(){
+        return this.parent.orig.pos.x == this.path.value[0].x && this.parent.orig.pos.y == this.path.value[0].y;
+    }
+
     Move(){
+        console.log(this.OnStart());
         this.parent.orig.moveByPath(this.path.value);
-        console.log(this.parent.orig.pos," ",this.path.value[0].x," ",this.path.value[0].y);
+        console.log(this.OnStart());
     }
 
     Update(){
