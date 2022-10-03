@@ -11,6 +11,7 @@ class MemoryItem {
     Alloc(value){
         console.log("memory = ",this.isset);
         console.log("memory = ",this.value);
+        console.log("memory = ",typeof(this.value));
         if(!this.isset){
             this.value = value;
         }
