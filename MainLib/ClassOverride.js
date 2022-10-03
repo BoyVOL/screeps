@@ -73,7 +73,7 @@ class ObjTable extends HtableOverride{
 
     AddObject(orig){
         var obj = pass.InitSingleObject(orig);
-        pass.objArray[key] = obj;
+        this.objArray[key] = obj;
     }
 
     /** Initiate all objects from hash table */
