@@ -66,6 +66,11 @@ class ObjTable extends HtableOverride{
         this.objArray = {};
     }
 
+    /** this way you can get hash table overall count */
+    get objcount(){
+        return Object.keys(this.objArray).length;
+    }
+
     /** Method for initiatins single object that needs to be overread */
     InitSingleObject(orig){
         return new ObjectOverride(orig);
@@ -87,6 +92,7 @@ class ObjTable extends HtableOverride{
     }
 
     UpdateObjects(){
+        console.log(this.count,' ',this.objcount);
         var pass = this;
         this.forEach(function(val,key){
             if(!pass.ObjExists(key)){
@@ -108,7 +114,6 @@ class ObjTable extends HtableOverride{
     }
 
     Update(){
-        console.log(this.objArray);
         super.Update();
         this.UpdateObjects();
 
