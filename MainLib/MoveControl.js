@@ -7,6 +7,7 @@ class Movement extends WithParent{
         super(parent);
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
+        this.target = null;
     }
 
     DrawPath(){
@@ -23,18 +24,42 @@ class Movement extends WithParent{
         return this.path.value.length <= 0;
     }
 
+    get MovIsGood(){
+        return this.lastresult != -5 && this.lastresult != -10;
+    }
+
     Move(){
-        console.log("Move result = ",this.parent.orig.moveByPath(this.path.value));
-        console.log(this.IsOnPath);
+        this.lastresult = this.parent.orig.moveByPath(this.path.value);
     }
 
     GetNewPath(pos){
-        this.path.value = this.parent.FindPath(pos);
+        this.path.value = this.parent.FindPath(this.target);
+    }
+
+    CheckArrival(){
+        if(this.PathIsComplete) {
+            this.GetNewPath();
+        }
+    }
+
+    CheckStayingOnPath(){
+        if(!this.IsOnPath){
+            this.GetNewPath();
+        }
+    }
+
+    CheckValidPath(){
+        if(!this.MovIsGood){
+            this.GetNewPath();
+        }
     }
 
     Update(){
         super.Update();
+        this.CheckArrival();
+        this.CheckStayingOnPath();
         this.Move();
+        this.CheckValidPath();
         this.DrawPath();
     }
 }
