@@ -13,6 +13,10 @@ class StructureTable extends ObjTable{
     constructor(){
         super(Game.structures);
     }
+    
+    LoadFromMem(){
+        this.orig = Game.structures;
+    }
 
     InitSingleObject(orig){
         return new StructureOverride(orig);

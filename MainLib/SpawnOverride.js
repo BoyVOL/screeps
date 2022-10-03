@@ -25,6 +25,10 @@ class SpawnTable extends ObjTable{
     constructor(){
         super(Game.spawns);
     }
+    
+    LoadFromMem(){
+        this.orig = Game.spawns;
+    }
 
     InitSingleObject(orig){
         return new SpawnOverride(orig);

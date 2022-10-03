@@ -18,6 +18,10 @@ class RoomsTable extends ObjTable{
     constructor(){
         super(Game.rooms);
     }
+    
+    LoadFromMem(){
+        this.orig = Game.rooms;
+    }
 
     InitSingleObject(orig){
         return new RoomOverride(orig);
