@@ -30,7 +30,6 @@ class ObjectOverride extends Updatable{
     
     Reupload(){
         this.orig = this.origTable[this.origKey];
-        console.log(this.origTable);
     }
 
     Update(){
