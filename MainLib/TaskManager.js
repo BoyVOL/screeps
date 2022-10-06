@@ -18,9 +18,9 @@ class TaskServer {
     }
 }
 
-const TaskServer = new TaskServer();
+const taskServer = new TaskServer();
 
 module.exports = {
     TaskClient,
-    TaskServer,
+    taskServer,
 }
