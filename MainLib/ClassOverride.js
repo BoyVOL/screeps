@@ -23,7 +23,6 @@ class ObjectOverride extends Updatable{
     constructor(orig,table = null){
         super();
         this.orig = orig;
-        this.isoperational = true;
     }
 
     LoadOrig(orig){
@@ -32,8 +31,17 @@ class ObjectOverride extends Updatable{
         }
     }
 
+    get key(){
+        if(this.hasid) return this.orig.id;
+        else return this.orig.name;
+    }
+
     get hasid(){
         return typeof(this.orig.id) != 'undefined';
+    }
+
+    get hasname(){
+        return typeof(this.orig.name) != 'undefined';
     }
 
     Update(){

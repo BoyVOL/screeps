@@ -48,7 +48,6 @@ class RoomObjectOver extends ObjectOverride{
 
     Update(){
         super.Update();
-        this.taskClient.Update();
     }
 }
 

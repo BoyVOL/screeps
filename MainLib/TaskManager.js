@@ -1,20 +1,29 @@
-const { WithParent } = require('./ClassOverride');
+const { WithParent,HtableOverride } = require('./ClassOverride');
 
 class TaskClient extends WithParent {
     constructor(parent){
         super(parent);
+        taskServer.AddRecord(this.parent,this.parent.key);
     }
 
     Update(){
         super.Update();
-        console.log(this.parent.isoperational);
     }
 }
 
-class TaskServer {
+class TaskServer extends HtableOverride{
 
     constructor(){
+        super({});
+    }
 
+    Update(){
+        super.Update();
+                
+        var funct = function(obj,key){
+            console.log(key);
+        }
+        this.forEachObj(funct);
     }
 }
 
