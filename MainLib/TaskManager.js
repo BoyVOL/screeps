@@ -4,11 +4,11 @@ class TaskClient extends WithParent {
     constructor(parent){
         super(parent);
         taskServer.AddRecord(this.parent.key,this);
-        console.log("key = ",this.parent.key);
     }
 
     Update(){
         super.Update();
+        console.log("key = ",this.parent.key);
     }
 }
 
@@ -23,7 +23,7 @@ class TaskServer extends HtableOverride{
             
         var pass = this;
         var funct = function(obj,key){
-            console.log(key,obj.parent);
+            obj.Update();
         }
         this.forEach(funct);
     }
