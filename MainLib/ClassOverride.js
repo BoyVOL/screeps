@@ -20,9 +20,10 @@ class WithParent extends Updatable{
 /** class for overriding functionality of different low level class */
 class ObjectOverride extends Updatable{
 
-    constructor(orig){
+    constructor(orig,table = null){
         super();
         this.orig = orig;
+        this.isoperational = true;
     }
 
     LoadOrig(orig){
@@ -101,9 +102,11 @@ class ObjProxyTable extends HtableOverride{
     AddObject(orig,key){
         var obj = this.InitSingleObject(orig);
         this.objArray[key] = obj;
+        this.objArray[key].isoperational = true;
     }
 
     DeleteObject(key){
+        this.objArray[key].isoperational = false;
         delete this.objArray[key];
     }
 

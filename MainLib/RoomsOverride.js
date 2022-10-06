@@ -1,4 +1,5 @@
 const { ObjectOverride,ObjProxyTable } = require('./ClassOverride');
+const { TaskClient} = require("./TaskManager")
 
 class RoomOverride extends ObjectOverride{
 
@@ -37,6 +38,7 @@ class RoomObjectOver extends ObjectOverride{
     constructor(orig){
         super(orig);
         this.Room = roomTable.objArray[this.orig.room.name];
+        this.taskClient = new TaskClient();
     }
 
     FindPath(target){
