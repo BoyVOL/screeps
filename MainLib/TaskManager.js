@@ -23,7 +23,7 @@ class TaskServer extends HtableOverride{
         var funct = function(obj,key){
             console.log(key);
         }
-        this.forEachObj(funct);
+        this.forEach(funct);
     }
 }
 
