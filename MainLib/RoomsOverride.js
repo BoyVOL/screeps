@@ -45,6 +45,11 @@ class RoomObjectOver extends ObjectOverride{
         var result = this.orig.pos.findPathTo(target);
         return result;
     }
+
+    Update(){
+        super.Update();
+        this.taskClient.Update();
+    }
 }
 
 const roomTable = new RoomsTable();
