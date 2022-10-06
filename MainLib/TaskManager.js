@@ -4,11 +4,11 @@ class TaskClient extends WithParent {
     constructor(parent){
         super(parent);
         taskServer.AddRecord(this,this.parent.key);
+        console.log("key = ",this.parent.key);
     }
 
     Update(){
         super.Update();
-        console.log("key = ",this.parent.key);
     }
 }
 
