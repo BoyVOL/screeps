@@ -38,7 +38,7 @@ class RoomObjectOver extends ObjectOverride{
     constructor(orig){
         super(orig);
         this.Room = roomTable.objArray[this.orig.room.name];
-        this.taskClient = new TaskClient();
+        this.taskClient = new TaskClient(this);
     }
 
     FindPath(target){
