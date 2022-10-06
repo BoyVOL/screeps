@@ -3,7 +3,7 @@ const { WithParent,HtableOverride } = require('./ClassOverride');
 class TaskClient extends WithParent {
     constructor(parent){
         super(parent);
-        taskServer.AddRecord(this,this.parent.key);
+        taskServer.AddRecord(this.parent.key,this);
         console.log("key = ",this.parent.key);
     }
 
