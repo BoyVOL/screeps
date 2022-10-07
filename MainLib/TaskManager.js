@@ -19,6 +19,7 @@ class TaskServer extends HtableOverride{
     }
 
     Update(){
+        console.log("Update");
         super.Update();
             
         var pass = this;
