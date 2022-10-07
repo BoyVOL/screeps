@@ -9,7 +9,6 @@ class Updatable{
     }
 
     Unload(){
-        console.log("Unload");
     }
 }
 
@@ -127,16 +126,13 @@ class ObjProxyTable extends HtableOverride{
     }
 
     UpdateObjects(){
-        console.log("UPDATE");
         var pass = this;
         this.forEach(function(val,key){
             if(!pass.ObjExists(key)){
-                console.log("ADD");
                 pass.AddObject(val,key);
             }
         });
         this.forEachObj(function(val,key){
-            console.log(pass.Exists(key),key,pass.orig[key]);
             if(!pass.Exists(key)){
                 pass.DeleteObject(key);
             }

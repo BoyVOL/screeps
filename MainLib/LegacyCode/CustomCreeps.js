@@ -404,7 +404,6 @@ class EnergyCarrier extends Worker{
                 this.ClearTask();
             }
         }
-                    console.log("taskToBuild");
         super.ExecuteTask();
     }
     
@@ -489,7 +488,6 @@ class EnergyDistantMiner extends DistantMiner{
     
     FindDestination(){
         var result = this.GetAllStorages();
-        console.log(result);
         return this.DistanceSort(result);
     }
     

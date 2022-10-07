@@ -8,7 +8,6 @@ class TaskClient extends WithParent {
 
     Update(){
         super.Update();
-        //console.log("key = ",this.parent.key);
     }
 
     Unload(){
@@ -30,7 +29,6 @@ class TaskServer extends HtableOverride{
         var pass = this;
         var funct = function(obj,key){
             obj.Update();
-            console.log("count = ",pass.count, " key = ",key);
         }
         this.forEach(funct);
     }
