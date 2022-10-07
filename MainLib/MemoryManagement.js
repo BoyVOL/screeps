@@ -1,7 +1,7 @@
 /** class for overriding long term memory usage */
 class MemoryItem {
 
-    constructor(key,def="",memPath=Memory){
+    constructor(key,def="",memPath=Game.Memory){
         this.key = key;
         this.memPath = memPath;
         this.Alloc(def);
@@ -25,6 +25,10 @@ class MemoryItem {
 
     get isset(){
         return typeof(this.value) != 'undefined';
+    }
+
+    Load(){
+        this.memPath = memPath;
     }
 }
 

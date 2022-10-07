@@ -5,6 +5,7 @@ class Movement extends WithParent{
     
     constructor(parent){
         super(parent);
+        this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
         this.target = null;
     }
