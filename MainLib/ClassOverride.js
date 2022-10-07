@@ -9,7 +9,7 @@ class Updatable{
     }
 
     Unload(){
-        
+        console.log("Unload");
     }
 }
 
@@ -74,7 +74,6 @@ class HtableOverride extends ObjectOverride{
     }
 
     DeleteRecord(key){
-        this.orig[key].Unload();
         delete this.orig[key];
     }
 
@@ -119,7 +118,7 @@ class ObjProxyTable extends HtableOverride{
     }
 
     DeleteObject(key){
-        this.objArray[key].isoperational = false;
+        this.orig[key].Unload();
         delete this.objArray[key];
     }
 
