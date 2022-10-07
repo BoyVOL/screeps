@@ -127,15 +127,17 @@ class ObjProxyTable extends HtableOverride{
     }
 
     UpdateObjects(){
+        console.log("UPDATE");
         var pass = this;
         this.forEach(function(val,key){
+            console.log("ADD");
             if(!pass.ObjExists(key)){
                 pass.AddObject(val,key);
             }
         });
         this.forEachObj(function(val,key){
+            console.log("DELETE");
             if(!pass.Exists(key)){
-                console.log("DELETE");
                 pass.DeleteObject(key);
             }
         });
