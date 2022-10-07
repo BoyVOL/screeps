@@ -136,8 +136,8 @@ class ObjProxyTable extends HtableOverride{
             }
         });
         this.forEachObj(function(val,key){
+            console.log(pass.Exists(key));
             if(!pass.Exists(key)){
-                console.log("DELETE");
                 pass.DeleteObject(key);
             }
         });
