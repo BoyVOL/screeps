@@ -21,7 +21,7 @@ class TaskServer extends HtableOverride{
 
     constructor(){
         super({});
-        this.tasks = new MemoryItem("Tasks",{},Game.Memory);
+        this.tasks = new MemoryItem("tasks",{},Game.Memory);
     }
 
     Update(){
