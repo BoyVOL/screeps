@@ -8,7 +8,7 @@ class TaskClient extends WithParent {
 
     Update(){
         super.Update();
-        console.log("key = ",this.parent.key);
+        //console.log("key = ",this.parent.key);
     }
 
     Unload(){
