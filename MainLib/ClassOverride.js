@@ -145,7 +145,7 @@ class ObjProxyTable extends HtableOverride{
     
     /** cycle for all items in table that gets function as a parameter */
     forEachObj(funct){
-        for (const key in this.orig) {
+        for (const key in this.objArray) {
             funct(this.objArray[key],key);
         }
     }
