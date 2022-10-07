@@ -21,6 +21,7 @@ class TaskServer extends HtableOverride{
 
     constructor(){
         super({});
+        this.Update();
     }
 
     Update(){
