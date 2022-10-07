@@ -8,11 +8,11 @@ const { taskServer } = require('./TaskManager');
 
 function loop(){
     
-    taskServer.Update();
     roomTable.Update();
     structTable.Update();
     spawnTable.Update();
     creepTable.Update();
+    taskServer.Update();
 
 }
 

@@ -1,4 +1,5 @@
 const { WithParent,HtableOverride } = require('./ClassOverride');
+const { MemoryItem} = require('./MemoryManagement');
 
 class TaskClient extends WithParent {
     constructor(parent){
@@ -20,12 +21,12 @@ class TaskServer extends HtableOverride{
 
     constructor(){
         super({});
-        this.Update();
+        this.tasks = new MemoryItem("Tasks",{},Game.Memory);
     }
 
     Update(){
         super.Update();
-            
+
         var pass = this;
         var funct = function(obj,key){
             obj.Update();
