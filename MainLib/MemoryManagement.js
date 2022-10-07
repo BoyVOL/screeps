@@ -1,7 +1,7 @@
 /** class for overriding long term memory usage */
 class MemoryItem {
 
-    constructor(key,def="",memPath=Game.Memory){
+    constructor(key,def="",memPath=Game.memory){
         this.key = key;
         this.memPath = memPath;
         this.Alloc(def);
