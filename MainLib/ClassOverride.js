@@ -74,6 +74,7 @@ class HtableOverride extends ObjectOverride{
     }
 
     DeleteRecord(key){
+        this.orig[key].Unload();
         delete this.orig[key];
     }
 
