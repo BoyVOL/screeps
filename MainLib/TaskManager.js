@@ -24,8 +24,18 @@ class TaskServer extends HtableOverride{
         this.tasks = new MemoryItem("tasks",new Array(),Game.Memory);
     }
 
+    AddTask(task){
+        this.tasks.value.push(task);
+    }
+
+    DeleteTask(id){
+        this.tasks.value.splice(id,1);
+    }
+
     Update(){
         super.Update();
+
+        this.AddTask({"bla" : "bla","ble" : "ble"});
 
         var pass = this;
         var funct = function(obj,key){
