@@ -7,6 +7,10 @@ class Updatable{
     Update(){
         
     }
+
+    Unload(){
+        
+    }
 }
 
 class WithParent extends Updatable{

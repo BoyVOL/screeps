@@ -10,6 +10,11 @@ class TaskClient extends WithParent {
         super.Update();
         console.log("key = ",this.parent.key);
     }
+
+    Unload(){
+        super.Unload();
+        taskServer.DeleteRecord(this.parent.key);
+    }
 }
 
 class TaskServer extends HtableOverride{

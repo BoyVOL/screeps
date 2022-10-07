@@ -50,6 +50,11 @@ class RoomObjectOver extends ObjectOverride{
         super.Update();
         this.taskClient.Update();
     }
+
+    Unload(){
+        super.Unload();
+        this.taskClient.Unload();
+    }
 }
 
 const roomTable = new RoomsTable();
