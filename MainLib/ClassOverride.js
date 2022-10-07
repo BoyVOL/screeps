@@ -118,7 +118,7 @@ class ObjProxyTable extends HtableOverride{
     }
 
     DeleteObject(key){
-        this.orig[key].Unload();
+        this.objArray[key].Unload();
         delete this.objArray[key];
     }
 
