@@ -8,7 +8,7 @@ class SourceOverride extends ObjectOverride{
 
     Update(){
         super.Update();
-        console.log("source",this.orig.position);
+        console.log("source",this.orig.pos);
     }
 }
 
