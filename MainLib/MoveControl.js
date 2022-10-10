@@ -44,24 +44,23 @@ class Movement extends WithParent{
 
     GetNewPath(range = 0){
         this.path.value = this.parent.orig.pos.findPathTo(this.target,{range: range});
-        this.DrawTarget();
     }
 
     CheckArrival(){
         if(this.PathIsComplete) {
-            this.GetNewPath(3);
+            this.GetNewPath();
         }
     }
 
     CheckStayingOnPath(){
         if(!this.IsOnPath){
-            this.GetNewPath(3);
+            this.GetNewPath();
         }
     }
 
     CheckValidPath(){
         if(!this.MovIsGood){
-            this.GetNewPath(3);
+            this.GetNewPath();
         }
     }
 
@@ -73,6 +72,7 @@ class Movement extends WithParent{
         this.Move();
         this.CheckValidPath();
         this.DrawPath();
+        this.DrawTarget();
     }
 }
 
