@@ -13,7 +13,6 @@ function loop(){
     spawnTable.Update();
     creepTable.Update();
     taskServer.Update();
-
 }
 
 module.exports = {
