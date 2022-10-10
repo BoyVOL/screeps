@@ -15,6 +15,11 @@ class Movement extends WithParent{
         opacity: .2, lineStyle: 'dashed'});
     }
 
+    DrawTarget(){
+        circle(this.target,
+            {fill: 'transparent', radius: 0.55, stroke: 'red'});
+    }
+
     get IsOnPath(){
         return this.parent.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
         this.parent.orig.pos.y+this.path.value[0].dy == this.path.value[0].y;
