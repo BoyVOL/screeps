@@ -74,22 +74,6 @@ class SourceOverride extends RoomObjectOver{
     }
 }
 
-class SourceTable extends ObjProxyTable{
-
-    constructor(room){
-        this.room = room;
-        this.orig = super(room.orig.find(FIND_SOURCES));
-    }
-    
-    LoadOrig(){
-        this.orig = room.orig.find(FIND_SOURCES);
-    }
-
-    InitSingleObject(orig){
-        return new SourceOverride(orig);
-    }
-}
-
 const roomTable = new RoomsTable();
 
 module.exports = {
