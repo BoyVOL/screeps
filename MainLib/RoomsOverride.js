@@ -11,7 +11,7 @@ class RoomOverride extends ObjectOverride{
 
     Update(){
         super.Update();
-        this.MarkFlags();
+        this.sourceTable.Update();
     }
 
     LoadOrig(){
