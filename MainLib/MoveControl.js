@@ -16,8 +16,10 @@ class Movement extends WithParent{
     }
 
     DrawTarget(){
-        this.parent.Room.orig.visual.circle(this.target,
-            {fill: 'transparent', radius: 0.55, stroke: 'red'});
+        if(this.target != null){
+            this.parent.Room.orig.visual.circle(this.target,
+                {fill: 'transparent', radius: 0.55, stroke: 'red'});
+        }
     }
 
     get IsOnPath(){
@@ -74,7 +76,7 @@ class Movement extends WithParent{
         this.Move();
         this.CheckValidPath();
         this.DrawPath();
-        //this.DrawTarget();
+        this.DrawTarget();
     }
 }
 
