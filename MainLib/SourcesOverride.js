@@ -4,6 +4,8 @@ class SourceOverride extends ObjectOverride{
 
     constructor(orig){
         super(orig);
+        this.Room = roomTable.objArray[this.orig.room.name];
+        this.taskClient = new TaskClient(this);
     }
 
     Update(){

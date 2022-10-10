@@ -1,6 +1,5 @@
 const { ObjectOverride,ObjProxyTable } = require('./ClassOverride');
 const { TaskClient} = require("./TaskManager");
-const { SourceTable } = require('./SourcesOverride');
 
 class RoomOverride extends ObjectOverride{
 
@@ -61,6 +60,34 @@ class RoomObjectOver extends ObjectOverride{
     Unload(){
         super.Unload();
         this.taskClient.Unload();
+    }
+}
+
+class SourceOverride extends RoomObjectOver{
+
+    constructor(orig){
+        super(orig);
+    }
+
+    Update(){
+        super.Update();
+        console.log("source",this.orig.pos);
+    }
+}
+
+class SourceTable extends ObjProxyTable{
+
+    constructor(room){
+        super(room.orig.find(FIND_SOURCES));
+        this.room = room;
+    }
+    
+    LoadOrig(){
+        this.orig = this.room.orig.find(FIND_SOURCES);
+    }
+
+    InitSingleObject(orig){
+        return new SourceOverride(orig);
     }
 }
 
