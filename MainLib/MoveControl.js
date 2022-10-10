@@ -72,7 +72,7 @@ class Movement extends WithParent{
     Update(){
         super.Update();
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
-        this.target = new MemoryItem("target",new Array(),this.parent.orig.memory);
+        this.target = new MemoryItem("target",null,this.parent.orig.memory);
         this.CheckArrival();
         this.CheckStayingOnPath();
         this.Move();
