@@ -3,8 +3,13 @@ const { TaskClient} = require("./TaskManager")
 
 class RoomOverride extends ObjectOverride{
 
+    MarkFlags(){
+        console.log(this.orig.find(FIND_SOURCES));
+    }
+
     Update(){
         super.Update();
+        this.MarkFlags();
     }
 
     LoadOrig(){

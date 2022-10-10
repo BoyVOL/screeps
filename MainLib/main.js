@@ -9,8 +9,8 @@ const { taskServer } = require('./TaskManager');
 
 function loop(){
     
-    flagTable.Update();
     roomTable.Update();
+    flagTable.Update();
     structTable.Update();
     spawnTable.Update();
     creepTable.Update();
