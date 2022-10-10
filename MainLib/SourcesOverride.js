@@ -1,7 +1,6 @@
-const { ObjProxyTable } = require('./ClassOverride');
-const { RoomObjectOver } = require('./RoomsOverride');
+const { ObjProxyTable, ObjectOverride } = require('./ClassOverride');
 
-class SourceOverride extends RoomObjectOver{
+class SourceOverride extends ObjectOverride{
 
     constructor(orig){
         super(orig);
