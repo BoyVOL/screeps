@@ -72,6 +72,7 @@ class Movement extends WithParent{
         this.Move();
         this.CheckValidPath();
         this.DrawPath();
+        this.DrawTarget();
     }
 }
 
