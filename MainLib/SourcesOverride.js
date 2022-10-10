@@ -16,7 +16,7 @@ class SourceTable extends ObjProxyTable{
 
     constructor(room){
         this.room = room;
-        this.orig = super(room.find(FIND_SOURCES));
+        super(room.find(FIND_SOURCES));
     }
     
     LoadOrig(){
