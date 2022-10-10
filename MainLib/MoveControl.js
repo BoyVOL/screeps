@@ -16,7 +16,7 @@ class Movement extends WithParent{
     }
 
     DrawTarget(){
-        circle(this.target,
+        this.parent.Room.orig.visual.circle(this.target,
             {fill: 'transparent', radius: 0.55, stroke: 'red'});
     }
 
