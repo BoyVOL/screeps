@@ -49,19 +49,19 @@ class Movement extends WithParent{
 
     CheckArrival(){
         if(this.PathIsComplete) {
-            this.GetNewPath();
+            this.GetNewPath(3);
         }
     }
 
     CheckStayingOnPath(){
         if(!this.IsOnPath){
-            this.GetNewPath();
+            this.GetNewPath(3);
         }
     }
 
     CheckValidPath(){
         if(!this.MovIsGood){
-            this.GetNewPath();
+            this.GetNewPath(3);
         }
     }
 
