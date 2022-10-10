@@ -16,11 +16,11 @@ class SourceTable extends ObjProxyTable{
 
     constructor(room){
         this.room = room;
-        this.orig = super(room.orig.find(FIND_SOURCES));
+        this.orig = super(room.find(FIND_SOURCES));
     }
     
     LoadOrig(){
-        this.orig = room.orig.find(FIND_SOURCES);
+        this.orig = room.find(FIND_SOURCES);
     }
 
     InitSingleObject(orig){

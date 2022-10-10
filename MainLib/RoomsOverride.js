@@ -6,7 +6,7 @@ class RoomOverride extends ObjectOverride{
 
     constructor(orig){
         super(orig);
-        this.sourceTable = new SourceTable(this);
+        this.sourceTable = new SourceTable(orig);
     }
 
     Update(){
