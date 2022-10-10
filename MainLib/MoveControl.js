@@ -7,7 +7,7 @@ class Movement extends WithParent{
         super(parent);
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
-        this.target = new MemoryItem("target",new Array(),this.parent.orig.memory);
+        this.target = new MemoryItem("target",null,this.parent.orig.memory);
     }
 
     DrawPath(){
@@ -17,6 +17,7 @@ class Movement extends WithParent{
 
     DrawTarget(){
         if(this.target.value != null){
+            console.log(this.target.value);
             this.parent.Room.orig.visual.circle(this.target.value,
                 {fill: 'transparent', radius: 0.55, stroke: 'red'});
         }
