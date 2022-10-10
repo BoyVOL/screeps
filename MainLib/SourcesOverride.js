@@ -15,12 +15,12 @@ class SourceOverride extends ObjectOverride{
 class SourceTable extends ObjProxyTable{
 
     constructor(room){
+        super(room.orig.find(FIND_SOURCES));
         this.room = room;
-        super(room.find(FIND_SOURCES));
     }
     
     LoadOrig(){
-        this.orig = room.find(FIND_SOURCES);
+        this.orig = room.orig.find(FIND_SOURCES);
     }
 
     InitSingleObject(orig){
