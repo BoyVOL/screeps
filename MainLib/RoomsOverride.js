@@ -10,7 +10,7 @@ class RoomOverride extends ObjectOverride{
     }
 
     Update(){
-        super.Update();
+        //super.Update();
         this.sourceTable.Update();
     }
 
