@@ -6,6 +6,11 @@ class SourceOverride extends RoomObjectOver{
     constructor(orig){
         super(orig);
     }
+
+    Update(){
+        super.Update();
+        console.log("source");
+    }
 }
 
 class SourceTable extends ObjProxyTable{
