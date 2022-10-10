@@ -37,8 +37,8 @@ class Movement extends WithParent{
         if(!this.Tired) this.path.value.shift();
     }
 
-    GetNewPath(pos){
-        this.path.value = this.parent.FindPath(this.target);
+    GetNewPath(){
+        this.path.value = this.parent.orig.pos.findPathTo(this.target,{range: 0});
     }
 
     CheckArrival(){
