@@ -23,7 +23,7 @@ class WithParent extends Updatable{
 /** class for overriding functionality of different low level class */
 class ObjectOverride extends Updatable{
 
-    constructor(orig,table = null){
+    constructor(orig){
         super();
         this.orig = orig;
     }
