@@ -71,7 +71,7 @@ class SourceOverride extends RoomObjectOver{
 
     Update(){
         super.Update();
-        console.log("source",this.orig.pos);
+        console.log("source",this.Room.key);
     }
 }
 
