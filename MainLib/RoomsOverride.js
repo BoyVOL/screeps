@@ -9,6 +9,10 @@ class RoomOverride extends ObjectOverride{
         this.sourceTable = new SourceTable(this);
     }
 
+    Update(){
+        super.Update();
+    }
+
     LoadOrig(){
         this.orig = Game.rooms[this.orig.name];
     }
