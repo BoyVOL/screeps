@@ -44,6 +44,7 @@ class Movement extends WithParent{
 
     GetNewPath(range = 0){
         this.path.value = this.parent.orig.pos.findPathTo(this.target,{range: range});
+        this.DrawTarget();
     }
 
     CheckArrival(){
@@ -72,7 +73,6 @@ class Movement extends WithParent{
         this.Move();
         this.CheckValidPath();
         this.DrawPath();
-        this.DrawTarget();
     }
 }
 
