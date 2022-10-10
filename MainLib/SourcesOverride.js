@@ -20,7 +20,7 @@ class SourceTable extends ObjProxyTable{
     }
     
     LoadOrig(){
-        this.orig = room.orig.find(FIND_SOURCES);
+        this.orig = this.room.orig.find(FIND_SOURCES);
     }
 
     InitSingleObject(orig){
