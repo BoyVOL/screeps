@@ -7,7 +7,7 @@ class Movement extends WithParent{
         super(parent);
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
-        this.target = new MemoryItem("target",null,this.parent.orig.memory);
+        this.target = null;
     }
 
     DrawPath(){
@@ -16,8 +16,8 @@ class Movement extends WithParent{
     }
 
     DrawTarget(){
-        if(this.target.value != null){
-        this.parent.Room.orig.visual.circle(this.target.value,
+        if(this.target != null){
+        this.parent.Room.orig.visual.circle(this.target,
             {fill: 'transparent', radius: 0.55, stroke: 'red'});
         }
     }
@@ -51,9 +51,8 @@ class Movement extends WithParent{
     }
 
     GetNewPath(range = 0){
-        if(this.target.value!=null){
-            console.log(this.target.value);
-            this.path.value = this.parent.orig.pos.findPathTo(this.target.value,{range: range});
+        if(this.target!=null){
+            this.path.value = this.parent.orig.pos.findPathTo(this.target,{range: range});
         }
     }
 
@@ -79,7 +78,6 @@ class Movement extends WithParent{
     Update(){
         super.Update();
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
-        this.target = new MemoryItem("target",null,this.parent.orig.memory);
         console.log(this.IsOnPath,this.MovIsGood,this.PathIsComplete,this.Tired);
         this.CheckArrival();
         this.CheckStayingOnPath();
