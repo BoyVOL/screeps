@@ -6,13 +6,13 @@ class TaskClient extends WithParent {
         super(parent);
         taskServer.AddRecord(this.parent.key,this);
         this.activeTask = new MemoryItem("activeTask",{},this.parent.orig.memory);
-        this.providedTasks = new MemoryItem("activeTask",new Array(),this.parent.orig.memory);
+        this.providedTasks = new MemoryItem("providedTask",new Array(),this.parent.orig.memory);
     }
 
     Update(){
         super.Update();
-        this.providedTasks = new MemoryItem("activeTask",new Array(),this.parent.orig.memory);
         this.activeTask = new MemoryItem("activeTask",{},this.parent.orig.memory);
+        this.providedTasks = new MemoryItem("providedTask",new Array(),this.parent.orig.memory);
         this.providedTasks.value.push({
             type:"test"
         });
