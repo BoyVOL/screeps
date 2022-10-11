@@ -27,8 +27,10 @@ class Movement extends WithParent{
     }
 
     get PathIsToTarget(){
-        return this.path.value[this.path.value.length-1].x == this.target.x,
-        this.path.value[this.path.value.length-1].y == this.target.y;
+        if(this.target != null){
+            return this.path.value[this.path.value.length-1].x == this.target.x,
+            this.path.value[this.path.value.length-1].y == this.target.y;
+        }
     }
 
     get IsOnPath(){
