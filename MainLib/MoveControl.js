@@ -30,7 +30,7 @@ class Movement extends WithParent{
         if(this.target != null){
             return this.path.value[this.path.value.length-1].x == this.target.x,
             this.path.value[this.path.value.length-1].y == this.target.y;
-        }
+        } else return false;
     }
 
     get IsOnPath(){
