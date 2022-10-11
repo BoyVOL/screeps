@@ -34,7 +34,6 @@ class CreepTable extends ObjProxyTable{
 
     Update(){
         super.Update();
-        console.log(this.objcount);
     }
 }
 
