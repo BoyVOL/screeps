@@ -11,7 +11,7 @@ class TaskClient extends WithParent {
     Update(){
         super.Update();
         this.activeTask = new MemoryItem("task",{},this.parent.orig.memory);
-        this.CreateTask("test");
+        //this.CreateTask("test");
     }
 
     CreateTask(type){
