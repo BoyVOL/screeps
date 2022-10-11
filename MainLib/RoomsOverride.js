@@ -47,6 +47,10 @@ class RoomObjectOver extends ObjectOverride{
         this.taskClient = new TaskClient(this);
     }
 
+    GetFreeNearby(){
+        console.log("Searcher = ",this.key);
+    }
+
     FindPath(target){
         var result = this.orig.pos.findPathTo(target);
         return result;
@@ -71,7 +75,6 @@ class SourceOverride extends RoomObjectOver{
 
     Update(){
         super.Update();
-        console.log("source",this.Room.key);
     }
 }
 

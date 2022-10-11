@@ -34,8 +34,6 @@ class TaskServer extends HtableOverride{
 
     Update(){
         super.Update();
-
-        console.log("update");
         
         this.tasks = new MemoryItem("tasks",new Array());
 

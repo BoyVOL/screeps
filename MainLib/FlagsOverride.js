@@ -12,7 +12,6 @@ class ResourceFlag extends FlagOverride{
 
     Update(){
         super.Update();
-        console.log("Resource");
     }
 
 }
@@ -28,7 +27,6 @@ class FlagTable extends ObjProxyTable{
     }
 
     InitSingleObject(orig){
-        console.log(orig.name);
         return new FlagOverride(orig);
     }
 }
