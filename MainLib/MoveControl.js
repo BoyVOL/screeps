@@ -71,7 +71,7 @@ class Movement extends WithParent{
     }
 
     AdjustPath(){
-        if(this.PathIsComplete || !this.IsOnPath || this.PathIsToTarget) {
+        if(this.PathIsComplete || !this.IsOnPath || !this.PathIsToTarget) {
             this.GetNewPath();
         }
     }
