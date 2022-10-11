@@ -5,16 +5,32 @@ class TaskClient extends WithParent {
     constructor(parent){
         super(parent);
         taskServer.AddRecord(this.parent.key,this);
+        this.activeTask = new MemoryItem("task",{},this.parent.orig.memory);
     }
 
     Update(){
         super.Update();
+        this.activeTask = new MemoryItem("task",{},this.parent.orig.memory);
     }
 
     Unload(){
         super.Unload();
         taskServer.DeleteRecord(this.parent.key);
     }
+}
+
+class CreepClient extends TaskClient{
+    constructor(parent){
+        super(parent);
+    }
+
+    Update(){
+        super.Update();
+    }
+}
+
+class SpawnClient extends TaskClient{
+
 }
 
 class TaskServer extends HtableOverride{
@@ -37,7 +53,7 @@ class TaskServer extends HtableOverride{
         
         this.tasks = new MemoryItem("tasks",new Array());
 
-        this.AddTask({"bla" : "bla","ble" : "ble"});
+        
 
         var pass = this;
         var funct = function(obj,key){
@@ -51,5 +67,7 @@ const taskServer = new TaskServer();
 
 module.exports = {
     TaskClient,
+    CreepClient,
+    SpawnClient,
     taskServer,
 }

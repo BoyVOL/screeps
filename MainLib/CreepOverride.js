@@ -1,12 +1,14 @@
 const { ObjProxyTable } = require('./ClassOverride');
 const { Movement } = require('./MoveControl');
 const { RoomObjectOver } = require('./RoomsOverride');
+const { CreepClient} = require('./TaskManager');
 
 class CreepOverride extends RoomObjectOver{
 
     constructor(orig){
         super(orig);
         this.MoveContr = new Movement(this);
+        this.taskClient = new CreepClient(this);
     }
 
     Update(){
