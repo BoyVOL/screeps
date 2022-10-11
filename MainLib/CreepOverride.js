@@ -31,6 +31,11 @@ class CreepTable extends ObjProxyTable{
     InitSingleObject(orig){
         return new CreepOverride(orig);
     }
+
+    Update(){
+        super.Update();
+        console.log(this.objcount);
+    }
 }
 
 const creepTable = new CreepTable();
