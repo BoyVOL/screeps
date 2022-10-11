@@ -54,7 +54,7 @@ class TaskServer extends HtableOverride{
         
         this.tasks = new MemoryItem("tasks",new Array());
 
-
+        console.log("-----");
 
         var pass = this;
         var funct = function(obj,key){
