@@ -64,21 +64,14 @@ class Movement extends WithParent{
         }
     }
 
-    CheckArrival(){
-        if(this.PathIsComplete) {
-            this.GetNewPath();
-        }
-    }
-
-    CheckStayingOnPath(){
-        if(!this.IsOnPath){
-            console.log("Not on path",this.IsOnPath);
-            this.GetNewPath();
-        }
-    }
-
-    CheckValidPath(){
+    CheckAfterMove(){
         if(!this.MovIsGood){
+            this.GetNewPath();
+        }
+    }
+
+    AdjustPath(){
+        if(this.PathIsComplete || !this.IsOnPath || this.PathIsToTarget) {
             this.GetNewPath();
         }
     }
@@ -87,10 +80,9 @@ class Movement extends WithParent{
         super.Update();
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         console.log(this.IsOnPath,this.MovIsGood,this.PathIsComplete,this.Tired,this.PathIsToTarget);
-        this.CheckArrival();
-        this.CheckStayingOnPath();
+        this.AdjustPath();
         this.Move();
-        this.CheckValidPath();
+        this.CheckAfterMove();
         this.DrawPath();
         this.DrawTarget();
     }
