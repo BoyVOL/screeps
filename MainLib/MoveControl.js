@@ -71,7 +71,7 @@ class Movement extends WithParent{
     Update(){
         super.Update();
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
-        console.log(this.MovIsGood,this.PathIsComplete,this.Tired);
+        console.log(this.IsOnPath,this.MovIsGood,this.PathIsComplete,this.Tired);
         this.CheckArrival();
         this.CheckStayingOnPath();
         this.Move();
