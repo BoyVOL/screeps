@@ -22,9 +22,15 @@ class Movement extends WithParent{
         }
     }
 
+    get PathIsDefined(){
+        typeof(this.path.value[0])!= "undefined";
+    }
+
     get IsOnPath(){
-        return this.parent.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
+        if(this.PathIsDefined){
+            return this.parent.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
         this.parent.orig.pos.y+this.path.value[0].dy == this.path.value[0].y;
+        } else return false;
     }
 
     get PathIsComplete(){
