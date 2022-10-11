@@ -10,6 +10,7 @@ class TaskClient extends WithParent {
 
     Update(){
         super.Update();
+        console.log('Update');
         this.activeTask = new MemoryItem("task",{},this.parent.orig.memory);
     }
 
@@ -53,7 +54,7 @@ class TaskServer extends HtableOverride{
         
         this.tasks = new MemoryItem("tasks",new Array());
 
-        
+
 
         var pass = this;
         var funct = function(obj,key){
