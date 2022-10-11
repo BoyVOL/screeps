@@ -56,7 +56,7 @@ class TaskServer extends HtableOverride{
 
             pass.tasks = pass.tasks.concat(obj.providedTasks.value);
         }
-        console.log(pass.tasks);
+        console.log(this.tasks);
         this.forEach(funct);
     }
 }
