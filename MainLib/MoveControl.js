@@ -26,6 +26,11 @@ class Movement extends WithParent{
         return typeof(this.path.value[0])!= "undefined";
     }
 
+    get PathIsToTarget(){
+        return this.path.value[this.path.value.length-1].x == this.target.x,
+        this.path.value[this.path.value.length-1].y == this.target.y;
+    }
+
     get IsOnPath(){
         if(this.PathIsDefined){
             return this.parent.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
