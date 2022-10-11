@@ -28,6 +28,7 @@ class Movement extends WithParent{
 
     get PathIsToTarget(){
         if(this.target != null){
+            console.log(this.path.value.length);
             return this.path.value[this.path.value.length-1].x == this.target.x,
             this.path.value[this.path.value.length-1].y == this.target.y;
         } else return false;
