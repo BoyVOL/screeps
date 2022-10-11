@@ -65,7 +65,7 @@ class Movement extends WithParent{
 
     CheckStayingOnPath(){
         if(!this.IsOnPath){
-            console.log("Not on path");
+            console.log("Not on path",this.IsOnPath);
             this.GetNewPath();
         }
     }
