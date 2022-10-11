@@ -52,6 +52,7 @@ class Movement extends WithParent{
 
     GetNewPath(range = 0){
         if(this.target.value!=null){
+            console.log(this.target.value);
             this.path.value = this.parent.orig.pos.findPathTo(this.target.value,{range: range});
         }
     }
