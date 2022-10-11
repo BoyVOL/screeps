@@ -28,6 +28,7 @@ class Movement extends WithParent{
 
     get IsOnPath(){
         if(this.PathIsDefined){
+            console.log(this.parent.orig.pos,this.path.value[0]);
             return this.parent.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
         this.parent.orig.pos.y+this.path.value[0].dy == this.path.value[0].y;
         } else return false;
