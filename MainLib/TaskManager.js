@@ -72,7 +72,7 @@ class TaskServer extends HtableOverride{
     }
 
     taskExists(id){
-        return typeof(this.tasks[element.id]) != 'undefined';
+        return typeof(this.tasks[id]) != 'undefined';
     }
 
     LoadTasks(obj){
