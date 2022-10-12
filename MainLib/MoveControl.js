@@ -28,7 +28,7 @@ class Movement extends WithParent{
     }
 
     GetStepPos(id){
-        return new RoomPosition(this.path.value[id].x,this.path.value[id].y,this.parent.room.orig.name);
+        return new RoomPosition(this.path.value[id].x,this.path.value[id].y,this.parent.Room.orig.name);
     }
 
     get PathIsToTarget(){
