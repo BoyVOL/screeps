@@ -71,6 +71,10 @@ class TaskServer extends HtableOverride{
         this.tasks = new Array();
     }
 
+    LoadTasks(obj){
+        pass.tasks = pass.tasks.concat(obj.providedTasks.value);
+    }
+
     Update(){
         super.Update();
 
@@ -79,8 +83,7 @@ class TaskServer extends HtableOverride{
         var pass = this;
         var funct = function(obj,key){
             obj.Update();
-
-            pass.tasks = pass.tasks.concat(obj.providedTasks.value);
+            this.LoadTasks(obj);
         }
         this.forEach(funct);
     }
