@@ -10,11 +10,11 @@ const { taskServer } = require('./TaskManager');
 function loop(){
     
     roomTable.Update();
+    taskServer.Update();
     flagTable.Update();
     structTable.Update();
     spawnTable.Update();
     creepTable.Update();
-    taskServer.Update();
 }
 
 module.exports = {
