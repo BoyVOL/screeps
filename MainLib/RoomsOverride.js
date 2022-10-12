@@ -42,7 +42,6 @@ class RoomObjectOver extends ObjectOverride{
 
     constructor(orig){
         super(orig);
-        this.taskClient = new TaskClient(this);
         this.Room = roomTable.objArray[this.orig.room.name];
     }
 
@@ -57,12 +56,10 @@ class RoomObjectOver extends ObjectOverride{
 
     Update(){
         super.Update();
-        this.taskClient.Update();
     }
 
     Unload(){
         super.Unload();
-        this.taskClient.Unload();
     }
 }
 
