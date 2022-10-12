@@ -5,7 +5,6 @@ class RoomOverride extends ObjectOverride{
 
     constructor(orig){
         super(orig);
-        console.log(this.key);
         this.sourceTable = new SourceTable(this);;
         this.movClient = new MovClient(this);
     }

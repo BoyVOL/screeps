@@ -48,10 +48,12 @@ class SpawnClient extends TaskClient{
 }
 
 class MovClient extends TaskClient{
+
     Update(){
         super.Update();
         this.console.log("move");
     }
+
 }
 
 class TaskServer extends HtableOverride{
@@ -77,8 +79,6 @@ class TaskServer extends HtableOverride{
 }
 
 const taskServer = new TaskServer();
-
-const randomMovClient = new MovClient();
 
 module.exports = {
     TaskClient,
