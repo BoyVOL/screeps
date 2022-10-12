@@ -13,14 +13,23 @@ class TaskClient extends WithParent {
         super.Update();
         this.activeTask = new MemoryItem("activeTask",{},this.parent.orig.memory);
         this.providedTasks = new MemoryItem("providedTask",new Array(),this.parent.orig.memory);
-        this.providedTasks.value.push({
-            type:"test"
-        });
+        this.providedTasks.value.push(new Task());
     }
 
     Unload(){
         super.Unload();
         taskServer.DeleteRecord(this.parent.key);
+    }
+}
+
+class Task{
+    constructor(type,id = this.GetRandomId()){
+        this.id = id;
+        this.type = type;
+    }
+
+    GetRandomId(){
+        return Date.now();
     }
 }
 
