@@ -26,6 +26,7 @@ class Task{
     constructor(type,id = this.GetRandomId()){
         this.id = id;
         this.type = type;
+        this.parent = null;
     }
 
     GetRandomId(){

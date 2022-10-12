@@ -8,6 +8,7 @@ class Movement extends WithParent{
         this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
         this.lastresult = 0;
         this.target = null;
+        this.distance = 0;
     }
 
     DrawPath(){
@@ -26,8 +27,13 @@ class Movement extends WithParent{
         return typeof(this.path.value[0])!= "undefined";
     }
 
+    GetStepPos(id){
+        return new RoomPosition(this.path.value[id].x,this.path.value[id].y,this.parent.room.orig.name);
+    }
+
     get PathIsToTarget(){
         if(this.target != null && this.PathIsDefined){
+            console.log("GetStepPos result = ",this.GetStepPos(this.path.value.length-1));
             return this.path.value[this.path.value.length-1].x == this.target.x,
             this.path.value[this.path.value.length-1].y == this.target.y;
         } else return false;
