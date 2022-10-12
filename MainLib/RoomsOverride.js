@@ -1,15 +1,17 @@
 const { ObjectOverride,ObjProxyTable } = require('./ClassOverride');
-const { TaskClient} = require('./TaskManager');
+const { TaskClient,MovClient} = require('./TaskManager');
 
 class RoomOverride extends ObjectOverride{
 
     constructor(orig){
         super(orig);
-        this.sourceTable = new SourceTable(this);
+        this.sourceTable = new SourceTable(this);;
+        this.movClient = new MovClient(this);
     }
 
     Update(){
         super.Update();
+        this.movClient.Update();
         this.sourceTable.Update();
     }
 
@@ -27,7 +29,7 @@ class RoomOverride extends ObjectOverride{
 class RoomsTable extends ObjProxyTable{
 
     constructor(){
-        super(Game.rooms);
+        super(Game.rooms)
     }
     
     LoadOrig(){
@@ -48,7 +50,7 @@ class RoomObjectOver extends ObjectOverride{
     }
 
     GetFreeNearby(){
-        
+
     }
 
     FindPath(target){

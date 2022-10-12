@@ -82,6 +82,7 @@ const randomMovClient = new MovClient();
 
 module.exports = {
     TaskClient,
+    MovClient,
     CreepClient,
     SpawnClient,
     taskServer,
