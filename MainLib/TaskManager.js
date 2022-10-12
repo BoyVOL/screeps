@@ -77,10 +77,8 @@ class TaskServer extends HtableOverride{
 
     LoadTasks(obj){
         obj.providedTasks.value.forEach((element) => {
-            console.log(element.id);
             while (this.taskExists(element.id)) {
                 element.id += 1;
-                console.log("exists");
             }
             this.tasks[element.id] = element;
             console.log(element.id);
