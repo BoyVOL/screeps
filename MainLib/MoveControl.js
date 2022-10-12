@@ -31,9 +31,13 @@ class Movement extends WithParent{
         return new RoomPosition(this.path.value[id].x,this.path.value[id].y,this.parent.Room.orig.name);
     }
 
+    get PathRangeToTarget(){
+        return this.GetStepPos(this.path.value.length-1).getRangeTo(this.target);
+    }
+
     get PathIsToTarget(){
         if(this.target != null && this.PathIsDefined){
-            console.log("GetStepPos result = ",this.GetStepPos(this.path.value.length-1).getRangeTo(this.target));
+            console.log("GetStepPos result = ",this.PathRangeToTarget);
             return this.path.value[this.path.value.length-1].x == this.target.x,
             this.path.value[this.path.value.length-1].y == this.target.y;
         } else return false;
