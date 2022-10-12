@@ -1,17 +1,14 @@
 const { ObjectOverride,ObjProxyTable } = require('./ClassOverride');
-const { TaskClient,MovClient} = require('./TaskManager');
 
 class RoomOverride extends ObjectOverride{
 
     constructor(orig){
         super(orig);
         this.sourceTable = new SourceTable(this);;
-        this.movClient = new MovClient(this);
     }
 
     Update(){
         super.Update();
-        this.movClient.Update();
         this.sourceTable.Update();
     }
 
