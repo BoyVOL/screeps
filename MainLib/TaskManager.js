@@ -51,7 +51,7 @@ class MovClient extends TaskClient{
 
     Update(){
         super.Update();
-        this.console.log("move");
+        console.log("move");
     }
 
 }
