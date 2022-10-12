@@ -21,25 +21,6 @@ class TaskClient extends WithParent {
     }
 }
 
-class Task{
-    constructor(type,id = this.GetRandomId()){
-        this.id = id;
-        this.type = type;
-        this.parent = null;
-    }
-
-    GetRandomId(){
-        return Date.now();
-    }
-}
-
-class MoveTask extends Task{
-    constructor(pos){
-        super();
-        this.pos = pos;
-    }
-}
-
 class CreepClient extends TaskClient{
     constructor(parent){
         super(parent);
@@ -59,9 +40,28 @@ class MovClient extends TaskClient{
     Update(){
         super.Update();
         var MTask = new MoveTask(this.parent.GetRandomPos());
-        this.providedTasks.push(MTask);
+        this.providedTasks.value.push(MTask);
     }
 
+}
+
+class Task{
+    constructor(type,id = this.GetRandomId()){
+        this.id = id;
+        this.type = type;
+        this.parent = null;
+    }
+
+    GetRandomId(){
+        return Date.now();
+    }
+}
+
+class MoveTask extends Task{
+    constructor(pos){
+        super();
+        this.pos = pos;
+    }
 }
 
 class TaskServer extends HtableOverride{
