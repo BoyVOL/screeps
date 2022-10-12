@@ -28,7 +28,6 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
-        PlainTable.AddRecord(this.key,this);
     }
 
     LoadOrig(orig){
@@ -57,7 +56,6 @@ class ObjectOverride extends Updatable{
 
     Unload(){
         super.Unload();
-        PlainTable.DeleteRecord(this.key);
     }
 }
 
@@ -87,18 +85,6 @@ class HtableOverride extends ObjectOverride{
     Exists(key){
         return typeof(this.orig[key]) != 'undefined';
     }
-}
-
-class ObjTable extends HtableOverride{
-
-    constructor(){
-        super({});
-    }
-
-    Update(){
-        super.Update();
-    }
-
 }
 
 /** object that wraps around native hash table and converts it into updating object array on the fly*/
@@ -166,8 +152,6 @@ class ObjProxyTable extends HtableOverride{
         this.forEachObj(funct);
     }
 }
-
-const PlainTable = new HtableOverride({});
 
 module.exports = {
     Updatable,
