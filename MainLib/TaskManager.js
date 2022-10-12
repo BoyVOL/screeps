@@ -72,6 +72,9 @@ class TaskServer extends HtableOverride{
     }
 
     LoadTasks(obj){
+        obj.providedTasks.value.forEach((element,index) => {
+            console.log(element.id);
+        })
         this.tasks = this.tasks.concat(obj.providedTasks.value);
     }
 
