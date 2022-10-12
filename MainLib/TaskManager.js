@@ -72,7 +72,7 @@ class TaskServer extends HtableOverride{
     }
 
     LoadTasks(obj){
-        pass.tasks = pass.tasks.concat(obj.providedTasks.value);
+        this.tasks = this.tasks.concat(obj.providedTasks.value);
     }
 
     Update(){
