@@ -83,7 +83,7 @@ class TaskServer extends HtableOverride{
         var pass = this;
         var funct = function(obj,key){
             obj.Update();
-            this.LoadTasks(obj);
+            pass.LoadTasks(obj);
         }
         this.forEach(funct);
     }
