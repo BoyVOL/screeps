@@ -9,7 +9,6 @@ const { flagTable } = require('./FlagsOverride');
 function loop(){
     
     roomTable.Update();
-    taskServer.Update();
     flagTable.Update();
     structTable.Update();
     spawnTable.Update();
