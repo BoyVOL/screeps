@@ -20,8 +20,8 @@ class RoomOverride extends ObjectOverride{
     }
 
     GetRandomPos(){
-        var x = Math.floor(Math.random()*48+1);
-        var y = Math.floor(Math.random()*48+1);
+        var x = Math.floor(Math.random()*47+1);
+        var y = Math.floor(Math.random()*47+1);
         return this.orig.getPositionAt(x,y);
     }
 }

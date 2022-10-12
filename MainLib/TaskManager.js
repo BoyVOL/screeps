@@ -33,6 +33,12 @@ class Task{
     }
 }
 
+class MoveTask extends Task{
+    constructor(pos){
+        this.pos = pos;
+    }
+}
+
 class CreepClient extends TaskClient{
     constructor(parent){
         super(parent);
@@ -51,7 +57,8 @@ class MovClient extends TaskClient{
 
     Update(){
         super.Update();
-        console.log("move");
+        var MTask = new MoveTask(this.parent.GetRandomPos());
+        this.providedTasks.push(MTask);
     }
 
 }
