@@ -13,7 +13,7 @@ class TaskClient extends WithParent {
         super.Update();
         this.activeTask = new MemoryItem("activeTask",{},this.parent.orig.memory);
         this.providedTasks = new MemoryItem("providedTask",new Array(),this.parent.orig.memory);
-        this.providedTasks.value.push(new Task());
+        this.providedTasks.value.push(new Task("test"));
     }
 
     Unload(){
