@@ -28,7 +28,7 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
-        PlainTable[this.key] = this;
+        PlainTable.AddRecord(this.key,this);
     }
 
     LoadOrig(orig){
@@ -57,7 +57,7 @@ class ObjectOverride extends Updatable{
 
     Unload(){
         super.Unload();
-        delete PlainTable[this.key];
+        PlainTable.DeleteRecord(this.key);
     }
 }
 
@@ -167,7 +167,7 @@ class ObjProxyTable extends HtableOverride{
     }
 }
 
-const PlainTable = {};
+const PlainTable = new HtableOverride({});
 
 module.exports = {
     Updatable,
