@@ -28,6 +28,7 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
+        PlainTable[this.key] = this;
     }
 
     LoadOrig(orig){
@@ -52,6 +53,11 @@ class ObjectOverride extends Updatable{
     Update(){
         super.Update();
         this.LoadOrig();
+    }
+
+    Unload(){
+        super.Unload();
+        delete PlainTable[this.key];
     }
 }
 
@@ -161,10 +167,13 @@ class ObjProxyTable extends HtableOverride{
     }
 }
 
+const PlainTable = {};
+
 module.exports = {
     Updatable,
     WithParent,
     HtableOverride,
     ObjectOverride,
     ObjProxyTable,
+    PlainTable,
 }
