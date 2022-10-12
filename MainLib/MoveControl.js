@@ -37,9 +37,7 @@ class Movement extends WithParent{
 
     get PathIsToTarget(){
         if(this.target != null && this.PathIsDefined){
-            console.log("GetStepPos result = ",this.PathRangeToTarget);
-            return this.path.value[this.path.value.length-1].x == this.target.x,
-            this.path.value[this.path.value.length-1].y == this.target.y;
+            return this.PathRangeToTarget <= this.distance;
         } else return false;
     }
 
