@@ -48,7 +48,7 @@ class RoomObjectOver extends ObjectOverride{
     }
 
     GetFreeNearby(){
-        console.log("Searcher = ",this.key);
+        
     }
 
     FindPath(target){

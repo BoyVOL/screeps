@@ -13,7 +13,6 @@ class TaskClient extends WithParent {
         super.Update();
         this.activeTask = new MemoryItem("activeTask",{},this.parent.orig.memory);
         this.providedTasks = new MemoryItem("providedTask",new Array(),this.parent.orig.memory);
-        this.providedTasks.value.push(new Task("test"));
     }
 
     Unload(){
@@ -48,6 +47,13 @@ class SpawnClient extends TaskClient{
 
 }
 
+class MovClient extends TaskClient{
+    Update(){
+        super.Update();
+        this.console.log("move");
+    }
+}
+
 class TaskServer extends HtableOverride{
 
     constructor(){
@@ -71,6 +77,8 @@ class TaskServer extends HtableOverride{
 }
 
 const taskServer = new TaskServer();
+
+const randomMovClient = new MovClient();
 
 module.exports = {
     TaskClient,
