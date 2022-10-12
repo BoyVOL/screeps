@@ -65,9 +65,9 @@ class Movement extends WithParent{
         if(!this.Tired) this.path.value.shift();
     }
 
-    GetNewPath(range = 0){
+    GetNewPath(){
         if(this.target!=null){
-            this.path.value = this.parent.orig.pos.findPathTo(this.target,{range: range});
+            this.path.value = this.parent.orig.pos.findPathTo(this.target,{range: this.distance});
         }
     }
 
