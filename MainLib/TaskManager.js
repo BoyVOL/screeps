@@ -68,20 +68,29 @@ class TaskServer extends HtableOverride{
 
     constructor(){
         super({});
-        this.tasks = new Array();
+        this.tasks = {};
+    }
+
+    taskExists(id){
+        return typeof(this.tasks[element.id]) != 'undefined';
     }
 
     LoadTasks(obj){
-        obj.providedTasks.value.forEach((element,index) => {
+        obj.providedTasks.value.forEach((element) => {
+            console.log(element.id);
+            while (this.taskExists(element.id)) {
+                element.id += 1;
+                console.log("exists");
+            }
+            this.tasks[element.id] = element;
             console.log(element.id);
         })
-        this.tasks = this.tasks.concat(obj.providedTasks.value);
     }
 
     Update(){
         super.Update();
 
-        this.tasks = new Array();
+        this.tasks = {};
 
         var pass = this;
         var funct = function(obj,key){
