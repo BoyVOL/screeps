@@ -35,6 +35,7 @@ class Task{
 
 class MoveTask extends Task{
     constructor(pos){
+        super();
         this.pos = pos;
     }
 }
