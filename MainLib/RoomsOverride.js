@@ -12,7 +12,7 @@ class RoomOverride extends ObjectOverride{
     Update(){
         super.Update();
         this.sourceTable.Update();
-        this.MovTaskHost.Update();
+        this.movTask.Update();
     }
 
     LoadOrig(){
