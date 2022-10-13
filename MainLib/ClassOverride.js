@@ -176,7 +176,7 @@ class ObjProxyTable extends HtableOverride{
         super.Update();
         this.UpdateObjects();
 
-        CallUpdate();
+        this.CallUpdate();
     }
 }
 
