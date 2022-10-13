@@ -28,7 +28,6 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
-        plainTable.AddObject(this);
     }
 
     LoadOrig(orig){
@@ -50,10 +49,6 @@ class ObjectOverride extends Updatable{
         return typeof(this.orig.name) != 'undefined';
     }
 
-    get haskey(){
-        return typeof(this.key) != 'undefined';
-    }
-
     Update(){
         super.Update();
         this.LoadOrig();
@@ -61,25 +56,6 @@ class ObjectOverride extends Updatable{
 
     Unload(){
         super.Unload();
-        plainTable.RemoveObject(this);
-    }
-}
-
-class PlainTable{
-    constructor(){
-
-    }
-
-    AddObject(obj){
-        if(obj.haskey) this[obj.key] = obj; 
-    }
-
-    RemoveObject(obj){
-        if(obj.haskey) delete this[obj.key];
-    }
-
-    Count(){
-        return Object.keys(this).length;
     }
 }
 
@@ -106,8 +82,8 @@ class HtableOverride extends ObjectOverride{
         delete this.orig[key];
     }
 
-    Exists(obj){
-        return typeof(this.orig[obj.key]) != 'undefined';
+    Exists(key){
+        return typeof(this.orig[key]) != 'undefined';
     }
 }
 
@@ -176,8 +152,6 @@ class ObjProxyTable extends HtableOverride{
         this.forEachObj(funct);
     }
 }
-
-const plainTable = new PlainTable();
 
 module.exports = {
     Updatable,
