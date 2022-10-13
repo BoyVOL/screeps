@@ -28,6 +28,7 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
+        plainTable.objects[this.key] = this;
     }
 
     LoadOrig(orig){
