@@ -29,6 +29,7 @@ class ObjectOverride extends Updatable{
         this.table = null;
         this.tableid = null;
         plainTable.AddObject(this);
+        console.log("bla");
     }
 
     LoadOrig(orig){
