@@ -8,6 +8,7 @@ class TaskTable extends HtableOverride{
     }
 
     LoadOrig(){
+        console.log("update");
         this.orig = new MemoryItem('taskTable',{}).value;
     }
 
