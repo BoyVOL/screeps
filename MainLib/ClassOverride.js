@@ -162,7 +162,6 @@ class ObjProxyTable extends HtableOverride{
     /** cycle for all items in table that gets function as a parameter */
     forEachObj(funct){
         for (const key in this.objArray) {
-            console.log(key);
             funct(this.objArray[key],key);
         }
     }
@@ -171,7 +170,10 @@ class ObjProxyTable extends HtableOverride{
         super.Update();
         this.UpdateObjects();
 
+        console.log(this.count);
+
         var funct = function(obj,key){
+            console.log(obj.key);
             obj.Update();
         }
         this.forEachObj(funct);
