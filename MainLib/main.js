@@ -13,8 +13,7 @@ function loop(){
     
     roomTable.Update();
     taskTable.Update();
-    console.log(new Task({type: 'test'}).data.id);
-    taskTable.UploadTask(new Task({type: 'test'}).data);
+    taskTable.UploadTask(new Task({type: 'test'}));
     flagTable.Update();
     structTable.Update();
     spawnTable.Update();
