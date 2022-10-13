@@ -153,10 +153,23 @@ class ObjProxyTable extends HtableOverride{
     }
 }
 
+class PlainTable{
+    constructor(){
+        this.objects = {};
+    }
+
+    get count(){
+        return Object.keys(this.objects).length;
+    }
+}
+
+const plainTable = new PlainTable();
+
 module.exports = {
     Updatable,
     WithParent,
     HtableOverride,
     ObjectOverride,
     ObjProxyTable,
+    plainTable
 }
