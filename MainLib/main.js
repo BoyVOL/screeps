@@ -12,7 +12,7 @@ function loop(){
     
     roomTable.Update();
     taskTable.Update();
-    taskTable.AddRecord(Date.now(),{bla: "bla"});
+    taskTable.AddRecord(Date.now(),{});
     flagTable.Update();
     structTable.Update();
     spawnTable.Update();
