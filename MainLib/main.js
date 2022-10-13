@@ -10,9 +10,9 @@ const { taskTable,Task } = require('./TaskManager');
 const {createUUID} = require('./UUID');
 
 function loop(){
-    
-    roomTable.Update();
+        
     taskTable.Update();
+    roomTable.Update();
     flagTable.Update();
     structTable.Update();
     spawnTable.Update();
