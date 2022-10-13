@@ -61,6 +61,7 @@ class ObjectOverride extends Updatable{
 
     Unload(){
         super.Unload();
+        plainTable.DeleteObject(this);
     }
 }
 
@@ -169,6 +170,10 @@ class PlainTable{
 
     AddObject(obj){
         if(obj.haskey) this.objects[obj.key] = obj;
+    }
+
+    DeleteObject(obj){
+        if(obj.haskey) delete this.objects[obj.key];
     }
 }
 
