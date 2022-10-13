@@ -37,7 +37,7 @@ class SpawnTable extends ObjProxyTable{
     Update(){
         super.Update();
         
-        console.log(this.count);
+        console.log("bla");
     }
 }
 
