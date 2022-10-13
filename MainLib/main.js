@@ -14,7 +14,7 @@ function loop(){
     structTable.Update();
     spawnTable.Update();
     creepTable.Update();
-    console.log(plainTable.Count());
+    console.log(plainTable);
 }
 
 module.exports = {
