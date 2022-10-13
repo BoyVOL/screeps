@@ -176,7 +176,7 @@ class ObjProxyTable extends HtableOverride{
         }
         this.forEachObj(function(obj,key){
             obj.Update();
-            console.log("бла");
+            console.log(key);
         });
     }
 }
