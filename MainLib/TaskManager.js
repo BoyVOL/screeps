@@ -57,8 +57,7 @@ class TaskHost extends WithParent{
 class MovTaskHost extends TaskHost{
     Update(){
         super.Update();
-        var task = new Task({type: 'mov', dest: this.parent.GetRandomPos()})
-        console.log(task.id);
+        var task = new Task({type: 'mov', dest: this.parent.GetRandomPos()});
         taskTable.UploadTask(task);
     }
 }
