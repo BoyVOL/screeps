@@ -28,7 +28,7 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
-        plainTable.objects[this.key] = this;
+        plainTable.AddObject(this);
     }
 
     LoadOrig(orig){
@@ -168,7 +168,7 @@ class PlainTable{
     }
 
     AddObject(obj){
-
+        if(obj.haskey) this.objects[obj.key] = obj;
     }
 }
 
