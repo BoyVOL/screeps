@@ -50,6 +50,10 @@ class ObjectOverride extends Updatable{
         return typeof(this.orig.name) != 'undefined';
     }
 
+    get haskey(){
+        return typeof(this.key) != 'undefined';
+    }
+
     Update(){
         super.Update();
         this.LoadOrig();
@@ -161,6 +165,10 @@ class PlainTable{
 
     get count(){
         return Object.keys(this.objects).length;
+    }
+
+    AddObject(obj){
+
     }
 }
 
