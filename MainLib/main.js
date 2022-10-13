@@ -6,10 +6,13 @@ const { StructureOverride,StructureTable,structTable} = require("./StructureOver
 const { MemoryItem } = require('./MemoryManagement');
 const { flagTable } = require('./FlagsOverride');
 const { plainTable } = require('./ClassOverride');
+const { taskTable } = require('./TaskManager');
 
 function loop(){
     
     roomTable.Update();
+    taskTable.Update();
+    taskTable.AddRecord({bla: 'bla'});
     flagTable.Update();
     structTable.Update();
     spawnTable.Update();
