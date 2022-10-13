@@ -5,7 +5,7 @@ const { CreepOverride,CreepTable,creepTable} = require('./CreepOverride');
 const { StructureOverride,StructureTable,structTable} = require("./StructureOverride");
 const { MemoryItem } = require('./MemoryManagement');
 const { flagTable } = require('./FlagsOverride');
-const { PlainTable } = require('./ClassOverride');
+const { plainTable } = require('./ClassOverride');
 
 function loop(){
     
@@ -14,7 +14,7 @@ function loop(){
     structTable.Update();
     spawnTable.Update();
     creepTable.Update();
-    console.log(PlainTable);
+    console.log(plainTable);
 }
 
 module.exports = {
