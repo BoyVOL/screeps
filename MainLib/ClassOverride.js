@@ -168,7 +168,7 @@ class ObjProxyTable extends HtableOverride{
 
     CallUpdate(){
         for (const key in this.objArray) {
-            console.log(this.objArray[key]);
+            console.log(key);
             this.objArray[key].Update();
         }
     }
