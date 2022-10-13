@@ -170,7 +170,7 @@ class ObjProxyTable extends HtableOverride{
         super.Update();
         this.UpdateObjects();
 
-        console.log(this.count);
+        console.log("update");
 
         var funct = function(obj,key){
             console.log(obj.key);
