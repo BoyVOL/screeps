@@ -32,7 +32,11 @@ class Task{
             this.id = createUUID();
         }
         this.type = data.type;
-        this.parentid = data.parentid;
+        if(typeof(data.parentid) != 'undefined'){  
+            this.parentid = data.parentid;
+        } else {
+            this.parentid = null;
+        }
         this.dest = data.dest;
         if(typeof(data.executerid) != 'undefined'){  
             this.executerid = data.executerid;
