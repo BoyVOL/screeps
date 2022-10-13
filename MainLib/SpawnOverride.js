@@ -31,7 +31,6 @@ class SpawnTable extends ObjProxyTable{
     }
 
     InitSingleObject(orig){
-        console.log(this.orig);
         return new SpawnOverride(orig);
     }
 
