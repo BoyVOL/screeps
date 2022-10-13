@@ -3,12 +3,12 @@ const { MemoryItem } = require('./MemoryManagement');
 
 class TaskTable extends HtableOverride{
     constructor(){
-        super(new MemoryItem('taskTable').value);
-        console.log(new MemoryItem('taskTable').value);
+        super(new MemoryItem('taskTable',{}).value);
+        console.log(new MemoryItem('taskTable',{}).value);
     }
 
     LoadOrig(){
-        this.orig = new MemoryItem('taskTable').value;
+        this.orig = new MemoryItem('taskTable',{}).value;
     }
 }
 
