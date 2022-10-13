@@ -28,7 +28,7 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
-        //plainTable.AddObject(this);
+        plainTable.AddObject(this);
     }
 
     LoadOrig(orig){
@@ -61,7 +61,7 @@ class ObjectOverride extends Updatable{
 
     Unload(){
         super.Unload();
-        //plainTable.RemoveObject(this);
+        plainTable.RemoveObject(this);
     }
 }
 
