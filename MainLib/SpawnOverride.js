@@ -15,6 +15,7 @@ class SpawnOverride extends StructureOverride{
 
     Update(){
         super.Update();
+        console.log("bla");
         this.buildorder.Update();
         this.SpawnCreep();
     }
@@ -32,12 +33,6 @@ class SpawnTable extends ObjProxyTable{
 
     InitSingleObject(orig){
         return new SpawnOverride(orig);
-    }
-
-    Update(){
-        super.Update();
-        
-        console.log("bla");
     }
 }
 
