@@ -8,7 +8,6 @@ class TaskTable extends HtableOverride{
     }
 
     LoadOrig(){
-        console.log("update");
         this.orig = new MemoryItem('taskTable',{}).value;
     }
 
@@ -60,7 +59,7 @@ class MovTaskHost extends TaskHost{
         super.Update();
         var task = new Task({type: 'mov', dest: this.parent.GetRandomPos()})
         console.log(task.id);
-        taskTable.UploadTask(task);
+        taskTable.AddRecord(task.id,task.data);
     }
 }
 
