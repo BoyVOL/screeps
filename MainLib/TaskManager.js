@@ -21,7 +21,7 @@ class Task{
         if(typeof(data.id) != 'undefined'){  
             this.id = data.id;
         } else {
-            this.id = Date.now();
+            this.id = createUUID();
         }
         this.type = data.type;
         this.parentid = data.parentid;
