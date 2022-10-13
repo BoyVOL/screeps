@@ -13,7 +13,6 @@ function loop(){
     
     roomTable.Update();
     taskTable.Update();
-    taskTable.UploadTask(new Task({type: 'test'}));
     flagTable.Update();
     structTable.Update();
     spawnTable.Update();

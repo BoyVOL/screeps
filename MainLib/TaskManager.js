@@ -14,6 +14,14 @@ class TaskTable extends HtableOverride{
     UploadTask(task){
         this.AddRecord(task.id,task.data);
     }
+
+    DeleteTask(task){
+        this.DeleteRecord(task.id);
+    }
+
+    GetTask(id){
+        return new Task(this.orig[id]);
+    }
 }
 
 class Task{
@@ -25,6 +33,7 @@ class Task{
         }
         this.type = data.type;
         this.parentid = data.parentid;
+        this.dest = data.dest;
     }
 
     get parent(){
@@ -35,18 +44,31 @@ class Task{
         return {
             id: this.id,
             type : this.type,
-            parentid: this.parentid
+            parentid: this.parentid,
+            dest: this.dest
         }
     }
 }
 
-class TaskProvider extends WithParent{
-    
+class TaskHost extends WithParent{
+
+}
+
+class MovTaskHost extends TaskHost{
+    Update(){
+        super.Update();
+        taskTable.UploadTask(new Task({type: 'mov', dest: this.parent.GetRandomPos()}));
+    }
+}
+
+class TaskExecuter extends WithParent{
+
 }
 
 const taskTable = new TaskTable();
 
 module.exports = {
     Task,
+    MovTaskHost,
     taskTable
 }
