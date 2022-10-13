@@ -159,5 +159,4 @@ module.exports = {
     HtableOverride,
     ObjectOverride,
     ObjProxyTable,
-    PlainTable,
 }
