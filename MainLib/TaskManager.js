@@ -34,10 +34,10 @@ class Task{
         this.type = data.type;
         this.parentid = data.parentid;
         this.dest = data.dest;
-        if(typeof(data.executer) != 'undefined'){  
-            this.executer = data.executer;
+        if(typeof(data.executerid) != 'undefined'){  
+            this.executerid = data.executerid;
         } else {
-            this.executer = null;
+            this.executerid = null;
         }
     }
 
@@ -46,7 +46,7 @@ class Task{
     }
 
     get executer(){
-        return plainTable.objects[this.executer];
+        return plainTable.objects[this.executerid];
     }
 
     get data(){
@@ -55,7 +55,7 @@ class Task{
             type : this.type,
             parentid: this.parentid,
             dest: this.dest,
-            executer: this.executer
+            executerid: this.executerid
         }
     }
 }
@@ -72,7 +72,7 @@ class MovTaskHost extends TaskHost{
     }
 }
 
-class TaskExecuter extends WithParent{
+class TaskExecuterid extends WithParent{
     constructor(parent){
         super(parent);
         this.activeTask;
