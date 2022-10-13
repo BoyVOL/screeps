@@ -3,6 +3,10 @@ class Updatable{
     constructor(){
         
     }
+
+    LoadOrig(){
+        
+    }
     
     Update(){
         

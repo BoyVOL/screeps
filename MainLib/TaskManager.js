@@ -1,26 +1,32 @@
-const { HtableOverride,plainTable,WithParent } = require('./ClassOverride');
+const { HtableOverride,plainTable,WithParent,Updatable } = require('./ClassOverride');
 const { MemoryItem } = require('./MemoryManagement');
 const {createUUID} = require('./UUID');
 
-class TaskTable extends HtableOverride{
+class TaskTable extends Updatable{
     constructor(){
-        super(new MemoryItem('taskTable',{}).value);
+        super();
+        this.LoadData();
     }
 
-    LoadOrig(){
-        this.orig = new MemoryItem('taskTable',{}).value;
+    LoadData(){
+        this.mem = new MemoryItem('taskTable',{});
     }
 
     UploadTask(task){
-        this.AddRecord(task.id,task.data);
+        this.mem.value[task.id] = task.data;
     }
 
     DeleteTask(task){
-        this.DeleteRecord(task.id);
+        delete this.mem.value[task.id];
     }
 
     GetTask(id){
-        return new Task(this.orig[id]);
+        return new Task(this.mem.valueg[id]);
+    }
+
+    Update(){
+        super.Update();
+        this.LoadData();
     }
 }
 
