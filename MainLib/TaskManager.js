@@ -1,32 +1,26 @@
-const { HtableOverride,plainTable,WithParent,Updatable } = require('./ClassOverride');
+const { HtableOverride,plainTable,WithParent } = require('./ClassOverride');
 const { MemoryItem } = require('./MemoryManagement');
 const {createUUID} = require('./UUID');
 
-class TaskTable extends Updatable{
+class TaskTable extends HtableOverride{
     constructor(){
-        super();
-        this.LoadData();
+        super(new MemoryItem('taskTable',{}).value);
     }
 
-    LoadData(){
-        this.mem = new MemoryItem('taskTable',{});
+    LoadOrig(){
+        this.orig = new MemoryItem('taskTable',{}).value;
     }
 
     UploadTask(task){
-        this.mem.value[task.id] = task.data;
+        this.AddRecord(task.id,task.data);
     }
 
     DeleteTask(task){
-        delete this.mem.value[task.id];
+        this.DeleteRecord(task.id);
     }
 
     GetTask(id){
-        return new Task(this.mem.valueg[id]);
-    }
-
-    Update(){
-        super.Update();
-        this.LoadData();
+        return new Task(this.orig[id]);
     }
 }
 
@@ -63,7 +57,7 @@ class TaskHost extends WithParent{
 class MovTaskHost extends TaskHost{
     Update(){
         super.Update();
-        var task = new Task({type: 'mov', dest: this.parent.GetRandomPos()});
+        var task = new Task({type: 'mov', dest: this.parent.GetRandomPos()})
         console.log(task.id);
         taskTable.UploadTask(task);
     }
