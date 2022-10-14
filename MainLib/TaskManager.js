@@ -38,7 +38,7 @@ class Task{
         } else {
             this.parentid = null;
         }
-        this.dest = data.dest;
+        this.dest = new RoomPosition(data.dest.x,data.dest.y,data.dest.roomName);
         if(typeof(data.executerid) != 'undefined'){  
             this.executerid = data.executerid;
         } else {
