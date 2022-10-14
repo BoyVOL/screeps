@@ -76,10 +76,19 @@ class MovTaskHost extends TaskHost{
     }
 }
 
-class TaskExecuterid extends WithParent{
+class TaskExecuter extends WithParent{
     constructor(parent){
         super(parent);
-        this.activeTask;
+        this.activeTask = null;
+        this.activeTaskId = null;
+    }
+
+    SearchForTasks(){
+        
+    }
+
+    Update(){
+        super.Update();
     }
 }
 
@@ -87,6 +96,7 @@ const taskTable = new TaskTable();
 
 module.exports = {
     Task,
+    TaskExecuter,
     MovTaskHost,
     taskTable
 }

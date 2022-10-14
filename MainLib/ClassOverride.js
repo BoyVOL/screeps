@@ -84,6 +84,10 @@ class HtableOverride extends ObjectOverride{
         }
     }
 
+    AsArray(){
+        return Object.keys(this.orig).map((key) => [Number(key), this.orig[key]]);
+    }
+
     AddRecord(key,val){
         this.orig[key] = val;
     }

@@ -18,7 +18,7 @@ function loop(){
     spawnTable.Update();
     creepTable.Update();
     
-    console.log(plainTable.count);
+    console.log(taskTable.AsArray());
 }
 
 module.exports = {
