@@ -80,15 +80,28 @@ class TaskExecuter extends WithParent{
     constructor(parent){
         super(parent);
         this.activeTask = null;
-        this.activeTaskId = null;
+        this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
     }
 
-    SearchForTasks(){
-        
+    GetAvailableTasks(){
+        var taskArray = taskTable.AsArray();
+        return taskArray;
+    }
+
+    PickRandomTask(){
+        var tasks = this.GetAvailableTasks();
+        var id = Math.random()*tasks.length;
+        this.activeTaskId.value = tasks[id][0];
+    }
+
+    OccupyTask(taskId){
+        taskTable[taskId].executerid = this.key;
     }
 
     Update(){
         super.Update();
+        this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
+        this.PickRandomTask();
     }
 }
 
