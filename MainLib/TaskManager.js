@@ -115,7 +115,7 @@ class TaskExecuter extends WithParent{
         if(!this.hasTask){
             this.OccupyTask(this.PickRandomTask())
         } else {
-            this.OccupyTask(this.activeTaskId);
+            //this.OccupyTask(this.activeTaskId);
         };
         this.UploadTask();
     }
