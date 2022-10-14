@@ -110,7 +110,7 @@ class TaskExecuter extends WithParent{
     Update(){
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
-        this.PickRandomTask();
+        if(!this.hasTask)this.PickRandomTask();
         this.UploadTask();
     }
 }
