@@ -90,7 +90,7 @@ class TaskExecuter extends WithParent{
 
     PickRandomTask(){
         var tasks = this.GetAvailableTasks();
-        var id = Math.random()*tasks.length;
+        var id = Math.floor(Math.random()*tasks.length);
         console.log(tasks);
         console.log(id,tasks[id]);
         this.activeTaskId.value = tasks[id][0];
