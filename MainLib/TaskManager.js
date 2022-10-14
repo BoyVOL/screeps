@@ -121,13 +121,13 @@ class TaskExecuter extends WithParent{
     Update(){
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
-        if(this.parent.orig.pos = this.activeTask.dest) this.CompleteTask(this.activeTaskId.value);
-        this.UploadTask();
         if(!this.hasTask){
             this.OccupyTask(this.PickRandomTask())
         } else {
             this.OccupyTask(this.activeTaskId.value);
         };
+        this.UploadTask();
+        if(this.parent.orig.pos = this.activeTask.dest) this.CompleteTask(this.activeTaskId.value);
     }
 }
 
