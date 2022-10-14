@@ -97,12 +97,12 @@ class TaskExecuter extends WithParent{
 
     UploadTask(){
         if(this.hasTask) this.activeTask = taskTable.GetTask(this.activeTaskId.value);
+        console.log("executer = ",this.activeTask.executerid);
     }
 
     OccupyTask(taskId){
         this.activeTaskId.value = taskId;
         taskTable[taskId].executerid = this.orig.key;
-        console.log(this.orig.key,this.taskTable[taskId].executerid);
     }
 
     get hasTask(){
