@@ -102,7 +102,7 @@ class TaskExecuter extends WithParent{
 
     OccupyTask(taskId){
         this.activeTaskId.value = taskId;
-        taskTable[taskId].executerid = this.orig.key;
+        taskTable.orig[taskId].executerid = this.orig.key;
     }
 
     get hasTask(){
@@ -112,7 +112,11 @@ class TaskExecuter extends WithParent{
     Update(){
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
-        if(!this.hasTask)this.OccupyTask(this.PickRandomTask());
+        if(!this.hasTask){
+            this.OccupyTask(this.PickRandomTask())
+        } else {
+            this.OccupyTask(this.activeTaskId);
+        };
         this.UploadTask();
     }
 }
