@@ -127,6 +127,7 @@ class TaskExecuter extends WithParent{
             this.OccupyTask(this.activeTaskId.value);
         };
         this.UploadTask();
+        console.log(this.parent.orig.pos,this.activeTask.dest);
         if(this.parent.orig.pos == this.activeTask.dest) this.CompleteTask(this.activeTaskId.value);
     }
 }
