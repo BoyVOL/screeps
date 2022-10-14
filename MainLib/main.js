@@ -17,8 +17,6 @@ function loop(){
     structTable.Update();
     spawnTable.Update();
     creepTable.Update();
-    
-    console.log(taskTable.AsArray());
 }
 
 module.exports = {
