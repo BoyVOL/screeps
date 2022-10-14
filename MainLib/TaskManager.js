@@ -99,6 +99,10 @@ class TaskExecuter extends WithParent{
         taskTable[taskId].executerid = this.key;
     }
 
+    get hasTask(){
+        return this.activeTaskId != null;
+    }
+
     Update(){
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
