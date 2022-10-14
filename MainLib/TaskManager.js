@@ -116,6 +116,7 @@ class TaskExecuter extends WithParent{
     CompleteTask(taskId){
         this.UnoccupyTask(taskId);
         taskTable.DeleteRecord(taskId);
+        console.log("after delete = ",taskTable.orig[taskId]);
     }
 
     Update(){
@@ -127,7 +128,6 @@ class TaskExecuter extends WithParent{
             this.OccupyTask(this.activeTaskId.value);
         };
         this.UploadTask();
-        console.log(this.parent.orig.pos,this.activeTask.dest);
         if(this.parent.orig.pos == this.activeTask.dest) this.CompleteTask(this.activeTaskId.value);
     }
 }
