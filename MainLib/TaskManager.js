@@ -92,6 +92,7 @@ class TaskExecuter extends WithParent{
         var tasks = this.GetAvailableTasks();
         var id = Math.floor(Math.random()*tasks.length);
         this.activeTaskId.value = tasks[id][0];
+        this.activeTask = new Task(tasks[id][1]);
     }
 
     OccupyTask(taskId){
