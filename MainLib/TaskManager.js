@@ -96,7 +96,7 @@ class TaskExecuter extends WithParent{
     }
 
     UploadTask(){
-        if(this.hasTask) this.activeTask = taskTable.GetTask(this.activeTaskId);
+        if(this.hasTask) this.activeTask = taskTable.GetTask(this.activeTaskId.value);
     }
 
     OccupyTask(taskId){
@@ -104,7 +104,7 @@ class TaskExecuter extends WithParent{
     }
 
     get hasTask(){
-        return this.activeTaskId != null;
+        return this.activeTaskId.value != null;
     }
 
     Update(){
