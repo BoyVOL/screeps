@@ -92,7 +92,10 @@ class TaskExecuter extends WithParent{
         var tasks = this.GetAvailableTasks();
         var id = Math.floor(Math.random()*tasks.length);
         this.activeTaskId.value = tasks[id][0];
-        this.activeTask = new Task(tasks[id][1]);
+    }
+
+    UploadTask(){
+        if(this.hasTask) this.activeTask = taskTable.GetTask(this.activeTaskId);
     }
 
     OccupyTask(taskId){
@@ -107,6 +110,7 @@ class TaskExecuter extends WithParent{
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
         this.PickRandomTask();
+        this.UploadTask();
     }
 }
 
