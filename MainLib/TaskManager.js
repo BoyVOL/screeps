@@ -102,6 +102,7 @@ class TaskExecuter extends WithParent{
     OccupyTask(taskId){
         this.activeTaskId.value = taskId;
         taskTable[taskId].executerid = this.orig.key;
+        console.log(this.orig.key,this.taskTable[taskId].executerid);
     }
 
     get hasTask(){
