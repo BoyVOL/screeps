@@ -26,6 +26,7 @@ class TaskTable extends HtableOverride{
 
 class Task{
     constructor(data){
+        console.log(data);
         if(typeof(data.id) != 'undefined'){  
             this.id = data.id;
         } else {
@@ -110,7 +111,7 @@ class TaskExecuter extends WithParent{
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
         this.PickRandomTask();
-        //this.UploadTask();
+        this.UploadTask();
     }
 }
 
