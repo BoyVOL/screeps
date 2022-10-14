@@ -20,13 +20,13 @@ class TaskTable extends HtableOverride{
     }
 
     GetTask(id){
+        console.log(this.orig[id],id);
         return new Task(this.orig[id]);
     }
 }
 
 class Task{
     constructor(data){
-        console.log(data);
         if(typeof(data.id) != 'undefined'){  
             this.id = data.id;
         } else {
