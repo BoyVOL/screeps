@@ -1,4 +1,4 @@
-const { ObjProxyTable,plainTable,ObjectOverride } = require('./ClassOverride');
+const { ObjProxyTable,plainTable,ObjectOverride,WithParent } = require('./ClassOverride');
 const { MemoryItem } = require('./MemoryManagement');
 const {createUUID} = require('./UUID');
 
