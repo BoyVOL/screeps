@@ -12,6 +12,7 @@ const {createUUID} = require('./UUID');
 function loop(){
         
     taskTable.Update();
+    console.log(taskTable.count);
     roomTable.Update();
     flagTable.Update();
     structTable.Update();
