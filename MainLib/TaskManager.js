@@ -33,6 +33,22 @@ class Task extends ObjectOverride{
         this.orig = taskTable.orig[this.tableid];
     }
 
+    get parent(){
+        return plainTable.objects[this.orig.parentid];
+    }
+
+    get hasParent(){
+        return typeof(this.parent) != 'undefined';
+    }
+
+    get executer(){
+        return plainTable.objects[this.orig.executerid];
+    }
+
+    get hasExecuter(){
+        return typeof(this.executer) != 'undefined';
+    }
+
     Update(){
         super.Update();
     }
