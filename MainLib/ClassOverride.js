@@ -42,8 +42,7 @@ class ObjectOverride extends Updatable{
     }
 
     get key(){
-        if(this.hasid) return this.orig.id;
-        else return this.orig.name;
+        return this.tableid;
     }
 
     get hasid(){
