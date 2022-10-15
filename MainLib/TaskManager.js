@@ -22,7 +22,7 @@ class Task extends ObjectOverride{
     }
 
     LoadOrig(){
-        this.orig = taskTable.orig[this.orig.id];
+        this.orig = taskTable.orig[this.key];
         console.log("update task");
     }
 }
