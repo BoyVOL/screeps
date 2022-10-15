@@ -32,6 +32,10 @@ class Task extends ObjectOverride{
     LoadOrig(){
         this.orig = taskTable.orig[this.tableid];
     }
+
+    Update(){
+        super.Update();
+    }
 }
 
 class MovTask extends Task{
@@ -43,7 +47,16 @@ class MovTask extends Task{
 
 class TaskHandler extends WithParent{
     PostTask(data){
+        data.parentid = this.parent.key;
         taskTable.AddRecord(createUUID(),data);
+    }
+
+    GetTask(id){
+        return taskTable.objArray[id];
+    }
+
+    TaskExists(id){
+        return taskTable.ObjExists(id);
     }
 }
 
@@ -52,7 +65,6 @@ class MovTaskHost extends TaskHandler{
         super.Update();
         var task = {type: 'mov', dest: this.parent.GetRandomPos()};
         this.PostTask(task);
-        console.log("update");
     }
 }
 
