@@ -42,11 +42,17 @@ class ObjectOverride extends Updatable{
     }
 
     get key(){
-        return this.tableid;
+        if(this.hastableid) return this.tableid;
+        else if(this.hasid) return this.orig.id;
+        else return this.orig.name;
     }
 
     get hasid(){
         return typeof(this.orig.id) != 'undefined';
+    }
+
+    get hastableid(){
+        return typeof(this.tableid) != 'undefined' && this.tableid != null;
     }
 
     get hasname(){
@@ -58,9 +64,9 @@ class ObjectOverride extends Updatable{
     }
 
     Update(){
+        console.log(this.key);
         super.Update();
         this.LoadOrig();
-        console.log(this.key);
     }
 
     Unload(){
