@@ -1,8 +1,8 @@
-const { HtableOverride,plainTable,WithParent } = require('./ClassOverride');
+const { ObjProxyTable,plainTable,ObjectOverride } = require('./ClassOverride');
 const { MemoryItem } = require('./MemoryManagement');
 const {createUUID} = require('./UUID');
 
-class TaskTable extends HtableOverride{
+class TaskTable extends ObjProxyTable{
     constructor(){
         super(new MemoryItem('taskTable',{}).value);
     }
@@ -11,65 +11,22 @@ class TaskTable extends HtableOverride{
         this.orig = new MemoryItem('taskTable',{}).value;
     }
 
-    UploadTask(task){
-        this.AddRecord(task.id,task.data);
-    }
-
-    DeleteTask(task){
-        this.DeleteRecord(task.id);
-    }
-
-    GetTask(id){
-        console.log(this.orig[id],id);
-        return new Task(this.orig[id]);
+    InitSingleObject(orig){
+        return new Task(orig);
     }
 }
 
-class Task{
-    constructor(data){
-        if(typeof(data.id) != 'undefined'){  
-            this.id = data.id;
-        } else {
-            this.id = createUUID();
-        }
-        this.type = data.type;
-        if(typeof(data.parentid) != 'undefined'){  
-            this.parentid = data.parentid;
-        } else {
-            this.parentid = null;
-        }
-        this.dest = new RoomPosition(data.dest.x,data.dest.y,data.dest.roomName);
-        if(typeof(data.executerid) != 'undefined'){  
-            this.executerid = data.executerid;
-        } else {
-            this.executerid = null;
-        }
-    }
-
-    get parent(){
-        return plainTable.objects[this.parentid];
-    }
-
-    get executer(){
-        return plainTable.objects[this.executerid];
-    }
-
-    get data(){
-        return {
-            id: this.id,
-            type : this.type,
-            parentid: this.parentid,
-            dest: this.dest,
-            executerid: this.executerid
-        }
+class Task extends ObjectOverride{
+    constructor(orig){
+        super(orig);
     }
 }
 
-class TaskHost extends WithParent{
+class TaskHandler extends WithParent{
 
 }
 
-class MovTaskHost extends TaskHost{
+class MovTaskHost extends TaskHandler{
     Update(){
         super.Update();
         var task = new Task({type: 'mov', dest: this.parent.GetRandomPos()});
@@ -77,7 +34,7 @@ class MovTaskHost extends TaskHost{
     }
 }
 
-class TaskExecuter extends WithParent{
+class TaskExecuter extends TaskHandler{
     constructor(parent){
         super(parent);
         this.activeTask = null;
@@ -95,7 +52,7 @@ class TaskExecuter extends WithParent{
         return tasks[id][0];
     }
 
-    UploadTask(){
+    DownloadTask(){
         if(this.hasTask) this.activeTask = taskTable.GetTask(this.activeTaskId.value);
     }
 
@@ -116,7 +73,6 @@ class TaskExecuter extends WithParent{
     CompleteTask(taskId){
         this.UnoccupyTask(taskId);
         taskTable.DeleteRecord(taskId);
-        console.log("after delete = ",taskTable.orig[taskId]);
     }
 
     Update(){
@@ -127,7 +83,7 @@ class TaskExecuter extends WithParent{
         } else {
             this.OccupyTask(this.activeTaskId.value);
         };
-        this.UploadTask();
+        this.DownloadTask();
         if(this.parent.orig.pos.inRangeTo(this.activeTask.dest,0)) this.CompleteTask(this.activeTaskId.value);
     }
 }
