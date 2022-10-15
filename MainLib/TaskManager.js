@@ -19,11 +19,10 @@ class TaskTable extends ObjProxyTable{
 class Task extends ObjectOverride{
     constructor(orig){
         super(orig);
-        this.id = orig.id;
     }
 
     LoadOrig(){
-        this.orig = taskTable.orig[this.id];
+        this.orig = taskTable.orig[this.tableid];
         console.log("update task",this.orig);
     }
 }
