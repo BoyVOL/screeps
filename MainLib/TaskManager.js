@@ -12,7 +12,15 @@ class TaskTable extends ObjProxyTable{
     }
 
     InitSingleObject(orig){
-        return new Task(orig);
+        switch (orig.type) {
+            case 'mov':
+                    return new MovTask(orig);
+                break;
+        
+            default:
+                    return new Task(orig)
+                break;
+        }
     }
 }
 
@@ -23,6 +31,13 @@ class Task extends ObjectOverride{
 
     LoadOrig(){
         this.orig = taskTable.orig[this.tableid];
+    }
+}
+
+class MovTask extends Task{
+    Update(){
+        super.Update();
+        console.log("movtask!");
     }
 }
 
