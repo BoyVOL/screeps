@@ -20,6 +20,11 @@ class Task extends ObjectOverride{
     constructor(orig){
         super(orig);
     }
+
+    LoadOrig(){
+        this.orig = taskTable.orig[this.orig.id];
+        console.log("update task");
+    }
 }
 
 class TaskHandler extends WithParent{
