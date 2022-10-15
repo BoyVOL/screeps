@@ -30,7 +30,7 @@ class MovTaskHost extends TaskHandler{
     Update(){
         super.Update();
         var task = {type: 'mov', dest: this.parent.GetRandomPos()};
-        taskTable.AddRecord(task);
+        taskTable.AddRecord(createUUID(),task);
         console.log("update");
     }
 }
