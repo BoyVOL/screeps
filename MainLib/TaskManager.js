@@ -42,14 +42,16 @@ class MovTask extends Task{
 }
 
 class TaskHandler extends WithParent{
-
+    PostTask(data){
+        taskTable.AddRecord(createUUID(),data);
+    }
 }
 
 class MovTaskHost extends TaskHandler{
     Update(){
         super.Update();
         var task = {type: 'mov', dest: this.parent.GetRandomPos()};
-        taskTable.AddRecord(createUUID(),task);
+        this.PostTask(task);
         console.log("update");
     }
 }
