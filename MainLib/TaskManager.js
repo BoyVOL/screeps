@@ -96,7 +96,7 @@ class TaskExecuter extends TaskHandler{
         return taskArray;
     }
 
-    PickRandomTask(){
+    PickRandomTaskID(){
         var tasks = this.GetAvailableTasks();
         var id = Math.floor(Math.random()*tasks.length);
         return tasks[id][0];
@@ -104,7 +104,7 @@ class TaskExecuter extends TaskHandler{
 
     Update(){
         super.Update();
-        console.log(this.GetAvailableTasks().length);
+        console.log(this.PickRandomTaskID());
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
     }
 }
