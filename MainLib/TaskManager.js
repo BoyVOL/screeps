@@ -102,39 +102,9 @@ class TaskExecuter extends TaskHandler{
         return tasks[id][0];
     }
 
-    DownloadTask(){
-        if(this.hasTask) this.activeTask = taskTable.GetTask(this.activeTaskId.value);
-    }
-
-    OccupyTask(taskId){
-        this.activeTaskId.value = taskId;
-        taskTable.orig[taskId].executerid = this.parent.key;
-    }
-
-    UnoccupyTask(taskId){
-        this.activeTaskId.value = null;
-        taskTable.orig[taskId].executerid = null;
-    }
-
-    get hasTask(){
-        return this.activeTaskId.value != null;
-    }
-
-    CompleteTask(taskId){
-        this.UnoccupyTask(taskId);
-        taskTable.DeleteRecord(taskId);
-    }
-
     Update(){
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
-        if(!this.hasTask){
-            this.OccupyTask(this.PickRandomTask())
-        } else {
-            this.OccupyTask(this.activeTaskId.value);
-        };
-        this.DownloadTask();
-        if(this.parent.orig.pos.inRangeTo(this.activeTask.dest,0)) this.CompleteTask(this.activeTaskId.value);
     }
 }
 

@@ -118,6 +118,10 @@ class ObjProxyTable extends HtableOverride{
         return Object.keys(this.objArray).length;
     }
 
+    ObjAsArray(){
+        return Object.keys(this.objArray).map((key) => [key, this.objArray[key]]);
+    }
+
     /** Method for initiatins single object that needs to be overread */
     InitSingleObject(orig){
         return new ObjectOverride(orig);
