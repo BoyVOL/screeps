@@ -91,6 +91,7 @@ class MovTask extends Task{
             console.log('distance = ',this.destDistance);
             result = this.destDistance;
         }
+        return super.completed;
     }
 
     Update(){
