@@ -102,10 +102,15 @@ class TaskExecuter extends TaskHandler{
         return tasks[id][0];
     }
 
+    LoadActiveTask(){
+        this.activeTask = this.GetTask(this.activeTaskId.value);
+    }
+
     Update(){
         super.Update();
-        console.log(this.GetTask(this.PickRandomTaskID()).orig.dest);
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
+        this.LoadActiveTask();
+        console.log(this.activeTask);
     }
 }
 
