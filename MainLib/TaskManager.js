@@ -109,7 +109,7 @@ class TaskExecuter extends TaskHandler{
     Update(){
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
-        if(this.TaskExists(this.activeTaskId.value)){
+        if(!this.TaskExists(this.activeTaskId.value)){
             this.activeTaskId.value = this.PickRandomTaskID();
         } 
         this.LoadActiveTask();
