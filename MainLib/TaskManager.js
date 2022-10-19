@@ -85,6 +85,10 @@ class Task extends ObjectOverride{
 
 class MovTask extends Task{
 
+    get viable(){
+        return true;
+    }
+
     get completed(){
         var result = false;
         if(this.hasExecuter){
