@@ -16,7 +16,6 @@ class CreepOverride extends RoomObjectOver{
         this.taskExecuter.Update();
         if(this.taskExecuter.activeTask != null) {
             this.MoveContr.target = this.taskExecuter.activeTask.dest;
-            console.log(this.taskExecuter.activeTask.dest);
         }
         this.MoveContr.Update();
     }
