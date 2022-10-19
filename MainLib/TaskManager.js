@@ -104,7 +104,7 @@ class TaskExecuter extends TaskHandler{
 
     Update(){
         super.Update();
-        console.log(this.GetTask(this.PickRandomTaskID()).id);
+        console.log(this.GetTask(this.PickRandomTaskID()).orig.id);
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
     }
 }
