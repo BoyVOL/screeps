@@ -59,7 +59,7 @@ class Task extends ObjectOverride{
     }
 
     get viable(){
-        return this.hasParent();
+        return this.hasParent;
     }
 
     get completed(){
