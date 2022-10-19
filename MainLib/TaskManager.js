@@ -33,6 +33,10 @@ class Task extends ObjectOverride{
         this.orig = taskTable.orig[this.tableid];
     }
 
+    DeleteItself(){
+        taskTable.DeleteObject(this.tableid);
+    }
+
     get parent(){
         return plainTable.objects[this.orig.parentid];
     }
@@ -54,12 +58,41 @@ class Task extends ObjectOverride{
         return result;
     }
 
+    get viable(){
+        return this.hasParent();
+    }
+
+    get completed(){
+        return false;
+    }
+
+    get destDistance(){
+        return this.executer.orig.pos.getRangeTo(this.dest);
+    }
+
+    Unload(){
+        super.Unload();
+        taskTable.DeleteRecord(this.tableid);
+    }
+
     Update(){
         super.Update();
+        if(!this.viable || this.completed){
+            this.DeleteItself();
+        }
     }
 }
 
 class MovTask extends Task{
+
+    get completed(){
+        var result = false;
+        if(this.hasExecuter){
+            result = this.destDistance;
+            console.log(result);
+        }
+    }
+
     Update(){
         super.Update();
         console.log("movtask!");
