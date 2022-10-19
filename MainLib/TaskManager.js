@@ -91,9 +91,9 @@ class MovTask extends Task{
 
     get completed(){
         var result = false;
-        console.log('distance = ',this.destDistance);
-        result = this.destDistance;
         if(this.hasExecuter){
+            console.log('distance = ',this.destDistance);
+            result = this.destDistance;
         }
         return super.completed;
     }
