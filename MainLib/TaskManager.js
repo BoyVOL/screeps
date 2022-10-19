@@ -110,7 +110,7 @@ class TaskExecuter extends TaskHandler{
         super.Update();
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
         this.LoadActiveTask();
-        console.log(this.activeTask);
+        console.log(this.activeTask,this.activeTaskId.value);
     }
 }
 
