@@ -51,7 +51,7 @@ class Task extends ObjectOverride{
 
     get dest(){
         var result = new RoomPosition(this.orig.dest.x, this.orig.dest.y, this.orig.dest.roomName);
-        return 
+        return result;
     }
 
     Update(){
