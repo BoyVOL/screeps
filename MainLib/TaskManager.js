@@ -92,7 +92,7 @@ class TaskExecuter extends TaskHandler{
     }
 
     GetAvailableTasks(){
-        var taskArray = taskTable.AsArray();
+        var taskArray = taskTable.ObjAsArray();
         return taskArray;
     }
 
@@ -104,6 +104,7 @@ class TaskExecuter extends TaskHandler{
 
     Update(){
         super.Update();
+        console.log(this.GetAvailableTasks().length);
         this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
     }
 }
