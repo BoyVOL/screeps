@@ -49,6 +49,11 @@ class Task extends ObjectOverride{
         return typeof(this.executer) != 'undefined';
     }
 
+    get dest(){
+        var result = new RoomPosition(this.orig.dest.x, this.orig.dest.y, this.orig.dest.roomName);
+        return 
+    }
+
     Update(){
         super.Update();
     }
