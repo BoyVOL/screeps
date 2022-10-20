@@ -32,7 +32,6 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
-        plainTable.AddObject(this);
     }
 
     LoadOrig(orig){
@@ -131,6 +130,7 @@ class ObjProxyTable extends HtableOverride{
         var obj = this.InitSingleObject(orig);
         obj.table = this;
         obj.tableid = key;
+        plainTable.AddObject(obj);
         this.objArray[key] = obj;
         this.objArray[key].isoperational = true;
     }
