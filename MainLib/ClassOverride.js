@@ -32,7 +32,6 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
-        this.LoadOrig();
     }
 
     LoadOrig(orig){
