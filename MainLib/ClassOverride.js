@@ -32,6 +32,7 @@ class ObjectOverride extends Updatable{
         this.orig = orig;
         this.table = null;
         this.tableid = null;
+        this.LoadOrig();
     }
 
     LoadOrig(orig){
@@ -110,6 +111,7 @@ class ObjProxyTable extends HtableOverride{
     constructor(orig){
         super(orig);
         this.objArray = {};
+        this.UpdateObjects();
     }
 
     /** this way you can get hash table overall count */
