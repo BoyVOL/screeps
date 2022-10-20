@@ -64,7 +64,6 @@ class ObjectOverride extends Updatable{
 
     Update(){
         super.Update();
-        this.LoadOrig();
     }
 
     Unload(){
@@ -152,6 +151,7 @@ class ObjProxyTable extends HtableOverride{
             }
         });
         this.forEachObj(function(val,key){
+            val.LoadOrig();
             if(!pass.Exists(key)){
                 pass.DeleteObject(key);
             }
