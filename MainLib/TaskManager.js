@@ -162,7 +162,7 @@ class TaskExecuter extends TaskHandler{
             this.activeTaskId.value = this.PickRandomTaskID();
         }
         this.LoadActiveTask();
-        if(!this.activeTask.hasExecuter) this.activeTask.executer = this;
+        if(!this.activeTask.hasExecuter) this.activeTask.executer = this.parent;
         console.log(this.activeTask,this.activeTaskId.value);
     }
 }
