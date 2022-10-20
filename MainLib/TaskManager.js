@@ -50,9 +50,9 @@ class Task extends ObjectOverride{
         return plainTable.objects[this.orig.executerid];
     }
 
-    set executer(executer){
-        console.log('executer set', executer.key);
-        this.orig.executerid = executer.tableid;
+    set executer(exec){
+        console.log('executer set', exec);
+        this.orig.executerid = exec.tableid;
     }
 
     get hasExecuter(){
