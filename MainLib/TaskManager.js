@@ -46,6 +46,7 @@ class Task extends ObjectOverride{
     }
 
     get executer(){
+        console.log('executer' = this.orig.executerid);
         return plainTable.objects[this.orig.executerid];
     }
 
