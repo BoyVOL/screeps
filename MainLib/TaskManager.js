@@ -105,7 +105,7 @@ class MovTask extends Task{
 
     Update(){
         super.Update();
-        console.log("movtask!");
+        //console.log("movtask!");
     }
 }
 
