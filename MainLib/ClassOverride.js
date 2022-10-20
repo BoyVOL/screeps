@@ -110,7 +110,6 @@ class ObjProxyTable extends HtableOverride{
     constructor(orig){
         super(orig);
         this.objArray = {};
-        this.UpdateObjects();
     }
 
     /** this way you can get hash table overall count */
