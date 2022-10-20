@@ -51,7 +51,7 @@ class Task extends ObjectOverride{
     }
 
     set executer(executer){
-        console.log('executer set', this.orig.executerid);
+        console.log('executer set', executer.key);
         this.orig.executerid = executer.tableid;
     }
 
