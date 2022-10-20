@@ -95,7 +95,7 @@ class MovTask extends Task{
 
     get completed(){
         var result = false;
-        console.log('this.hasExecuter = ',this.hasExecuter,this.executer,this.orig.executerid,plainTable.objects[this.orig.executerid]);
+        
         if(this.hasExecuter){
             console.log('distance = ',this.destDistance);
             result = this.destDistance;
@@ -160,7 +160,6 @@ class TaskExecuter extends TaskHandler{
 
     Update(){
         super.Update();
-        this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
         if(!this.TaskExists(this.activeTaskId.value) && this.hasavailable){
             this.activeTaskId.value = this.PickRandomTaskID();
         }
