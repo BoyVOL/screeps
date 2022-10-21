@@ -34,7 +34,6 @@ class Task extends ObjectOverride{
     }
 
     DeleteItself(){
-        console.log("DELETE");
         taskTable.DeleteObject(this.tableid);
     }
 
@@ -159,6 +158,7 @@ class TaskExecuter extends TaskHandler{
 
     Update(){
         super.Update();
+        this.activeTaskId = new MemoryItem('activeTaskId',null,this.parent.orig.memory);
         if(!this.TaskExists(this.activeTaskId.value) && this.hasavailable){
             this.activeTaskId.value = this.PickRandomTaskID();
         }
