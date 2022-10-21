@@ -97,8 +97,8 @@ class MovTask extends Task{
         var result = false;
         
         if(this.hasExecuter){
-            console.log('distance = ',this.destDistance);
-            result = this.destDistance;
+            result += this.destDistance == this.orig.range;
+            console.log('distance = ',result);
         }
         return super.completed;
     }
