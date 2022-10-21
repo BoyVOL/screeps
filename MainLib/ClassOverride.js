@@ -144,6 +144,7 @@ class ObjProxyTable extends HtableOverride{
     }
 
     UpdateObjects(){
+        this.LoadOrig();
         var pass = this;
         this.forEach(function(val,key){
             if(!pass.ObjExists(key)){
