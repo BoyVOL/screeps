@@ -98,13 +98,13 @@ class MovTask extends Task{
         
         if(this.hasExecuter){
             result += this.destDistance == this.orig.range;
+            console.log("dist = ",this.destDistance," ",this.orig.range," ",result);
         }
         return result;
     }
 
     Update(){
         super.Update();
-        //console.log("movtask!");
     }
 }
 
