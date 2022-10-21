@@ -70,8 +70,8 @@ class Task extends ObjectOverride{
         return false;
     }
 
-    get destDistance(){
-        return this.executer.orig.pos.getRangeTo(this.dest);
+    Distance(obj){
+        return obj.orig.pos.getRangeTo(this.dest);
     }
 
     Unload(){
@@ -97,7 +97,7 @@ class MovTask extends Task{
         var result = super.completed;
         
         if(this.hasExecuter){
-            result += this.destDistance == this.orig.range;
+            result += this.Distance(this.executer) == this.orig.range;
         }
         return result;
     }
@@ -125,7 +125,11 @@ class TaskHandler extends WithParent{
 class MovTaskHost extends TaskHandler{
     Update(){
         super.Update();
-        var task = {type: 'mov', dest: this.parent.GetRandomPos(), range: 0};
+        var task = {
+            type: 'mov', 
+            dest: this.parent.GetRandomPos(), 
+            range: 0
+        };
         this.PostTask(task);
     }
 }
