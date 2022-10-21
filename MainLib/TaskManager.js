@@ -127,7 +127,7 @@ class TaskHandler extends WithParent{
 class MovTaskHost extends TaskHandler{
     Update(){
         super.Update();
-        var task = {type: 'mov', dest: this.parent.GetRandomPos()};
+        var task = {type: 'mov', dest: this.parent.GetRandomPos(), range: 0};
         this.PostTask(task);
     }
 }
