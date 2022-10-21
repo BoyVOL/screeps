@@ -34,6 +34,7 @@ class Task extends ObjectOverride{
     }
 
     DeleteItself(){
+        console.log("DELETE");
         taskTable.DeleteObject(this.tableid);
     }
 
@@ -98,7 +99,6 @@ class MovTask extends Task{
         
         if(this.hasExecuter){
             result += this.destDistance == this.orig.range;
-            console.log("dist = ",this.destDistance," ",this.orig.range," ",result);
         }
         return result;
     }
