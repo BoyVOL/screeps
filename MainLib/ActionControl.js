@@ -28,7 +28,7 @@ class ActionTable extends ObjProxyTable{
     Update(){
         super.Update();
         console.log("BRUH",this.objcount,this.count);
-        this.AddRecord(createUUID(),{type:'mov'});
+        this.AddRecord(createUUID(),Action.data);
     }
 }
 
@@ -38,9 +38,15 @@ class Action extends ObjectOverride{
         this.actor = actor;
     }
 
+    static get data(){
+        return {
+            type: 'base',
+            text: 'wow'
+        }
+    }
+
     Update(){
         super.Update();
-        console.log("base");
     }
 }
 
@@ -51,7 +57,6 @@ class MovAction extends Action{
 
     Update(){
         super.Update();
-        console.log("mov");
     }
 }
 
