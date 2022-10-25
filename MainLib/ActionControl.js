@@ -27,6 +27,7 @@ class ActionTable extends ObjProxyTable{
     Update(){
         super.Update();
         console.log("BRUH");
+        this.AddRecord({type:'mov'});
     }
 }
 
