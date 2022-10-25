@@ -28,7 +28,7 @@ class ActionTable extends ObjProxyTable{
     Update(){
         super.Update();
         console.log("BRUH");
-        this.AddRecord(createUUID,{type:'mov'});
+        this.AddRecord(createUUID(),{type:'mov'});
     }
 }
 
