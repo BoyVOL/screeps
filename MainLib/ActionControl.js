@@ -27,7 +27,7 @@ class ActionTable extends ObjProxyTable{
 
     Update(){
         super.Update();
-        console.log("BRUH");
+        console.log("BRUH",this.objcount);
         this.AddRecord(createUUID(),{type:'mov'});
     }
 }
