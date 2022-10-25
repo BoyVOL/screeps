@@ -9,7 +9,7 @@ const { plainTable } = require('./ClassOverride');
 const {createUUID} = require('./UUID');
 
 function loop(){
-        
+    console.log("UPDATE >>>>>>>>");
     roomTable.UpdateObjects();
     flagTable.UpdateObjects();
     structTable.UpdateObjects();
