@@ -9,7 +9,7 @@ class ActionTable extends ObjProxyTable{
     }
     
     LoadOrig(){
-        this.orig = new MemoryItem('taskTable',{},actor.orig.memory).value;
+        this.orig = new MemoryItem('taskTable',{},this.actor.orig.memory).value;
     }
 
     InitSingleObject(orig){
