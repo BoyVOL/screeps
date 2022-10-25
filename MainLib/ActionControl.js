@@ -1,5 +1,6 @@
 const { MemoryItem } = require('./MemoryManagement');
 const { ObjectOverride,ObjProxyTable } = require('./ClassOverride');
+const {createUUID} = require('./UUID');
 
 class ActionTable extends ObjProxyTable{
 
@@ -27,7 +28,7 @@ class ActionTable extends ObjProxyTable{
     Update(){
         super.Update();
         console.log("BRUH");
-        this.AddRecord({type:'mov'});
+        this.AddRecord(createUUID,{type:'mov'});
     }
 }
 
