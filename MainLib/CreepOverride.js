@@ -11,7 +11,7 @@ class CreepOverride extends RoomObjectOver{
 
     LoadOrig(){
         super.LoadOrig();
-        this.actionTable.LoadOrig();
+        this.actionTable.UpdateObjects();
     }
 
     Update(){
