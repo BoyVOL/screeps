@@ -37,11 +37,21 @@ class Action extends ObjectOverride{
         super(orig);
         this.actor = actor;
     }
+
+    Update(){
+        super.Update();
+        console.log("base");
+    }
 }
 
 class MovAction extends Action{
     constructor(orig,actor){
         super(orig,actor);
+    }
+
+    Update(){
+        super.Update();
+        console.log("mov");
     }
 }
 
