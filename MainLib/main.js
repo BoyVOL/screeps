@@ -6,12 +6,10 @@ const { structTable} = require("./StructureOverride");
 const { MemoryItem } = require('./MemoryManagement');
 const { flagTable } = require('./FlagsOverride');
 const { plainTable } = require('./ClassOverride');
-const { taskTable,Task } = require('./TaskManager');
 const {createUUID} = require('./UUID');
 
 function loop(){
         
-    taskTable.UpdateObjects();
     console.log(taskTable.count);
     roomTable.UpdateObjects();
     flagTable.UpdateObjects();
@@ -19,7 +17,6 @@ function loop(){
     spawnTable.UpdateObjects();
     creepTable.UpdateObjects();
 
-    taskTable.Update();
     console.log(taskTable.count);
     roomTable.Update();
     flagTable.Update();
