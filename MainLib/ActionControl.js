@@ -32,8 +32,7 @@ class ActionTable extends ObjProxyTable{
 
     Update(){
         super.Update();
-        console.log("BRUH",this.objcount,this.count);
-        this.CreateAction(Action.data);
+        this.CreateAction(MovAction.data(this.actor.orig.pos));
     }
 }
 
@@ -46,7 +45,6 @@ class Action extends ObjectOverride{
     static get data(){
         return {
             type: 'base',
-            text: 'wow'
         }
     }
 
@@ -66,8 +64,15 @@ class MovAction extends Action{
         return result;
     }
 
+    static data(target){
+        var result = this.data;
+        result.target = target;
+        return result;
+    }
+
     Update(){
         super.Update();
+        console.log(this.orig.target);
     }
 }
 
