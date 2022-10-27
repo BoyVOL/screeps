@@ -25,10 +25,15 @@ class ActionTable extends ObjProxyTable{
         }
     }
 
+    CreateAction(data){
+        data.id = createUUID();
+        this.AddRecord(data.id,data);
+    }
+
     Update(){
         super.Update();
         console.log("BRUH",this.objcount,this.count);
-        this.AddRecord(createUUID(),Action.data);
+        this.CreateAction(Action.data);
     }
 }
 
@@ -53,6 +58,12 @@ class Action extends ObjectOverride{
 class MovAction extends Action{
     constructor(orig,actor){
         super(orig,actor);
+    }
+
+    static get data(){
+        var result = super.data;
+        result.type = 'mov';
+        return result;
     }
 
     Update(){
