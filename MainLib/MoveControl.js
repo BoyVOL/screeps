@@ -1,25 +1,26 @@
-const { WithParent } = require('./ClassOverride');
+const { WithParent} = require('./ClassOverride');
 const { MemoryItem } = require('./MemoryManagement');
 
 class Movement extends WithParent{
     
-    constructor(parent){
-        super(parent);
-        this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
+    constructor(task){
+        super(task.actor);
+        this.task = task;
+        this.path = new MemoryItem("path",new Array(),this.task.orig);
         this.lastresult = 0;
         this.target = null;
         this.distance = 0;
     }
 
     DrawPath(){
-        this.parent.Room.orig.visual.poly(this.path.value,{stroke: '#fff', strokeWidth: .15,
+        this.task.actor.Room.orig.visual.poly(this.path.value,{stroke: '#fff', strokeWidth: .15,
         opacity: .2, lineStyle: 'dashed'});
     }
 
     DrawTarget(){
         if(this.target != null){
-        this.parent.Room.orig.visual.circle(this.target,
-            {fill: 'transparent', radius: 0.55, stroke: 'red'});
+        this.task.actor.Room.orig.visual.circle(this.target,
+            {fill: 'transtaskactor', radius: 0.55, stroke: 'red'});
         }
     }
 
@@ -28,7 +29,7 @@ class Movement extends WithParent{
     }
 
     GetStepPos(id){
-        return new RoomPosition(this.path.value[id].x,this.path.value[id].y,this.parent.Room.orig.name);
+        return new RoomPosition(this.path.value[id].x,this.path.value[id].y,this.task.actor.Room.orig.name);
     }
 
     get PathRangeToTarget(){
@@ -43,8 +44,8 @@ class Movement extends WithParent{
 
     get IsOnPath(){
         if(this.PathIsDefined){
-            return this.parent.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
-        this.parent.orig.pos.y+this.path.value[0].dy == this.path.value[0].y;
+            return this.task.actor.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
+        this.task.actor.orig.pos.y+this.path.value[0].dy == this.path.value[0].y;
         } else return false;
     }
 
@@ -61,13 +62,13 @@ class Movement extends WithParent{
     }
 
     Move(){
-        this.lastresult = this.parent.orig.moveByPath(this.path.value);
+        this.lastresult = this.task.actor.orig.moveByPath(this.path.value);
         if(!this.Tired) this.path.value.shift();
     }
 
     GetNewPath(){
         if(this.target!=null){
-            this.path.value = this.parent.orig.pos.findPathTo(this.target,{range: this.distance});
+            this.path.value = this.task.actor.orig.pos.findPathTo(this.target,{range: this.distance});
         }
     }
 
@@ -85,7 +86,7 @@ class Movement extends WithParent{
 
     Update(){
         super.Update();
-        this.path = new MemoryItem("path",new Array(),this.parent.orig.memory);
+        this.path = new MemoryItem("path",new Array(),this.this.task.orig);
         this.AdjustPath();
         this.Move();
         this.CheckAfterMove();

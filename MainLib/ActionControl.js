@@ -1,6 +1,7 @@
 const { MemoryItem } = require('./MemoryManagement');
 const { ObjectOverride,ObjProxyTable } = require('./ClassOverride');
 const {createUUID} = require('./UUID');
+const {Movement} = require('./MoveControl');
 
 class ActionTable extends ObjProxyTable{
 
@@ -56,6 +57,7 @@ class Action extends ObjectOverride{
 class MovAction extends Action{
     constructor(orig,actor){
         super(orig,actor);
+        this.movement = new Movement(this);
     }
 
     static get data(){
