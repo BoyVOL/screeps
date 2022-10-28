@@ -8,7 +8,6 @@ class Movement extends WithParent{
         this.task = task;
         this.path = new MemoryItem("path",new Array(),this.task.orig);
         this.lastresult = 0;
-        this.target = null;
         this.distance = 0;
     }
 
@@ -18,8 +17,8 @@ class Movement extends WithParent{
     }
 
     DrawTarget(){
-        if(this.target != null){
-        this.task.actor.Room.orig.visual.circle(this.target,
+        if(this.task.orig.target != null){
+        this.task.actor.Room.orig.visual.circle(this.task.orig.target,
             {fill: 'transtaskactor', radius: 0.55, stroke: 'red'});
         }
     }
@@ -33,11 +32,11 @@ class Movement extends WithParent{
     }
 
     get PathRangeToTarget(){
-        return this.GetStepPos(this.path.value.length-1).getRangeTo(this.target);
+        return this.GetStepPos(this.path.value.length-1).getRangeTo(this.task.orig.target);
     }
 
     get PathIsToTarget(){
-        if(this.target != null && this.PathIsDefined){
+        if(this.task.orig.target != null && this.PathIsDefined){
             return this.PathRangeToTarget <= this.distance;
         } else return false;
     }
@@ -67,8 +66,8 @@ class Movement extends WithParent{
     }
 
     GetNewPath(){
-        if(this.target!=null){
-            this.path.value = this.task.actor.orig.pos.findPathTo(this.target,{range: this.distance});
+        if(this.task.orig.target!=null){
+            this.path.value = this.task.actor.orig.pos.findPathTo(this.task.orig.target,{range: this.distance});
         }
     }
 
