@@ -14,6 +14,7 @@ class RoomOverride extends ObjectOverride{
 
     LoadOrig(){
         this.orig = Game.rooms[this.orig.name];
+        this.sourceTable.UpdateObjects();
     }
 
     GetRandomPos(){
