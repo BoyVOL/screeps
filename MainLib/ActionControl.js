@@ -28,7 +28,7 @@ class ActionTable extends ObjProxyTable{
 
     CreateAction(data){
         var id = createUUID();
-        data.taskid = id;
+        data.id = id;
         this.AddRecord(id,data);
     }
 
@@ -41,6 +41,7 @@ class ActionTable extends ObjProxyTable{
 class Action extends ObjectOverride{
     constructor(orig,actor){
         super(orig);
+        this.gettable = false;
         this.actor = actor;
     }
 

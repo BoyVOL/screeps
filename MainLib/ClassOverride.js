@@ -29,13 +29,14 @@ class ObjectOverride extends Updatable{
 
     constructor(orig){
         super();
+        this.gettable = true;
         this.orig = orig;
         this.table = null;
         this.tableid = null;
     }
 
     LoadOrig(orig){
-        if(typeof(this.orig.id) != 'undefined'){
+        if(this.gettable && typeof(this.orig.id) != 'undefined'){
             this.orig = Game.getObjectById(this.orig.id);
         }
     }
