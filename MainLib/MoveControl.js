@@ -71,8 +71,7 @@ class Movement extends WithParent{
 
     get distance(){
         var target = null;
-        console.log(target);
-        return target.getRangeTo(this.pos);
+        console.log(target.getRangeTo(this.pos));
     }
 
     get InRange(){
