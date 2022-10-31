@@ -15,6 +15,7 @@ class ActionTable extends ObjProxyTable{
     }
 
     InitSingleObject(orig){
+        console.log("INNIT Orig",orig);
         switch (orig.type) {
             case 'mov':
                     return new MovAction(orig,this.actor);
