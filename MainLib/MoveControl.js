@@ -32,6 +32,10 @@ class Movement extends WithParent{
             this.path.value[id].roomName);
     }
 
+    get pos(){
+        return this.task.actor.orig.pos;
+    }
+
     get PathRangeToTarget(){
         return this.GetStepPos(this.path.value.length-1).getRangeTo(this.target);
     }
@@ -44,8 +48,8 @@ class Movement extends WithParent{
 
     get IsOnPath(){
         if(this.PathIsDefined){
-            return this.task.actor.orig.pos.x+this.path.value[0].dx == this.path.value[0].x && 
-        this.task.actor.orig.pos.y+this.path.value[0].dy == this.path.value[0].y;
+            return this.pos.x+this.path.value[0].dx == this.path.value[0].x && 
+        this.pos.y+this.path.value[0].dy == this.path.value[0].y;
         } else return false;
     }
 
@@ -65,6 +69,10 @@ class Movement extends WithParent{
         return this.task.orig.range;
     }
 
+    get distance(){
+        return this.target.getRangeTo(this.pos);
+    }
+
     get InRange(){
 
     }
@@ -82,7 +90,7 @@ class Movement extends WithParent{
 
     GetNewPath(){
         if(this.target!=null){
-            this.path.value = this.task.actor.orig.pos.findPathTo(this.target,{range: this.distance});
+            this.path.value = this.pos.findPathTo(this.target,{range: this.distance});
         }
     }
 
