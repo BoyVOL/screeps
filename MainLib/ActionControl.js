@@ -27,9 +27,10 @@ class ActionTable extends ObjProxyTable{
     }
 
     CreateAction(data){
-        data.id = createUUID();
+        var id = createUUID();
+        data.id = id;
         console.log(data);
-        this.AddRecord(data.id,data);
+        this.AddRecord(id,data);
     }
 
     Update(){
