@@ -70,8 +70,7 @@ class Movement extends WithParent{
     }
 
     get distance(){
-        var target = null;
-        console.log(this.target.getRangeTo());
+        return this.target.getRangeTo(this.pos);
     }
 
     get InRange(){
@@ -79,7 +78,7 @@ class Movement extends WithParent{
     }
 
     get target(){ 
-        RoomPosition(this.task.orig.target.x,
+        return RoomPosition(this.task.orig.target.x,
             this.task.orig.target.y,
             this.task.orig.target.roomName);
     }
