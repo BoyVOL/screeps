@@ -34,8 +34,7 @@ class ActionTable extends ObjProxyTable{
 
     Update(){
         super.Update();
-        console.log(this.actor.Room);
-        this.CreateAction(MovAction.dataPos(this.actor.Room.getRandomPos()));
+        this.CreateAction(MovAction.dataPos(this.actor.Room.GetRandomPos()));
     }
 }
 
