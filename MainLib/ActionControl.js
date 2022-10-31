@@ -35,7 +35,7 @@ class ActionTable extends ObjProxyTable{
 
     Update(){
         super.Update();
-        this.CreateAction(MovAction.data(this.actor.orig.pos));
+        this.CreateAction(MovAction.dataPos(this.actor.orig.pos));
     }
 }
 
@@ -68,7 +68,7 @@ class MovAction extends Action{
         return result;
     }
 
-    static data(target){
+    static dataPos(target){
         var result = this.data;
         result.target = target;
         return result;
