@@ -60,7 +60,7 @@ class Action extends ObjectOverride{
 class MovAction extends Action{
     constructor(orig,actor){
         super(orig,actor);
-        this.movement = new Movement(this);
+        //this.movement = new Movement(this);
     }
 
     static get data(){
