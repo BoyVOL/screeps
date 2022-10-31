@@ -59,7 +59,7 @@ class Action extends ObjectOverride{
 class MovAction extends Action{
     constructor(orig,actor){
         super(orig,actor);
-        console.log("INIt",orig);
+        console.log("INIt",orig,this.orig);
         this.movement = new Movement(this);
     }
 
