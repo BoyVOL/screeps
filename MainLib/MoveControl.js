@@ -62,7 +62,7 @@ class Movement extends WithParent{
     }
 
     get targetRange(){
-        return this.task.orig.distance;
+        return this.task.orig.range;
     }
 
     get InRange(){
