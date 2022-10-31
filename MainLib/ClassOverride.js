@@ -64,7 +64,7 @@ class ObjectOverride extends Updatable{
 
     Update(){
         super.Update();
-        console.log(this.key,this.orig);
+        //console.log(this.key,this.orig);
     }
 
     Unload(){
