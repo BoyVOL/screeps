@@ -15,7 +15,6 @@ class ActionTable extends ObjProxyTable{
     }
 
     InitSingleObject(orig){
-        console.log("INNIT Orig",orig.id);
         switch (orig.type) {
             case 'mov':
                     return new MovAction(orig,this.actor);
@@ -60,6 +59,7 @@ class Action extends ObjectOverride{
 class MovAction extends Action{
     constructor(orig,actor){
         super(orig,actor);
+        console.log("INIt",orig);
         this.movement = new Movement(this);
     }
 
