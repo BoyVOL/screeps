@@ -76,7 +76,7 @@ class MovAction extends Action{
 
     Update(){
         super.Update();
-        console.log(this.orig.target);
+        console.log(this.orig);
     }
 }
 
