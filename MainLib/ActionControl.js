@@ -52,6 +52,7 @@ class Action extends ObjectOverride{
     }
 
     Update(){
+        console.log("INIt",this.orig);
         super.Update();
     }
 }
@@ -75,7 +76,6 @@ class MovAction extends Action{
     }
 
     Update(){
-        console.log("INIt",this.orig);
         super.Update();
     }
 }
