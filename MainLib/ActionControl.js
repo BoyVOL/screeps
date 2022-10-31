@@ -57,7 +57,7 @@ class Action extends ObjectOverride{
 
     Update(){
         super.Update();
-        console.log(this.tableid);
+        if(this.completed) this.table.DeleteRecord(this.tableid);
     }
 }
 
