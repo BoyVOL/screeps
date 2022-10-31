@@ -35,7 +35,7 @@ class ActionTable extends ObjProxyTable{
 
     Update(){
         super.Update();
-        this.CreateAction(MovAction.data);
+        this.CreateAction(Action.data);
     }
 }
 
