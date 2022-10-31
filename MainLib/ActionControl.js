@@ -51,9 +51,13 @@ class Action extends ObjectOverride{
         }
     }
 
+    get completed(){
+        return true;
+    }
+
     Update(){
-        console.log("INIt",this.orig);
         super.Update();
+        console.log(this.tableid);
     }
 }
 
