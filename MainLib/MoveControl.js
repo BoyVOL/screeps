@@ -78,7 +78,7 @@ class Movement extends WithParent{
     }
 
     get target(){ 
-        return RoomPosition(this.task.orig.target.x,
+        return new RoomPosition(this.task.orig.target.x,
             this.task.orig.target.y,
             this.task.orig.target.roomName);
     }
