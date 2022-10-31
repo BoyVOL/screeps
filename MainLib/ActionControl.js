@@ -81,7 +81,7 @@ class MovAction extends Action{
     }
 
     Update(){
-        console.log("range = ",this.movement.targetRange);
+        console.log("range = ",this.movement.distance);
         super.Update();
     }
 }
