@@ -34,7 +34,7 @@ class ActionTable extends ObjProxyTable{
 
     Update(){
         super.Update();
-        this.CreateAction(Action.data);
+        //this.CreateAction(Action.data);
     }
 }
 
@@ -51,7 +51,7 @@ class Action extends ObjectOverride{
     }
 
     Update(){
-        //console.log("INIt",this.orig);
+        console.log("INIt",this.orig);
         super.Update();
     }
 }
