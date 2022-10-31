@@ -8,7 +8,6 @@ class Movement extends WithParent{
         this.task = task;
         this.path = new MemoryItem("path",new Array(),this.task.orig);
         this.lastresult = 0;
-        this.distance = 0;
     }
 
     DrawPath(){
@@ -17,8 +16,8 @@ class Movement extends WithParent{
     }
 
     DrawTarget(){
-        if(this.task.orig.target != null){
-        this.task.actor.Room.orig.visual.circle(this.task.orig.target,
+        if(this.target != null){
+        this.task.actor.Room.orig.visual.circle(this.target,
             {fill: 'transtaskactor', radius: 0.55, stroke: 'red'});
         }
     }
@@ -28,15 +27,17 @@ class Movement extends WithParent{
     }
 
     GetStepPos(id){
-        return new RoomPosition(this.path.value[id].x,this.path.value[id].y,this.task.actor.Room.orig.name);
+        return new RoomPosition(this.path.value[id].x,
+            this.path.value[id].y,
+            this.path.value[id].roomName);
     }
 
     get PathRangeToTarget(){
-        return this.GetStepPos(this.path.value.length-1).getRangeTo(this.task.orig.target);
+        return this.GetStepPos(this.path.value.length-1).getRangeTo(this.target);
     }
 
     get PathIsToTarget(){
-        if(this.task.orig.target != null && this.PathIsDefined){
+        if(this.target != null && this.PathIsDefined){
             return this.PathRangeToTarget <= this.distance;
         } else return false;
     }
@@ -60,14 +61,28 @@ class Movement extends WithParent{
         return this.lastresult == -11;
     }
 
+    get targetRange(){
+        return this.task.orig.distance;
+    }
+
+    get InRange(){
+
+    }
+
+    get target(){ 
+        RoomPosition(this.task.orig.target.x,
+            this.task.orig.target.y,
+            this.task.orig.target.roomName);
+    }
+
     Move(){
         this.lastresult = this.task.actor.orig.moveByPath(this.path.value);
         if(!this.Tired) this.path.value.shift();
     }
 
     GetNewPath(){
-        if(this.task.orig.target!=null){
-            this.path.value = this.task.actor.orig.pos.findPathTo(this.task.orig.target,{range: this.distance});
+        if(this.target!=null){
+            this.path.value = this.task.actor.orig.pos.findPathTo(this.target,{range: this.distance});
         }
     }
 

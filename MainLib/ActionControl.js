@@ -34,7 +34,7 @@ class ActionTable extends ObjProxyTable{
 
     Update(){
         super.Update();
-        this.CreateAction(MovAction.dataPos(this.actor.orig.pos));
+        this.CreateAction(MovAction.dataPos(this.actor.Room.getRandomPos()));
     }
 }
 
@@ -73,13 +73,15 @@ class MovAction extends Action{
         return result;
     }
 
-    static dataPos(target){
+    static dataPos(target,range = 0){
         var result = this.data;
         result.target = target;
+        result.range = range;
         return result;
     }
 
     Update(){
+        console.log("range = ",this.movement.targetRange);
         super.Update();
     }
 }
