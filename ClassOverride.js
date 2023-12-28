@@ -215,6 +215,7 @@ class PlainTable{
     }
 }
 
+//Автоматически создаваемая таблица, доступная всем как константа
 const plainTable = new PlainTable();
 
 module.exports = {
