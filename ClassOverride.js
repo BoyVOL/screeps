@@ -89,6 +89,10 @@ class HtableOverride extends ObjectOverride{
         }
     }
 
+    /**
+     * Возвращает данные как массив
+     * @returns 
+     */
     AsArray(){
         return Object.keys(this.orig).map((key) => [key, this.orig[key]]);
     }
@@ -101,6 +105,11 @@ class HtableOverride extends ObjectOverride{
         delete this.orig[key];
     }
 
+    /**
+     * проверка на существование элемента в памяти
+     * @param {*} key идентификатор объекта
+     * @returns проверяет, есть ли он вообще в памяти
+     */
     Exists(key){
         return typeof(this.orig[key]) != 'undefined';
     }
@@ -118,6 +127,10 @@ class ObjProxyTable extends HtableOverride{
         return Object.keys(this.objArray).length;
     }
 
+    /**
+     * Возвращает хранимые объекты как массив
+     * @returns 
+     */
     ObjAsArray(){
         return Object.keys(this.objArray).map((key) => [key, this.objArray[key]]);
     }
