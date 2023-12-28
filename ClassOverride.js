@@ -128,17 +128,10 @@ class ObjProxyTable extends HtableOverride{
     get objcount(){
         return Object.keys(this.objArray).length;
     }
-<<<<<<< Updated upstream
-
-    /**
-     * Возвращает хранимые объекты как массив
-     * @returns 
-=======
     
     /**
      * Return array of contained objects
      * @returns object array
->>>>>>> Stashed changes
      */
     ObjAsArray(){
         return Object.keys(this.objArray).map((key) => [key, this.objArray[key]]);
