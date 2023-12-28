@@ -35,7 +35,10 @@ class ObjectOverride extends Updatable{
         this.tableid = null;
     }
 
-    LoadOrig(orig){
+    /**
+     * Method for loading each cycle data from memory
+     */
+    LoadOrig(){
         if(this.gettable && typeof(this.orig.id) != 'undefined'){
             this.orig = Game.getObjectById(this.orig.id);
         }
@@ -65,7 +68,6 @@ class ObjectOverride extends Updatable{
 
     Update(){
         super.Update();
-        //console.log(this.key,this.orig);
     }
 
     Unload(){
@@ -74,7 +76,7 @@ class ObjectOverride extends Updatable{
     }
 }
 
-/** class for overriding access to hash tables */
+/** класс перегружает хеш-таблицы в памяти игры */
 class HtableOverride extends ObjectOverride{
 
     /** this way you can get hash table overall count */
@@ -89,6 +91,10 @@ class HtableOverride extends ObjectOverride{
         }
     }
 
+    /**
+     * Возвращает данные как массив
+     * @returns 
+     */
     AsArray(){
         return Object.keys(this.orig).map((key) => [key, this.orig[key]]);
     }
@@ -101,12 +107,17 @@ class HtableOverride extends ObjectOverride{
         delete this.orig[key];
     }
 
+    /**
+     * проверка на существование элемента в таблице
+     * @param {*} key идентификатор объекта
+     * @returns есть ли элемент
+     */
     Exists(key){
         return typeof(this.orig[key]) != 'undefined';
     }
 }
 
-/** object that wraps around native hash table and converts it into updating object array on the fly*/
+/** object that wraps around native hash table of objects and converts it into updating object array on the fly*/
 class ObjProxyTable extends HtableOverride{
     constructor(orig){
         super(orig);
@@ -117,16 +128,32 @@ class ObjProxyTable extends HtableOverride{
     get objcount(){
         return Object.keys(this.objArray).length;
     }
+<<<<<<< Updated upstream
 
+    /**
+     * Возвращает хранимые объекты как массив
+     * @returns 
+=======
+    
+    /**
+     * Return array of contained objects
+     * @returns object array
+>>>>>>> Stashed changes
+     */
     ObjAsArray(){
         return Object.keys(this.objArray).map((key) => [key, this.objArray[key]]);
     }
 
-    /** Method for initiatins single object that needs to be overread */
+    /** Method for initiating single object that needs to be overread */
     InitSingleObject(orig){
         return new ObjectOverride(orig);
     }
 
+    /**
+     * 
+     * @param {bla} orig 
+     * @param {*} key 
+     */
     AddObject(orig,key){
         var obj = this.InitSingleObject(orig);
         obj.table = this;
@@ -145,6 +172,9 @@ class ObjProxyTable extends HtableOverride{
         return typeof(this.objArray[key]) != 'undefined';
     }
 
+    /**
+     * Обновляет все объесты. Вызывать раз в цикл
+     */
     UpdateObjects(){
         this.LoadOrig();
         var pass = this;
@@ -178,6 +208,9 @@ class ObjProxyTable extends HtableOverride{
     }
 }
 
+/**
+ * Класс "плоской" таблицы объектов, в которой представлены они все
+ */
 class PlainTable{
     constructor(){
         this.objects = {};
@@ -196,6 +229,7 @@ class PlainTable{
     }
 }
 
+//Автоматически создаваемая таблица, доступная всем как константа
 const plainTable = new PlainTable();
 
 module.exports = {
