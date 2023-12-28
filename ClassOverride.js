@@ -74,7 +74,7 @@ class ObjectOverride extends Updatable{
     }
 }
 
-/** class for overriding access to hash tables */
+/** класс перегружает хеш-таблицы в памяти игры */
 class HtableOverride extends ObjectOverride{
 
     /** this way you can get hash table overall count */
@@ -106,16 +106,16 @@ class HtableOverride extends ObjectOverride{
     }
 
     /**
-     * проверка на существование элемента в памяти
+     * проверка на существование элемента в таблице
      * @param {*} key идентификатор объекта
-     * @returns проверяет, есть ли он вообще в памяти
+     * @returns есть ли элемент
      */
     Exists(key){
         return typeof(this.orig[key]) != 'undefined';
     }
 }
 
-/** object that wraps around native hash table and converts it into updating object array on the fly*/
+/** object that wraps around native hash table of objects and converts it into updating object array on the fly*/
 class ObjProxyTable extends HtableOverride{
     constructor(orig){
         super(orig);
@@ -158,6 +158,9 @@ class ObjProxyTable extends HtableOverride{
         return typeof(this.objArray[key]) != 'undefined';
     }
 
+    /**
+     * Обновляет все объесты. Вызывать раз в цикл
+     */
     UpdateObjects(){
         this.LoadOrig();
         var pass = this;
@@ -191,6 +194,9 @@ class ObjProxyTable extends HtableOverride{
     }
 }
 
+/**
+ * Класс "плоской" таблицы объектов, в которой представлены они все
+ */
 class PlainTable{
     constructor(){
         this.objects = {};
