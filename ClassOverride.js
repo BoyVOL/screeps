@@ -35,7 +35,10 @@ class ObjectOverride extends Updatable{
         this.tableid = null;
     }
 
-    LoadOrig(orig){
+    /**
+     * Method for loading each cycle data from memory
+     */
+    LoadOrig(){
         if(this.gettable && typeof(this.orig.id) != 'undefined'){
             this.orig = Game.getObjectById(this.orig.id);
         }
@@ -65,7 +68,6 @@ class ObjectOverride extends Updatable{
 
     Update(){
         super.Update();
-        //console.log(this.key,this.orig);
     }
 
     Unload(){
@@ -126,20 +128,32 @@ class ObjProxyTable extends HtableOverride{
     get objcount(){
         return Object.keys(this.objArray).length;
     }
+<<<<<<< Updated upstream
 
     /**
      * Возвращает хранимые объекты как массив
      * @returns 
+=======
+    
+    /**
+     * Return array of contained objects
+     * @returns object array
+>>>>>>> Stashed changes
      */
     ObjAsArray(){
         return Object.keys(this.objArray).map((key) => [key, this.objArray[key]]);
     }
 
-    /** Method for initiatins single object that needs to be overread */
+    /** Method for initiating single object that needs to be overread */
     InitSingleObject(orig){
         return new ObjectOverride(orig);
     }
 
+    /**
+     * 
+     * @param {bla} orig 
+     * @param {*} key 
+     */
     AddObject(orig,key){
         var obj = this.InitSingleObject(orig);
         obj.table = this;
