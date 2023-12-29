@@ -1,30 +1,50 @@
+ /**
+ * base updatable class
+ */
 class Updatable{
 
+    /**
+     * base constructor
+     */
     constructor(){
         
     }
 
+    /**
+     * function to load class stuff from long term memory
+     */
     LoadOrig(){
         
     }
     
+    /**
+     * method for updating class state
+     */
     Update(){
         
     }
 
+    /**
+     * method for freening any resource this class used
+     */
     Unload(){
     }
 }
 
+/**
+ * Updatable with parent
+ */
 class WithParent extends Updatable{
     constructor(parent){
         super();
+        /** parent object of this class */
         this.parent = parent;
     }
 }
 
-
-/** class for overriding functionality of different low level class */
+/**
+ * Updatable that represents a Screeps memory object
+ */
 class ObjectOverride extends Updatable{
 
     constructor(orig){
@@ -35,15 +55,15 @@ class ObjectOverride extends Updatable{
         this.tableid = null;
     }
 
-    /**
-     * Method for loading each cycle data from memory
-     */
     LoadOrig(){
         if(this.gettable && typeof(this.orig.id) != 'undefined'){
             this.orig = Game.getObjectById(this.orig.id);
         }
     }
 
+    /**
+     * returns unique id for this object
+     */
     get key(){
         if(this.hastableid) return this.tableid;
         else if(this.hasid) return this.orig.id;
