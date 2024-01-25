@@ -32,6 +32,4 @@ class MemoryItem {
     }
 }
 
-module.exports = {
-    MemoryItem,
-}
+export {MemoryItem}
