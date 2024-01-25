@@ -62,7 +62,11 @@ class ObjProxyTable extends HtableOverride{
         return Object.keys(this.objArray).map((key) => [key, this.objArray[key]]);
     }
 
-    /** Method for initiating single object that needs to be overread */
+    /** Method for initiating single object that needs to be overread
+     * override this metod for every new object to get a specific one
+     * @param orig memory allocated for this object in original Hash table, passed for initiation in cycle
+     * @returns instance of a class
+     */
     InitSingleObject(orig){
         return new ObjectOverride(orig);
     }
@@ -128,5 +132,5 @@ class ObjProxyTable extends HtableOverride{
 
 module.exports = {
     HtableOverride,
-    ObjProxyTable
+    ObjProxyTable,
 }
