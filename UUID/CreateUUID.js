@@ -8,6 +8,4 @@
         return uuid;
     }
 
-    module.exports = {
-        createUUID,
-    }
+    export {createUUID};
