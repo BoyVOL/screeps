@@ -1,9 +1,10 @@
 console.log("______________________________________________________________________________");
 
-function loop(){
-    
-}
+const {HtableOverride} = require('./ObjTableOverride');
 
+function loop(){
+    var Htable = new HtableOverride();
+}
 module.exports = {
     loop,
 }
