@@ -73,8 +73,8 @@ class ObjProxyTable extends HtableOverride{
     }
 
     /**
-     * 
-     * @param {bla} orig 
+     * Adds object
+     * @param {bla} orig global memory entry that adds 
      * @param {*} key 
      */
     AddObject(orig,key){
@@ -114,7 +114,9 @@ class ObjProxyTable extends HtableOverride{
         });
     }
     
-    /** cycle for all items in table that gets function as a parameter */
+    /** cycle for all items in table and execute specific function
+     * @param funct Executed function
+     */
     forEachObj(funct){
         for (const key in this.objects) {
             funct(this.objects[key],key);
