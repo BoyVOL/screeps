@@ -1,9 +1,14 @@
 console.log("______________________________________________________________________________");
 
-const {HtableOverride} = require('./ObjTableOverride');
+const {RoomTable} = require('./RoomOverride');
+
+var RTable = new RoomTable;
 
 function loop(){
-    var Htable = new HtableOverride();
+    RTable.Update();
+
+    console.log(RTable.AsArray());
+    console.log(RTable.objects['sim1']);
 }
 module.exports = {
     loop,
