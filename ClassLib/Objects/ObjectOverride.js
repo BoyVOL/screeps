@@ -53,7 +53,6 @@ class ObjectOverride extends Updatable{
 
     Unload(){
         super.Unload();
-        plainTable.DeleteObject(this);
     }
 }
 

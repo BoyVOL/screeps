@@ -1,4 +1,4 @@
-const {Updatable} = require('./Updatable.js');
+const {Updatable} = require('./Updatable');
 
 class WithParent extends Updatable{
     constructor(parent){
