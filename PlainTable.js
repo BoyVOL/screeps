@@ -1,13 +1,15 @@
-
-
 /**
  * Класс "плоской" таблицы объектов, в которой представлены они все
+ * Работает с классом ObjectOverride
  */
 class PlainTable{
     constructor(){
         this.objects = {};
     }
 
+    /**
+     * Возвращает количество элементов в объекте.
+     */
     get count(){
         return Object.keys(this.objects).length;
     }
@@ -21,10 +23,6 @@ class PlainTable{
     }
 }
 
-//Автоматически создаваемая таблица, доступная всем как константа
-const plainTable = new PlainTable();
-
 module.exports = {
-    PlainTable,
-    plainTable
+    PlainTable
 }

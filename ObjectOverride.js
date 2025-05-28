@@ -1,30 +1,4 @@
-class Updatable{
-
-    constructor(){
-        
-    }
-
-    LoadOrig(){
-        
-    }
-    
-    /**
-     * Метод для обновления состояния объекта из глобальных данных. Вызвать перед выполнением цикла
-     */
-    Update(){
-        
-    }
-
-    Unload(){
-    }
-}
-
-class WithParent extends Updatable{
-    constructor(parent){
-        super();
-        this.parent = parent;
-    }
-}
+const {Updatable} = require('./Updatable');
 
 
 /** class for overriding functionality of different low level class */
@@ -84,7 +58,5 @@ class ObjectOverride extends Updatable{
 }
 
 module.exports = {
-    Updatable,
-    WithParent,
     ObjectOverride
 }
