@@ -1,15 +1,16 @@
-const {Updatable} = require('./Updatable');
+const {WithParent} = require('./WithParent');
 
 
 /** class for overriding functionality of different low level class */
-class ObjectOverride extends Updatable{
+class ObjectOverride extends WithParent{
 
     /**
      * 
      * @param {*} orig long term memory instance of this object
+     * @param {*} parent parent of this class. Null by default
      */
-    constructor(orig){
-        super();
+    constructor(orig, parent = null){
+        super(parent);
         this.gettable = true;
         this.orig = orig;
         this.table = null;
